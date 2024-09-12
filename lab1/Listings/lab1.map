@@ -1,0 +1,19 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Small function inlining results
+
+Inlined function __aeabi_idiv0 from aeabi_idiv0.o at offset 0x154 in aeabi_sdiv.o(.text).
+Inlined Instruction: BX       lr
+Inlined function __aeabi_idiv0 from aeabi_idiv0.o at offset 0x154 in aeabi_sdiv_div0.o(.text).
+Inlined Instruction: BX       lr
+Inlined function _platform_pre_stackheap_init from boardinit1.o at offset 0x0 in __rtentry2.o(.ARM.Collect$$rtentry$$00000001).
+Inlined Instruction: BX       lr
+Inlined function _fp_init from fpinit.o at offset 0x0 in libinit2.o(.ARM.Collect$$libinit$$00000001).
+Inlined Instruction: BX       lr
+Inlined function _platform_pre_lib_shutdown from boardshut.o at offset 0x0 in rtexit2.o(.ARM.Collect$$rtexit$$00000001).
+Inlined Instruction: BX       lr
+Inlined function __ARM_get_argv from no_argv.o at offset 0x2 in argv_veneer.o(.text).
+Inlined Instruction: BX       lr
+Inlined total of 6 calls.
