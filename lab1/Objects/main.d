@@ -6,6 +6,5 @@
 .\objects\main.o: ..\NUC1xx\system_NUC1xx.h
 .\objects\main.o: ..\Include\System\SysInfra.h
 .\objects\main.o: ..\Include\System\ModuleID.h
-.\objects\main.o: ..\Include\Driver\DrvSYS.h
 .\objects\main.o: ..\Include\Driver\DrvGPIO.h
-.\objects\main.o: ..\Include\Driver\DrvTimer.h
+.\objects\main.o: user_func.h

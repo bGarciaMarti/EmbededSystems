@@ -454,9 +454,9 @@
               <FilePath>..\Src\Driver\DrvSYS.c</FilePath>
             </File>
             <File>
-              <FileName>DrvTimer.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Include\Driver\DrvTimer.h</FilePath>
+              <FileName>DrvTIMER.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\Driver\DrvTIMER.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -464,9 +464,19 @@
           <GroupName>Source</GroupName>
           <Files>
             <File>
+              <FileName>user_func.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\user_func.h</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>blinky.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\blinky.c</FilePath>
             </File>
           </Files>
         </Group>
