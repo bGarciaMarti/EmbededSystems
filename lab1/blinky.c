@@ -8,16 +8,30 @@ Lab 1a
 #include "user_func.h"
 #include "DrvTimer.h"
 #include "DrvSYS.h"
+#include "DrvGPIO.h"
 
-void blinkFunc(void)
+void blinky_Drv(void)
 {
-	//select 22 MHz for Timer1 clock source
-	//0=External 12MHz, 1= External 32KHz, 2= HCLK, 7 = Internal 22MHz
-	DrvSYS_SelectIPClockSource(E_SYS_TMR1_CLKSRC,7);
-		
+	//select 22 MHz for Timer0 clock source
+	// 7 = Internal 22MHz
+	DrvSYS_SelectIPClockSource(E_SYS_TMR0_CLKSRC,7);
 	DrvTIMER_Init();
 		
 	//Timer 1, 1/2 s, periodic
-	DrvTIMER_Open(E_TMR1,2,E_PERIODIC_MODE);	
+	DrvTIMER_Open(E_TMR0,2,E_PERIODIC_MODE);	
+	
+	
+	DrvTIMER_SetTimerEvent(E_TMR0,1,(TIMER_CALLBACK)TMR0_callback,1);
+	//Enable timer ISR
+	DrvTIMER_EnableInt(E_TMR0);
+	// Clear interrupt flag
+	DrvTIMER_ClearIntFlag(E_TMR0);
+	//Enable timer
+	DrvTIMER_Start(E_TMR0); //start counting TCSR.CEN = 1
+}
 
+void TMR0_callback(void) //flashes led (green)
+{
+GPA_13 = ~GPA_13;
+DrvTIMER_ClearIntFlag(E_TMR0); // or TIMER1->TISR.TIF = 1;
 }

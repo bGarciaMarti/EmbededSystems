@@ -14,5 +14,9 @@ Lab 1a
 
 int main (void) {
 
-	blinkFunc();
+	/* DrvGPIO.h gives us the option to use the pins/ports directly for this chip */
+	GPC_13 = 1; //off
+	while(1){
+		blinky_Drv();
+	}
 } //end main

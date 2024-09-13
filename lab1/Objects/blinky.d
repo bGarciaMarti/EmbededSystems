@@ -9,3 +9,4 @@
 .\objects\blinky.o: ..\Include\System\SysInfra.h
 .\objects\blinky.o: ..\Include\System\ModuleID.h
 .\objects\blinky.o: ..\Include\Driver\DrvSYS.h
+.\objects\blinky.o: ..\Include\Driver\DrvGPIO.h

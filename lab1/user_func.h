@@ -12,5 +12,5 @@ Video resource: https://www.youtube.com/watch?v=ma_bPt2FN8w
 
 /* Declaration of Functions*/
 
-void blinkFunc(void);
-
+void blinky_Drv(void);
+void TMR0_callback(void);

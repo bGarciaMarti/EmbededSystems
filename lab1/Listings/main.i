@@ -9067,19 +9067,25 @@ int32_t DrvGPIO_GetVersion(void);
 
 
 
- 
-
-#line 8 "user_func.h"
- 
 
 
  
 
-void blinkFunc(void);
+#line 10 "user_func.h"
+ 
 
+
+ 
+
+void blinky_Drv(void);
+void TMR0_callback(void);
 #line 14 "main.c"
 
 int main (void) {
 
-	blinkFunc();
+	 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 1; 
+	while(1){
+		blinky_Drv();
+	}
 } 
