@@ -458,11 +458,21 @@
               <FileType>1</FileType>
               <FilePath>..\Src\Driver\DrvTIMER.c</FilePath>
             </File>
+            <File>
+              <FileName>LCD_Driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\NUC1xx-LB_002\LCD_Driver.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Source</GroupName>
           <Files>
+            <File>
+              <FileName>Ascii_Table.C</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\NUC1xx-LB_002\Ascii_Table.C</FilePath>
+            </File>
             <File>
               <FileName>user_func.h</FileName>
               <FileType>5</FileType>
@@ -474,9 +484,9 @@
               <FilePath>.\main.c</FilePath>
             </File>
             <File>
-              <FileName>blinky.c</FileName>
+              <FileName>helloWorld.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\blinky.c</FilePath>
+              <FilePath>.\helloWorld.c</FilePath>
             </File>
           </Files>
         </Group>

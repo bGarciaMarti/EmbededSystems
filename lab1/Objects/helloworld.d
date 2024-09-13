@@ -1,0 +1,10 @@
+.\objects\helloworld.o: helloWorld.c
+.\objects\helloworld.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\helloworld.o: ..\NUC1xx\NUC1xx.h
+.\objects\helloworld.o: ..\CoreSupport\core_cm0.h
+.\objects\helloworld.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\helloworld.o: ..\NUC1xx\system_NUC1xx.h
+.\objects\helloworld.o: ..\Include\System\SysInfra.h
+.\objects\helloworld.o: ..\Include\System\ModuleID.h
+.\objects\helloworld.o: ..\Include\Driver\DrvGPIO.h
+.\objects\helloworld.o: user_func.h

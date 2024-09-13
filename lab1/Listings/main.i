@@ -9060,6 +9060,21 @@ int32_t DrvGPIO_GetVersion(void);
 
 
 #line 11 "main.c"
+#line 1 "..\\Include\\NUC1xx-LB_002\\LCD_Driver.h"
+
+
+     
+extern void SysTimerDelay(uint32_t us);
+extern void Initial_panel(void);
+extern void Disable_Buzzer(void);
+
+extern void Show_Word(unsigned char x, unsigned char y,unsigned char ascii_word);
+
+extern void print_lcd(unsigned char line, char *str);
+
+
+extern void clr_all_panel(void);
+#line 12 "main.c"
 
 
 #line 1 "user_func.h"
@@ -9079,13 +9094,20 @@ int32_t DrvGPIO_GetVersion(void);
 
 void blinky_Drv(void);
 void TMR0_callback(void);
-#line 14 "main.c"
+void blinky_reg(void);
+void TMR1_IRQHandler(void);
+#line 15 "main.c"
 
 int main (void) {
 
 	 
 	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 1; 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 1; 
+	
+	Initial_panel(); 
+	
 	while(1){
-		blinky_Drv();
+		
+		blinky_reg();
 	}
 } 

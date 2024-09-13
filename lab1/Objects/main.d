@@ -7,4 +7,5 @@
 .\objects\main.o: ..\Include\System\SysInfra.h
 .\objects\main.o: ..\Include\System\ModuleID.h
 .\objects\main.o: ..\Include\Driver\DrvGPIO.h
+.\objects\main.o: ..\Include\NUC1xx-LB_002\LCD_Driver.h
 .\objects\main.o: user_func.h

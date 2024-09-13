@@ -14,3 +14,5 @@ Video resource: https://www.youtube.com/watch?v=ma_bPt2FN8w
 
 void blinky_Drv(void);
 void TMR0_callback(void);
+void blinky_reg(void);
+void TMR1_IRQHandler(void);
