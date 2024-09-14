@@ -1,13 +1,15 @@
 .\objects\7seg.o: 7seg.c
 .\objects\7seg.o: user_func.h
 .\objects\7seg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\7seg.o: ..\Include\Driver\DrvTimer.h
 .\objects\7seg.o: ..\NUC1xx\NUC1xx.h
 .\objects\7seg.o: ..\CoreSupport\core_cm0.h
 .\objects\7seg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\7seg.o: ..\NUC1xx\system_NUC1xx.h
 .\objects\7seg.o: ..\Include\System\SysInfra.h
 .\objects\7seg.o: ..\Include\System\ModuleID.h
-.\objects\7seg.o: ..\Include\Driver\DrvSYS.h
+.\objects\7seg.o: ..\Include\Driver\DrvTimer.h
 .\objects\7seg.o: ..\Include\Driver\DrvGPIO.h
+.\objects\7seg.o: ..\Include\NUC1xx-LB_002\LCD_Driver.h
+.\objects\7seg.o: ..\Include\Driver\DrvSYS.h
 .\objects\7seg.o: ..\Include\NUC1xx-LB_002\Seven_Segment.h
+.\objects\7seg.o: ..\Include\NUC1xx-LB_002\ScanKey.h

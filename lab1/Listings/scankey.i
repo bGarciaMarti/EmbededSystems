@@ -1,20 +1,9 @@
-#line 1 "7seg.c"
-
-
-
-
-
+#line 1 "..\\Src\\NUC1xx-LB_002\\ScanKey.c"
  
-
-#line 1 "user_func.h"
-
-
-
-
-
-
  
-
+ 
+ 
+ 
 #line 1 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
  
  
@@ -914,7 +903,16 @@ extern __declspec(__nothrow) void __use_no_semihosting(void);
 
  
 
-#line 10 "user_func.h"
+#line 7 "..\\Src\\NUC1xx-LB_002\\ScanKey.c"
+#line 1 "..\\Include\\Driver\\DrvGPIO.h"
+ 
+ 
+ 
+ 
+ 
+
+
+
 #line 1 "..\\NUC1xx\\NUC1xx.h"
  
  
@@ -8930,185 +8928,6 @@ typedef volatile unsigned short vu16;
 
 
                                                                                                  
-#line 11 "user_func.h"
- 
-#line 1 "..\\Include\\Driver\\DrvTimer.h"
- 
- 
- 
- 
- 
-
-
-
-#line 10 "..\\Include\\Driver\\DrvTimer.h"
-
- 
- 
- 
-
- 
- 
- 
-
-
-
-
-
- 
- 
- 
-#line 32 "..\\Include\\Driver\\DrvTimer.h"
-
- 
-                                                                             
- 
-typedef void (*TIMER_CALLBACK)(uint32_t data);	 
-typedef void (*WDT_CALLBACK)(uint32_t data);	 
-
- 
- 
- 
-typedef struct timeEvent_t
-{
-    int32_t              active;
-    int32_t              initTick;
-    int32_t              curTick;
-    TIMER_CALLBACK       funPtr;
-    uint32_t             transParam;
-} TIMER_EVENT_T;
-
- 
- 
- 
-typedef enum {
-    E_TMR0      = 0,
-    E_TMR1      = 1,
-	E_TMR2      = 2,
-	E_TMR3      = 3        
-} E_TIMER_CHANNEL;
-
- 
- 
- 
-typedef enum{                   
-    E_ONESHOT_MODE 		= 0,
-    E_PERIODIC_MODE   	= 1,
-    E_TOGGLE_MODE     	= 2, 
-	E_CONTINUOUS_MODE 	= 3     
-} E_TIMER_OPMODE ;
-
- 
- 
- 
-typedef enum{                   
-    E_PHASE_FALLING     = 0,
-    E_PHASE_RISING      = 1,
-} E_TIMER_TX_PHASE ;
-
- 
- 
- 
-typedef enum{                   
-    E_EDGE_FALLING      = 0,
-    E_EDGE_RISING       = 1,
-    E_EDGE_BOTH         = 2,
-} E_TIMER_TEX_EDGE ;
-
- 
- 
- 
-typedef enum{                   
-    E_CAPTURE           = 0,
-    E_RESET             = 1,
-} E_TIMER_RSTCAP_MODE ;
-
- 
- 
- 
-typedef enum {
-    E_WDT_IOC_START_TIMER       = 0,
-    E_WDT_IOC_STOP_TIMER        = 1,
-    E_WDT_IOC_ENABLE_INT        = 2,
-    E_WDT_IOC_DISABLE_INT       = 3,
-    E_WDT_IOC_ENABLE_WAKEUP     = 4, 
-    E_WDT_IOC_DISABLE_WAKEUP    = 5, 
-    E_WDT_IOC_RESET_TIMER       = 6,
-    E_WDT_IOC_ENABLE_RESET_FUNC = 7,
-    E_WDT_IOC_DISABLE_RESET_FUNC= 8,
-	E_WDT_IOC_SET_INTERVAL      = 9
-} E_WDT_CMD; 
-
- 
- 
- 
-typedef enum{
-    E_WDT_LEVEL0      = 0,          
-    E_WDT_LEVEL1      = 1,          
-    E_WDT_LEVEL2      = 2,           
-    E_WDT_LEVEL3      = 3,          
-	E_WDT_LEVEL4      = 4,          
-	E_WDT_LEVEL5      = 5,          
-	E_WDT_LEVEL6      = 6,          
-	E_WDT_LEVEL7      = 7           
-} E_WDT_INTERVAL;
-
- 
- 
- 
-void DrvTIMER_Init(void);
-int32_t DrvTIMER_Open(E_TIMER_CHANNEL ch, uint32_t uTicksPerSecond, E_TIMER_OPMODE op_mode);
-int32_t DrvTIMER_Close(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_SetTimerEvent(E_TIMER_CHANNEL ch, uint32_t uInterruptTicks, TIMER_CALLBACK pTimerCallback, uint32_t parameter);
-void DrvTIMER_ClearTimerEvent(E_TIMER_CHANNEL ch, uint32_t uTimerEventNo);
-int32_t DrvTIMER_EnableInt(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableInt(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_GetIntFlag(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_ClearIntFlag(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_Start(E_TIMER_CHANNEL ch);
-uint32_t DrvTIMER_GetIntTicks(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_ResetIntTicks(E_TIMER_CHANNEL ch);
-void DrvTIMER_Delay(E_TIMER_CHANNEL ch, uint32_t uTicks);
-int32_t DrvTIMER_OpenCounter(E_TIMER_CHANNEL ch, uint32_t uCounterBoundary, E_TIMER_OPMODE op_mode);
-int32_t DrvTIMER_StartCounter(E_TIMER_CHANNEL ch);
-uint32_t DrvTIMER_GetCounters(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_OpenCapture(E_TIMER_CHANNEL ch, E_TIMER_RSTCAP_MODE mode);
-int32_t DrvTIMER_CloseCapture(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_SelectExternalMode(E_TIMER_CHANNEL ch, E_TIMER_RSTCAP_MODE mode);
-int32_t DrvTIMER_SelectCaptureEdge(E_TIMER_CHANNEL ch, E_TIMER_TEX_EDGE edge);
-int32_t DrvTIMER_EnableCaptureInt(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableCaptureInt(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_EnableCapture(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableCapture(E_TIMER_CHANNEL ch);
-uint32_t DrvTIMER_GetCaptureData(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_GetCaptureIntFlag(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_ClearCaptureIntFlag(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_EnableCaptureDebounce(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableCaptureDebounce(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_EnableCounterDebounce(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableCounterDebounce(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_SelectCounterDetectPhase(E_TIMER_CHANNEL ch, E_TIMER_TX_PHASE phase);
-uint32_t DrvTIMER_GetVersion(void);
-
-int32_t DrvWDT_Open(E_WDT_INTERVAL WDTlevel);
-void DrvWDT_Close(void);
-void DrvWDT_InstallISR(WDT_CALLBACK pvWDTISR);
-int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
-
-
-
-
-
-#line 13 "user_func.h"
-#line 1 "..\\Include\\Driver\\DrvGPIO.h"
- 
- 
- 
- 
- 
-
-
-
 #line 10 "..\\Include\\Driver\\DrvGPIO.h"
 
  
@@ -9237,261 +9056,7 @@ int32_t DrvGPIO_GetVersion(void);
 
 
 
-#line 14 "user_func.h"
-#line 1 "..\\Include\\NUC1xx-LB_002\\LCD_Driver.h"
-
-
-     
-extern void SysTimerDelay(uint32_t us);
-extern void Initial_panel(void);
-extern void Disable_Buzzer(void);
-
-extern void Show_Word(unsigned char x, unsigned char y,unsigned char ascii_word);
-
-extern void print_lcd(unsigned char line, char *str);
-
-
-extern void clr_all_panel(void);
-#line 15 "user_func.h"
-#line 1 "..\\Include\\Driver\\DrvSYS.h"
- 
- 
- 
- 
- 
-
-
-
-#line 10 "..\\Include\\Driver\\DrvSYS.h"
-
-
- 
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-#line 35 "..\\Include\\Driver\\DrvSYS.h"
-
- 
- 
- 
-typedef enum 
-{
-    E_SYS_EXTERNAL_12M = 0,
-    E_SYS_INTERNAL_22M = 1, 
-}E_SYS_PLL_CLKSRC;
-
-
- 
- 
- 
-typedef enum 
-{
-    E_SYS_GPIO_RST  = 1,
-    E_SYS_TMR0_RST  = 2,
-    E_SYS_TMR1_RST  = 3,
-    E_SYS_TMR2_RST  = 4,
-    E_SYS_TMR3_RST  = 5,
-    E_SYS_I2C0_RST  = 8,
-    E_SYS_I2C1_RST  = 9,
-    E_SYS_SPI0_RST  = 12,
-    E_SYS_SPI1_RST  = 13,
-    E_SYS_SPI2_RST  = 14,
-    E_SYS_SPI3_RST  = 15,
-    E_SYS_UART0_RST = 16,
-    E_SYS_UART1_RST = 17,
-    E_SYS_UART2_RST = 18,
-    E_SYS_PWM03_RST = 20,
-    E_SYS_PWM47_RST = 21,
-    E_SYS_ACMP_RST  = 22,
-    E_SYS_PS2_RST   = 23,
-    E_SYS_CAN0_RST  = 24,
-    E_SYS_USBD_RST  = 27,
-    E_SYS_ADC_RST   = 28,
-    E_SYS_I2S_RST   = 29,
-    E_SYS_PDMA_RST  = 32,
-    E_SYS_EBI_RST   = 33
-}E_SYS_IP_RST;
-
- 
- 
- 
-
-typedef enum 
-{
-    E_SYS_WDT_CLK   = 0,
-    E_SYS_RTC_CLK   = 1,
-    E_SYS_TMR0_CLK  = 2,
-    E_SYS_TMR1_CLK  = 3,
-    E_SYS_TMR2_CLK  = 4,
-    E_SYS_TMR3_CLK  = 5,
-    E_SYS_FDIV_CLK  = 6,
-    E_SYS_I2C0_CLK  = 8,
-    E_SYS_I2C1_CLK  = 9,
-    E_SYS_SPI0_CLK  = 12,
-    E_SYS_SPI1_CLK  = 13,
-    E_SYS_SPI2_CLK  = 14,
-    E_SYS_SPI3_CLK  = 15,
-    E_SYS_UART0_CLK = 16,
-    E_SYS_UART1_CLK = 17,
-    E_SYS_UART2_CLK = 18,
-    E_SYS_PWM01_CLK = 20,
-    E_SYS_PWM23_CLK = 21,
-    E_SYS_PWM45_CLK = 22,
-    E_SYS_PWM67_CLK = 23,
-    E_SYS_CAN0_CLK  = 24,
-    E_SYS_USBD_CLK  = 27,
-    E_SYS_ADC_CLK   = 28,
-    E_SYS_I2S_CLK   = 29,
-    E_SYS_ACMP_CLK  = 30,
-    E_SYS_PS2_CLK   = 31,
-    E_SYS_PDMA_CLK  = 33,
-    E_SYS_ISP_CLK   = 34,
-    E_SYS_EBI_CLK   = 35
-}E_SYS_IP_CLK;
-
-
- 
- 
- 
-typedef enum 
-{
-    E_SYS_ADC_DIV,
-    E_SYS_UART_DIV,
-    E_SYS_USB_DIV,
-    E_SYS_HCLK_DIV
-
-}E_SYS_IP_DIV;
-
-
- 
- 
- 
-typedef enum 
-{
-    E_SYS_WDT_CLKSRC,
-    E_SYS_ADC_CLKSRC,
-    E_SYS_TMR0_CLKSRC,
-    E_SYS_TMR1_CLKSRC,
-    E_SYS_TMR2_CLKSRC,
-    E_SYS_TMR3_CLKSRC,
-    E_SYS_UART_CLKSRC,
-    E_SYS_PWM01_CLKSRC,
-    E_SYS_PWM23_CLKSRC,
-    E_SYS_I2S_CLKSRC,
-    E_SYS_FRQDIV_CLKSRC,
-    E_SYS_PWM45_CLKSRC,
-    E_SYS_PWM67_CLKSRC
-
-}E_SYS_IP_CLKSRC;
-
-
- 
- 
- 
-typedef enum 
-{
-    E_SYS_XTL12M,
-    E_SYS_XTL32K,
-    E_SYS_OSC22M,
-    E_SYS_OSC10K,
-    E_SYS_PLL,
-}E_SYS_CHIP_CLKSRC;
-
-
- 
- 
- 
-typedef enum 
-{
-    E_SYS_IMMEDIATE, 
-    E_SYS_WAIT_FOR_CPU
-}E_SYS_PD_TYPE;
-
-
-typedef void (*BOD_CALLBACK)(void);
-typedef void (*PWRWU_CALLBACK)(void);
-
- 
- 
- 
-void     DrvSYS_ClearClockSwitchStatus(void);
-uint32_t DrvSYS_ClearResetSource(uint32_t u32Src);
-
-void     DrvSYS_Delay(uint32_t us);
-void     DrvSYS_DisableBODLowPowerMode(void);
-void     DrvSYS_DisableHighPerformanceMode(void);
-void     DrvSYS_DisableLowVoltReset(void);
-void     DrvSYS_DisablePOR(void);
-void     DrvSYS_DisableTemperatureSensor(void);
-
-void     DrvSYS_EnableBODLowPowerMode(void);
-void     DrvSYS_EnableHighPerformanceMode(void);
-void     DrvSYS_EnableLowVoltReset(void);
-void     DrvSYS_EnablePOR(void);
-void     DrvSYS_EnableTemperatureSensor(void);
-void     DrvSYS_EnterPowerDown(E_SYS_PD_TYPE ePDType);
-
-uint32_t DrvSYS_GetBODState(void);
-int32_t  DrvSYS_GetChipClockSourceStatus(E_SYS_CHIP_CLKSRC eClkSrc);
-uint32_t DrvSYS_GetClockSwitchStatus(void);
-uint32_t DrvSYS_GetExtClockFreq(void);
-uint32_t DrvSYS_GetHCLKFreq(void);
-uint32_t DrvSYS_GetPLLClockFreq(void);
-uint32_t DrvSYS_GetPLLContent(E_SYS_PLL_CLKSRC ePllSrc, uint32_t u32PllClk);
-uint32_t DrvSYS_GetResetSource(void);
-uint32_t DrvSYS_GetVersion(void);
-
-int32_t  DrvSYS_IsProtectedRegLocked(void);
-
-int32_t  DrvSYS_LockProtectedReg(void);
-
-int32_t  DrvSYS_Open(uint32_t u32Hclk);
-
-uint32_t DrvSYS_ReadProductID(void);
-void     DrvSYS_ResetChip(void);
-void     DrvSYS_ResetCPU(void);
-void     DrvSYS_ResetIP(E_SYS_IP_RST eIpRst);
-
-void     DrvSYS_SelectBODVolt(uint8_t u8Volt);
-int32_t  DrvSYS_SelectHCLKSource(uint8_t u8ClkSrcSel);
-int32_t  DrvSYS_SelectIPClockSource(E_SYS_IP_CLKSRC eIpClkSrc, uint8_t u8ClkSrcSel);
-void     DrvSYS_SelectPLLSource(E_SYS_PLL_CLKSRC ePllSrc);
-int32_t  DrvSYS_SelectSysTickSource(uint8_t u8ClkSrcSel);
-void     DrvSYS_SetBODFunction(int32_t i32Enable, int32_t i32Mode, BOD_CALLBACK bodcallbackFn);
-int32_t  DrvSYS_SetClockDivider(E_SYS_IP_DIV eIpDiv , int32_t i32value);
-int32_t  DrvSYS_SetFreqDividerOutput(int32_t i32Flag, uint8_t u8Divider);
-void     DrvSYS_SetIPClock(E_SYS_IP_CLK eIpClk, int32_t i32Enable);
-int32_t  DrvSYS_SetOscCtrl(E_SYS_CHIP_CLKSRC eClkSrc, int32_t i32Enable);
-void     DrvSYS_SetPLLContent(uint32_t u32PllContent);
-void     DrvSYS_SetPLLMode(int32_t i32Flag);
-void     DrvSYS_SetPowerDownWakeUpInt(int32_t i32Enable, PWRWU_CALLBACK pdwucallbackFn, int32_t i32enWUDelay);
-
-int32_t  DrvSYS_UnlockProtectedReg(void);
-
-
-
-#line 16 "user_func.h"
-#line 1 "..\\Include\\NUC1xx-LB_002\\Seven_Segment.h"
-
-
-extern void OpenSevenSegment(void);
-extern void ShowSevenSegment(unsigned char no, unsigned char number);
-extern void CloseSevenSegment(void);
-
-
-#line 17 "user_func.h"
+#line 8 "..\\Src\\NUC1xx-LB_002\\ScanKey.c"
 #line 1 "..\\Include\\NUC1xx-LB_002\\ScanKey.h"
  
  
@@ -9507,65 +9072,53 @@ uint8_t Scankey(void);
 
 
 
-#line 18 "user_func.h"
+#line 9 "..\\Src\\NUC1xx-LB_002\\ScanKey.c"
 
-
-void blinky_Drv(void);
-void TMR0_callback(void);
-void heartbeat(void);
-void TMR1_IRQHandler(void);
-
-
-void outStringLCD(char str[]);
-
-
-void multiplex7segment(int num);
-int nth_digit(int n, int k);
-
-
-void keypad_input(void);
-#line 9 "7seg.c"
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-int nth_digit(int n, int k){
-     while(n--)
-         k/=10;
-     return k%10;
+void delay(void)
+{
+	int j;
+	for(j=0;j<1000;j++);
 }
 
+void OpenKeyPad(void)
+{
+	uint8_t i;
+	 
+	for(i=0;i<6;i++)
+	DrvGPIO_Open(E_GPA, i, E_IO_QUASI);
+}
 
-void multiplex7segment(int num){
+void CloseKeyPad(void)
+{
+	uint8_t i;
 
-		OpenSevenSegment(); 
-			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=1; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 0;
-			
-			ShowSevenSegment(3,nth_digit(3, num)); 
-			DrvSYS_Delay(475); 
-	
-			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=1; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 0;
-			ShowSevenSegment(2,nth_digit(2, num)); 
-			DrvSYS_Delay(475); 
-	
-			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=1; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 0;
-			ShowSevenSegment(1,nth_digit(1, num)); 
-			DrvSYS_Delay(475); 
-	
-			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 1;
-			ShowSevenSegment(0,nth_digit(0, num)); 
-			DrvSYS_Delay(475); 
-		CloseSevenSegment();
+	for(i=0;i<6;i++)
+	DrvGPIO_Close(E_GPA, i);
+}
+
+uint8_t Scankey(void)
+{
+	uint8_t act[4]={0x3b, 0x3d, 0x3e};    
+	uint8_t i,temp,pin;
+
+	for(i=0;i<3;i++)
+	{
+		temp=act[i];
+		for(pin=0;pin<6;pin++)
+		{
+			if((temp&0x01)==0x01)
+				DrvGPIO_SetBit(E_GPA,pin);
+			else
+				DrvGPIO_ClrBit(E_GPA,pin);
+			temp>>=1;
+		}
+		delay();
+		if(DrvGPIO_GetBit(E_GPA,3)==0)
+			return(i+1);
+		if(DrvGPIO_GetBit(E_GPA,4)==0)
+			return(i+4);
+		if(DrvGPIO_GetBit(E_GPA,5)==0)
+			return(i+7);
+	}
+		return 0;
 }

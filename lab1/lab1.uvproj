@@ -468,6 +468,11 @@
               <FileType>1</FileType>
               <FilePath>..\Src\NUC1xx-LB_002\Seven_Segment.c</FilePath>
             </File>
+            <File>
+              <FileName>ScanKey.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\NUC1xx-LB_002\ScanKey.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -502,6 +507,11 @@
               <FileName>7seg.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\7seg.c</FilePath>
+            </File>
+            <File>
+              <FileName>keypad display.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\keypad display.c</FilePath>
             </File>
           </Files>
         </Group>

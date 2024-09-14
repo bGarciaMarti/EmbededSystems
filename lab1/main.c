@@ -7,8 +7,6 @@ Lab 1abc
 
 #include <stdio.h>
 #include "NUC1xx.h"
-#include "DrvGPIO.h"
-#include "LCD_Driver.h"
 
 #include "user_func.h"
 
@@ -22,7 +20,10 @@ int main (void) {
 	
 	Initial_panel(); // init LCD
 	clr_all_panel(); // from LCD_Driver.c
-	outStringLCD("howdy world %d");
+	//outStringLCD("howdy world %d");
+	
+	OpenKeyPad(); //initialize Keypad
+	
 	
 
 	while(1){
@@ -31,7 +32,9 @@ int main (void) {
 		//heartbeat(); // wip // ISR to blink LED
 		//TMR1_IRQHandler(); // wip // ISR to blink LED
 	
-		multiplex7segment(2024);
+		// multiplex7segment(2024); // display 2024 on the 7-segment display
+		
+		keypad_input();
 	}
 	
 } //end main

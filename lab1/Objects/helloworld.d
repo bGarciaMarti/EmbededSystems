@@ -1,4 +1,5 @@
 .\objects\helloworld.o: helloWorld.c
+.\objects\helloworld.o: user_func.h
 .\objects\helloworld.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\helloworld.o: ..\NUC1xx\NUC1xx.h
 .\objects\helloworld.o: ..\CoreSupport\core_cm0.h
@@ -6,5 +7,9 @@
 .\objects\helloworld.o: ..\NUC1xx\system_NUC1xx.h
 .\objects\helloworld.o: ..\Include\System\SysInfra.h
 .\objects\helloworld.o: ..\Include\System\ModuleID.h
+.\objects\helloworld.o: ..\Include\Driver\DrvTimer.h
+.\objects\helloworld.o: ..\Include\Driver\DrvGPIO.h
 .\objects\helloworld.o: ..\Include\NUC1xx-LB_002\LCD_Driver.h
-.\objects\helloworld.o: user_func.h
+.\objects\helloworld.o: ..\Include\Driver\DrvSYS.h
+.\objects\helloworld.o: ..\Include\NUC1xx-LB_002\Seven_Segment.h
+.\objects\helloworld.o: ..\Include\NUC1xx-LB_002\ScanKey.h
