@@ -2,7 +2,10 @@
 number example
 Created by: Brenardo Garcia Marti
 For ECE 4330
-Lab 1b
+Lab 1c
+
+Resource:
+https://github.com/hoangdesu/BONK-game-NUC140/blob/main/src/main.c
 */
 
 #include <stdio.h>
@@ -12,11 +15,37 @@ Lab 1b
 #include "user_func.h"
 
 //~~~~~~~~~~~~~~~~~~~~~//
-/*Functions that us timer/ "Driver method" to blind the green RGB LEDs */
+/*Functions that display a string to the LCD */
 //~~~~~~~~~~~~~~~~~~~~~//
-void LCD_display(void){
-	clr_all_panel();
+
+// FEED ME SEYMOR MOVE THE INITIAL_PANEL TO MAIN
+Initial_panel();
+
+clr_all_panel(); // from LCD_Driver.c
+
+
+void outStringLCD(char str[]){
+	char buffer[50];
+	sprintf(buffer, "howdy world %d", count);
+	outStringLCD(buffer);
 	
-	char s[15];
-	sprintf(s, "howdy world %d", count);
-}
+	print_lcd(1, buuffer); //void print_lcd(unsigned char line, char *str)
+
+
+
+	int i;
+	while(i<64 && str[i] != '\0')
+	{
+		// OutLCD(str[i],1); //output char to lcd 
+		i++;
+		if(i == 16)				//if string is longer than 16 char
+		{
+			// OutLCD(0xC0,0); //set DD address to begin of 2nd row 		
+		}
+		//if (i == 32)
+		// begin the 3rd row
+		//if (i == 48)
+		// begin the fourth row
+	}
+
+} //end OutputString

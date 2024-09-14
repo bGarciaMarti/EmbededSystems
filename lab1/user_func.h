@@ -12,7 +12,12 @@ Video resource: https://www.youtube.com/watch?v=ma_bPt2FN8w
 
 /* Declaration of Functions*/
 
+//Lab1a, Lab1b
 void blinky_Drv(void);
 void TMR0_callback(void);
 void blinky_reg(void);
 void TMR1_IRQHandler(void);
+
+//Lab1c
+void clr_all_panel (void);
+void outStringLCD(char str[]);

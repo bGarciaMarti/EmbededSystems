@@ -22,6 +22,13 @@ int main (void) {
 	
 	while(1){
 		//blinky_Drv(); //timer to blink green LED
-		blinky_reg();
+		// blinky_reg(); //FEED ME SEYMOR
+	
+		char buffer[50];
+		sprintf(buffer, "howdy world %d", count);
+		outStringLCD(buffer);
+		
+	
 	}
+	
 } //end main
