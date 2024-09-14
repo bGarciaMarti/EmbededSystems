@@ -488,6 +488,16 @@
               <FileType>1</FileType>
               <FilePath>.\helloWorld.c</FilePath>
             </File>
+            <File>
+              <FileName>heartbeat.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\heartbeat.c</FilePath>
+            </File>
+            <File>
+              <FileName>blinky.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\blinky.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

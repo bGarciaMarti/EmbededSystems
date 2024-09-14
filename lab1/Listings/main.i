@@ -9094,7 +9094,7 @@ extern void clr_all_panel(void);
 
 void blinky_Drv(void);
 void TMR0_callback(void);
-void blinky_reg(void);
+void heartbeat(void);
 void TMR1_IRQHandler(void);
 
 
@@ -9113,15 +9113,12 @@ int main (void) {
 	clr_all_panel(); 
 	
 	while(1){
+		blinky_Drv(); 
 		
+		outStringLCD("howdy world %d");
 		
+		heartbeat(); 
 		
-		
-	char buffer[16];
-	int count = 1;
-	sprintf(buffer, "howdy world %d", count);
-	
-	print_lcd(1, buffer); 
 	}
 	
 } 

@@ -6,7 +6,6 @@
 
 
 
-
  
 
 #line 1 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
@@ -908,7 +907,7 @@ extern __declspec(__nothrow) void __use_no_semihosting(void);
 
  
 
-#line 12 "helloWorld.c"
+#line 11 "helloWorld.c"
 #line 1 "..\\NUC1xx\\NUC1xx.h"
  
  
@@ -8924,7 +8923,7 @@ typedef volatile unsigned short vu16;
 
 
                                                                                                  
-#line 13 "helloWorld.c"
+#line 12 "helloWorld.c"
 #line 1 "..\\Include\\NUC1xx-LB_002\\LCD_Driver.h"
 
 
@@ -8939,7 +8938,7 @@ extern void print_lcd(unsigned char line, char *str);
 
 
 extern void clr_all_panel(void);
-#line 14 "helloWorld.c"
+#line 13 "helloWorld.c"
 #line 1 "user_func.h"
 
 
@@ -8958,12 +8957,12 @@ extern void clr_all_panel(void);
 
 void blinky_Drv(void);
 void TMR0_callback(void);
-void blinky_reg(void);
+void heartbeat(void);
 void TMR1_IRQHandler(void);
 
 
 void outStringLCD(char str[]);
-#line 15 "helloWorld.c"
+#line 14 "helloWorld.c"
 
 
  
@@ -8973,8 +8972,7 @@ void outStringLCD(char str[]){
 	char buffer[16];
 	int count = 1;
 	sprintf(buffer, str, count);
-	outStringLCD(buffer);
 	
-	print_lcd(1, buffer); 
-
+	print_lcd(0, buffer); 
+	
 } 

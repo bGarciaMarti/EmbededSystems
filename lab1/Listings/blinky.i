@@ -3,7 +3,6 @@
 
 
 
-
  
 
 #line 1 "user_func.h"
@@ -923,12 +922,12 @@ extern __declspec(__nothrow) void __use_no_semihosting(void);
 
 void blinky_Drv(void);
 void TMR0_callback(void);
-void blinky_reg(void);
+void heartbeat(void);
 void TMR1_IRQHandler(void);
 
 
 void outStringLCD(char str[]);
-#line 9 "blinky.c"
+#line 8 "blinky.c"
 #line 1 "..\\Include\\Driver\\DrvTimer.h"
  
  
@@ -9111,7 +9110,7 @@ int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
 
 
 
-#line 10 "blinky.c"
+#line 9 "blinky.c"
 #line 1 "..\\Include\\Driver\\DrvSYS.h"
  
  
@@ -9341,7 +9340,7 @@ int32_t  DrvSYS_UnlockProtectedReg(void);
 
 
 
-#line 11 "blinky.c"
+#line 10 "blinky.c"
 #line 1 "..\\Include\\Driver\\DrvGPIO.h"
  
  
@@ -9479,7 +9478,7 @@ int32_t DrvGPIO_GetVersion(void);
 
 
 
-#line 12 "blinky.c"
+#line 11 "blinky.c"
 
 
  
@@ -9509,38 +9508,3 @@ void TMR0_callback(void)
 	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*0)) + (0x4*13)))) = ~(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*0)) + (0x4*13))));
 	DrvTIMER_ClearIntFlag(E_TMR0); 
 }
-
-
- 
-
-void blinky_reg(void)
-{
-	
-	((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKSEL1.TMR1_S = 7; 
-	((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->APBCLK.TMR1_EN = 1; 
-	
-	
-	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TCSR.MODE = 2; 
-	
-	
-	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TCSR.PRESCALE=1;
-	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TCMPR = 5500000; 
-	
-	
-	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TCSR.IE = 1;
-	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TISR.TIF = 1; 
-	
-	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TCSR.TDR_EN = 1;
-	
-	
-	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TCSR.CRST = 1; 
-	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TCSR.CEN= 1; 
-	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TCSR.TDR_EN= 1; 
-}
-
-void TMR1_IRQHandler(void) 
-{
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*0)) + (0x4*14)))) = ~(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*0)) + (0x4*14))));
-	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10000))->TISR.TIF = 1; 
-}
-
