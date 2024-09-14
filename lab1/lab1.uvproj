@@ -484,9 +484,9 @@
               <FilePath>.\main.c</FilePath>
             </File>
             <File>
-              <FileName>helloWorld.c</FileName>
+              <FileName>blinky.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\helloWorld.c</FilePath>
+              <FilePath>.\blinky.c</FilePath>
             </File>
           </Files>
         </Group>

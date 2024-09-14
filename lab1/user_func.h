@@ -19,5 +19,4 @@ void blinky_reg(void);
 void TMR1_IRQHandler(void);
 
 //Lab1c
-void clr_all_panel (void);
 void outStringLCD(char str[]);

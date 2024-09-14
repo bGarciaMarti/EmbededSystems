@@ -18,16 +18,16 @@ int main (void) {
 	GPC_13 = 1; //off, green
 	GPC_14 = 1; //off ?
 	
+	NVIC_EnableIRQ(	TMR1_IRQn	); //enable timer ISR
+	
 	Initial_panel(); // init LCD
+	clr_all_panel(); // from LCD_Driver.c
 	
 	while(1){
-		//blinky_Drv(); //timer to blink green LED
-		// blinky_reg(); //FEED ME SEYMOR
-	
-		char buffer[50];
-		sprintf(buffer, "howdy world %d", count);
-		outStringLCD(buffer);
-		
+		//blinky_Drv(); // timer to blink green LED
+		blinky_reg(); // wip // ISR to blink LED
+
+		TMR1_IRQHandler();
 	
 	}
 	

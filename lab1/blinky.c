@@ -59,14 +59,12 @@ void blinky_reg(void)
 	TIMER1->TCSR.IE = 1;
 	TIMER1->TISR.TIF = 1; // clear flag
 	
-	NVIC_EnableIRQ(	TMR1_IRQHandler	); //enable timer ISR
-	
 	TIMER1->TCSR.TDR_EN = 1;
 	
 	//Enable Timer
 	TIMER1->TCSR.CRST = 1; // reset timer counter
 	TIMER1->TCSR.CEN= 1; // enable counter
-	TIMER1->TCSR.TDR_EN= 1;
+	TIMER1->TCSR.TDR_EN= 1; //data register function enabled
 }
 
 void TMR1_IRQHandler(void) // flashes led (?)

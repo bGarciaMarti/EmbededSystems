@@ -11,25 +11,19 @@ https://github.com/hoangdesu/BONK-game-NUC140/blob/main/src/main.c
 #include <stdio.h>
 #include "NUC1xx.h"
 #include "LCD_Driver.h"
-
 #include "user_func.h"
 
 //~~~~~~~~~~~~~~~~~~~~~//
 /*Functions that display a string to the LCD */
 //~~~~~~~~~~~~~~~~~~~~~//
 
-// FEED ME SEYMOR MOVE THE INITIAL_PANEL TO MAIN
-Initial_panel();
-
-clr_all_panel(); // from LCD_Driver.c
-
-
 void outStringLCD(char str[]){
 	char buffer[50];
+	int count = 1;
 	sprintf(buffer, "howdy world %d", count);
 	outStringLCD(buffer);
 	
-	print_lcd(1, buuffer); //void print_lcd(unsigned char line, char *str)
+	print_lcd(1, buffer); //void print_lcd(unsigned char line, char *str)
 
 
 

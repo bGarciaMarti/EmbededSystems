@@ -920,10 +920,14 @@ extern __declspec(__nothrow) void __use_no_semihosting(void);
 
  
 
+
 void blinky_Drv(void);
 void TMR0_callback(void);
 void blinky_reg(void);
 void TMR1_IRQHandler(void);
+
+
+void outStringLCD(char str[]);
 #line 9 "blinky.c"
 #line 1 "..\\Include\\Driver\\DrvTimer.h"
  
@@ -9526,14 +9530,12 @@ void blinky_reg(void)
 	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TCSR.IE = 1;
 	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TISR.TIF = 1; 
 	
-	NVIC_EnableIRQ(	TMR1_IRQHandler	); 
-	
 	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TCSR.TDR_EN = 1;
 	
 	
 	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TCSR.CRST = 1; 
 	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TCSR.CEN= 1; 
-	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TCSR.TDR_EN= 1;
+	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TCSR.TDR_EN= 1; 
 }
 
 void TMR1_IRQHandler(void) 

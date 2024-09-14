@@ -5,6 +5,8 @@
 ".\objects\drvgpio.o"
 ".\objects\drvsys.o"
 ".\objects\drvtimer.o"
+".\objects\lcd_driver.o"
+".\objects\ascii_table.o"
 ".\objects\main.o"
 ".\objects\blinky.o"
 --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict

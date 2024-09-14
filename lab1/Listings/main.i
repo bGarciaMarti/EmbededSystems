@@ -9076,7 +9076,6 @@ extern void print_lcd(unsigned char line, char *str);
 extern void clr_all_panel(void);
 #line 12 "main.c"
 
-
 #line 1 "user_func.h"
 
 
@@ -9092,11 +9091,15 @@ extern void clr_all_panel(void);
 
  
 
+
 void blinky_Drv(void);
 void TMR0_callback(void);
 void blinky_reg(void);
 void TMR1_IRQHandler(void);
-#line 15 "main.c"
+
+
+void outStringLCD(char str[]);
+#line 14 "main.c"
 
 int main (void) {
 
@@ -9104,10 +9107,17 @@ int main (void) {
 	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 1; 
 	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 1; 
 	
+	NVIC_EnableIRQ(	TMR1_IRQn	); 
+	
 	Initial_panel(); 
+	clr_all_panel(); 
 	
 	while(1){
 		
-		blinky_reg();
+		blinky_reg(); 
+
+		TMR1_IRQHandler();
+	
 	}
+	
 } 
