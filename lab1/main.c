@@ -25,10 +25,14 @@ int main (void) {
 	
 	while(1){
 		//blinky_Drv(); // timer to blink green LED
-		blinky_reg(); // wip // ISR to blink LED
-
-		TMR1_IRQHandler();
+		//blinky_reg(); // wip // ISR to blink LED
+		//TMR1_IRQHandler(); // wip // ISR to blink LED
+		
+	char buffer[16];
+	int count = 1;
+	sprintf(buffer, "howdy world %d", count);
 	
+	print_lcd(1, buffer); //void print_lcd(unsigned char line, char *str)
 	}
 	
 } //end main

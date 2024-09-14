@@ -9114,10 +9114,14 @@ int main (void) {
 	
 	while(1){
 		
-		blinky_reg(); 
-
-		TMR1_IRQHandler();
+		
+		
+		
+	char buffer[16];
+	int count = 1;
+	sprintf(buffer, "howdy world %d", count);
 	
+	print_lcd(1, buffer); 
 	}
 	
 } 

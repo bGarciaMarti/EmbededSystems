@@ -18,28 +18,11 @@ https://github.com/hoangdesu/BONK-game-NUC140/blob/main/src/main.c
 //~~~~~~~~~~~~~~~~~~~~~//
 
 void outStringLCD(char str[]){
-	char buffer[50];
+	char buffer[16];
 	int count = 1;
-	sprintf(buffer, "howdy world %d", count);
+	sprintf(buffer, str, count);
 	outStringLCD(buffer);
 	
 	print_lcd(1, buffer); //void print_lcd(unsigned char line, char *str)
-
-
-
-	int i;
-	while(i<64 && str[i] != '\0')
-	{
-		// OutLCD(str[i],1); //output char to lcd 
-		i++;
-		if(i == 16)				//if string is longer than 16 char
-		{
-			// OutLCD(0xC0,0); //set DD address to begin of 2nd row 		
-		}
-		//if (i == 32)
-		// begin the 3rd row
-		//if (i == 48)
-		// begin the fourth row
-	}
 
 } //end OutputString
