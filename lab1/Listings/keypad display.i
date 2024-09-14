@@ -9529,18 +9529,17 @@ void keypad_input(void){
 	
 	int temp;
 	char k;
-	char buffer[16];
+	char Line1[15];
+	sprintf(Line1, "%s", "key = "); 
 	
 	temp = Scankey();
 	if(temp!=0){
 		k=temp;
 	}
 	
-	sprintf(buffer, "%d", k);
+	sprintf(Line1+6, "%d", k);
 	
 	multiplex7segment(k); 
-
-	print_lcd(0, buffer); 
-	
+	print_lcd(0, Line1); 
 }
 

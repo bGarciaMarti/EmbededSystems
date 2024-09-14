@@ -10,18 +10,16 @@ void keypad_input(void){
 	//capture key value
 	int temp;
 	char k;
-	char buffer[16];
+	char Line1[15];
+	sprintf(Line1, "%s", "key = "); //has 6 characters
 	
 	temp = Scankey();
 	if(temp!=0){
 		k=temp;
 	}
 	
-	sprintf(buffer, "%d", k);
+	sprintf(Line1+6, "%d", k);
 	
 	multiplex7segment(k); // display 2024 on the 7-segment display
-
-	print_lcd(0, buffer); //void print_lcd(unsigned char line, char *str)
-	
+	print_lcd(0, Line1); //void print_lcd(unsigned char line, char *str)
 }
-

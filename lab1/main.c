@@ -35,6 +35,7 @@ int main (void) {
 		// multiplex7segment(2024); // display 2024 on the 7-segment display
 		
 		keypad_input();
+		CloseKeyPad();
 	}
 	
 } //end main

@@ -9554,6 +9554,7 @@ int main (void) {
 		
 		
 		keypad_input();
+		CloseKeyPad();
 	}
 	
 } 
