@@ -22,17 +22,16 @@ int main (void) {
 	
 	Initial_panel(); // init LCD
 	clr_all_panel(); // from LCD_Driver.c
+	outStringLCD("howdy world %d");
 	
+
 	while(1){
 		blinky_Drv(); // timer to blink green LED
 		
-		outStringLCD("howdy world %d");
-		
 		//heartbeat(); // wip // ISR to blink LED
 		//TMR1_IRQHandler(); // wip // ISR to blink LED
-		
-		//
-		
+	
+		multiplex7segment(2,0,2,4);
 	}
 	
 } //end main

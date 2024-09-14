@@ -9099,6 +9099,9 @@ void TMR1_IRQHandler(void);
 
 
 void outStringLCD(char str[]);
+
+
+void multiplex7segment(int first,int second,int third,int fourth);
 #line 14 "main.c"
 
 int main (void) {
@@ -9111,14 +9114,16 @@ int main (void) {
 	
 	Initial_panel(); 
 	clr_all_panel(); 
+	outStringLCD("howdy world %d");
 	
+
 	while(1){
 		blinky_Drv(); 
 		
-		outStringLCD("howdy world %d");
 		
-		heartbeat(); 
 		
+	
+		multiplex7segment(2,0,2,4);
 	}
 	
 } 

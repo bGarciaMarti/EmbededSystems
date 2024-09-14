@@ -1,13 +1,4 @@
-#line 1 "helloWorld.c"
-
-
-
-
-
-
-
- 
-
+#line 1 "..\\Src\\NUC1xx-LB_002\\Seven_Segment.c"
 #line 1 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
  
  
@@ -907,7 +898,7 @@ extern __declspec(__nothrow) void __use_no_semihosting(void);
 
  
 
-#line 11 "helloWorld.c"
+#line 2 "..\\Src\\NUC1xx-LB_002\\Seven_Segment.c"
 #line 1 "..\\NUC1xx\\NUC1xx.h"
  
  
@@ -8923,59 +8914,511 @@ typedef volatile unsigned short vu16;
 
 
                                                                                                  
-#line 12 "helloWorld.c"
-#line 1 "..\\Include\\NUC1xx-LB_002\\LCD_Driver.h"
+#line 3 "..\\Src\\NUC1xx-LB_002\\Seven_Segment.c"
+#line 1 "..\\Include\\Driver\\DrvGPIO.h"
+ 
+ 
+ 
+ 
+ 
 
 
-     
-extern void SysTimerDelay(uint32_t us);
-extern void Initial_panel(void);
-extern void Disable_Buzzer(void);
 
-extern void Show_Word(unsigned char x, unsigned char y,unsigned char ascii_word);
+#line 10 "..\\Include\\Driver\\DrvGPIO.h"
 
-extern void print_lcd(unsigned char line, char *str);
-
-
-extern void clr_all_panel(void);
-#line 13 "helloWorld.c"
-#line 1 "user_func.h"
-
-
+ 
+ 
+ 
 
 
 
 
  
+ 
+ 
 
-#line 10 "user_func.h"
+							   
+ 
+ 
  
 
 
+
+
+typedef void (*GPIO_GPAB_CALLBACK)(uint32_t u32GPAStatus, uint32_t u32GPBStatus);
+typedef void (*GPIO_GPCDE_CALLBACK)(uint32_t u32GPCStatus, uint32_t u32GPDStatus, uint32_t u32GPEStatus);
+typedef void (*GPIO_EINT0_CALLBACK)(void);
+typedef void (*GPIO_EINT1_CALLBACK)(void);
+
+ 
+#line 117 "..\\Include\\Driver\\DrvGPIO.h"
+
+typedef enum 
+{
+	E_GPA = 0,
+	E_GPB = 1, 
+	E_GPC = 2, 
+	E_GPD = 3, 
+	E_GPE = 4
+} E_DRVGPIO_PORT;
+
+typedef enum 
+{
+    E_IO_INPUT = 0,
+    E_IO_OUTPUT,
+    E_IO_OPENDRAIN,
+    E_IO_QUASI
+} E_DRVGPIO_IO;
+
+typedef enum 
+{
+    E_IO_RISING = 0,
+    E_IO_FALLING,
+    E_IO_BOTH_EDGE
+} E_DRVGPIO_INT_TYPE;
+
+typedef enum
+{
+    E_MODE_EDGE = 0,
+    E_MODE_LEVEL
+} E_DRVGPIO_INT_MODE;
+
+typedef enum
+{
+    E_DBCLKSRC_HCLK = 0, 
+    E_DBCLKSRC_10K = 1
+} E_DRVGPIO_DBCLKSRC;	   
+
+typedef enum
+{
+	E_FUNC_GPIO,    E_FUNC_CLKO,    E_FUNC_I2C0,    E_FUNC_I2C1,    E_FUNC_I2S,     E_FUNC_CAN0,	
+    E_FUNC_ACMP0,   E_FUNC_ACMP1,   
+    E_FUNC_SPI0,    E_FUNC_SPI0_SS1,    E_FUNC_SPI0_2BIT_MODE,
+    E_FUNC_SPI1,    E_FUNC_SPI1_SS1,    E_FUNC_SPI1_2BIT_MODE,
+    E_FUNC_SPI2,    E_FUNC_SPI2_SS1,    E_FUNC_SPI2_2BIT_MODE,
+    E_FUNC_SPI3,    E_FUNC_SPI3_SS1,    E_FUNC_SPI3_2BIT_MODE,      
+    E_FUNC_SPI0_QFN36PIN,   E_FUNC_SPI0_SS1_QFN36PIN,   E_FUNC_SPI0_2BIT_MODE_QFN36PIN,
+    E_FUNC_ADC0,    E_FUNC_ADC1,    E_FUNC_ADC2,    E_FUNC_ADC3,    E_FUNC_ADC4,    E_FUNC_ADC5,
+    E_FUNC_ADC6,    E_FUNC_ADC7,    E_FUNC_EXTINT0, E_FUNC_EXTINT1, E_FUNC_TMR0,    E_FUNC_TMR1,      
+    E_FUNC_TMR2,    E_FUNC_TMR3,    E_FUNC_T0EX,    E_FUNC_T1EX,    E_FUNC_T2EX,    E_FUNC_T3EX,
+    E_FUNC_UART0,   E_FUNC_UART0_RX_TX, E_FUNC_UART0_RTS_CTS,
+    E_FUNC_UART1,   E_FUNC_UART1_RX_TX, E_FUNC_UART1_RTS_CTS,       E_FUNC_UART2,
+    E_FUNC_PWM01,   E_FUNC_PWM23,   E_FUNC_PWM45,   E_FUNC_PWM67,   E_FUNC_PWM0,    E_FUNC_PWM1,
+    E_FUNC_PWM2,    E_FUNC_PWM3,    E_FUNC_PWM4,    E_FUNC_PWM5,    E_FUNC_PWM6,    E_FUNC_PWM7,    
+    E_FUNC_EBI_8B,  E_FUNC_EBI_16B,          
+} E_DRVGPIO_FUNC;
+			  
+ 
+ 
+ 
+int32_t DrvGPIO_Open(E_DRVGPIO_PORT port, int32_t i32Bit, E_DRVGPIO_IO mode);
+int32_t DrvGPIO_Close(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_SetBit(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_GetBit(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_ClrBit(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_SetPortBits(E_DRVGPIO_PORT port, int32_t i32Data);
+int32_t DrvGPIO_GetPortBits(E_DRVGPIO_PORT port);
+int32_t DrvGPIO_GetDoutBit(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_GetPortDoutBits(E_DRVGPIO_PORT port);
+int32_t DrvGPIO_SetBitMask(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_GetBitMask(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_ClrBitMask(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_SetPortMask(E_DRVGPIO_PORT port, int32_t i32MaskData);
+int32_t DrvGPIO_GetPortMask(E_DRVGPIO_PORT port);
+int32_t DrvGPIO_ClrPortMask(E_DRVGPIO_PORT port, int32_t i32MaskData);
+int32_t DrvGPIO_EnableDigitalInputBit(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_DisableDigitalInputBit(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_EnableDebounce(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_DisableDebounce(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_SetDebounceTime(uint32_t u32CycleSelection, E_DRVGPIO_DBCLKSRC ClockSource);
+int32_t DrvGPIO_GetDebounceSampleCycle(void);
+int32_t DrvGPIO_EnableInt(E_DRVGPIO_PORT port, int32_t i32Bit, E_DRVGPIO_INT_TYPE TriggerType, E_DRVGPIO_INT_MODE Mode);
+int32_t DrvGPIO_DisableInt(E_DRVGPIO_PORT port, int32_t i32Bit);
+void DrvGPIO_SetIntCallback(GPIO_GPAB_CALLBACK pfGPABCallback, GPIO_GPCDE_CALLBACK pfGPCDECallback);
+void DrvGPIO_EnableEINT0(E_DRVGPIO_INT_TYPE TriggerType, E_DRVGPIO_INT_MODE Mode, GPIO_EINT0_CALLBACK pfEINT0Callback);
+void DrvGPIO_DisableEINT0(void);
+void DrvGPIO_EnableEINT1(E_DRVGPIO_INT_TYPE TriggerType, E_DRVGPIO_INT_MODE Mode, GPIO_EINT1_CALLBACK pfEINT1Callback);
+void DrvGPIO_DisableEINT1(void);
+int32_t DrvGPIO_GetIntStatus(E_DRVGPIO_PORT port);
+int32_t DrvGPIO_InitFunction(E_DRVGPIO_FUNC function);
+int32_t DrvGPIO_GetVersion(void);
+
+
+
+
+
+
+
+
+
+
+#line 4 "..\\Src\\NUC1xx-LB_002\\Seven_Segment.c"
+#line 1 "..\\Include\\Driver\\DrvSYS.h"
+ 
+ 
+ 
+ 
  
 
 
-void blinky_Drv(void);
-void TMR0_callback(void);
-void heartbeat(void);
-void TMR1_IRQHandler(void);
 
-
-void outStringLCD(char str[]);
-
-
-void multiplex7segment(int first,int second,int third,int fourth);
-#line 14 "helloWorld.c"
+#line 10 "..\\Include\\Driver\\DrvSYS.h"
 
 
  
+ 
+ 
 
 
-void outStringLCD(char str[]){
-	char buffer[16];
-	int count = 1;
-	sprintf(buffer, str, count);
+
+
+
+
+
+
+
+
+
+
+
+#line 35 "..\\Include\\Driver\\DrvSYS.h"
+
+ 
+ 
+ 
+typedef enum 
+{
+    E_SYS_EXTERNAL_12M = 0,
+    E_SYS_INTERNAL_22M = 1, 
+}E_SYS_PLL_CLKSRC;
+
+
+ 
+ 
+ 
+typedef enum 
+{
+    E_SYS_GPIO_RST  = 1,
+    E_SYS_TMR0_RST  = 2,
+    E_SYS_TMR1_RST  = 3,
+    E_SYS_TMR2_RST  = 4,
+    E_SYS_TMR3_RST  = 5,
+    E_SYS_I2C0_RST  = 8,
+    E_SYS_I2C1_RST  = 9,
+    E_SYS_SPI0_RST  = 12,
+    E_SYS_SPI1_RST  = 13,
+    E_SYS_SPI2_RST  = 14,
+    E_SYS_SPI3_RST  = 15,
+    E_SYS_UART0_RST = 16,
+    E_SYS_UART1_RST = 17,
+    E_SYS_UART2_RST = 18,
+    E_SYS_PWM03_RST = 20,
+    E_SYS_PWM47_RST = 21,
+    E_SYS_ACMP_RST  = 22,
+    E_SYS_PS2_RST   = 23,
+    E_SYS_CAN0_RST  = 24,
+    E_SYS_USBD_RST  = 27,
+    E_SYS_ADC_RST   = 28,
+    E_SYS_I2S_RST   = 29,
+    E_SYS_PDMA_RST  = 32,
+    E_SYS_EBI_RST   = 33
+}E_SYS_IP_RST;
+
+ 
+ 
+ 
+
+typedef enum 
+{
+    E_SYS_WDT_CLK   = 0,
+    E_SYS_RTC_CLK   = 1,
+    E_SYS_TMR0_CLK  = 2,
+    E_SYS_TMR1_CLK  = 3,
+    E_SYS_TMR2_CLK  = 4,
+    E_SYS_TMR3_CLK  = 5,
+    E_SYS_FDIV_CLK  = 6,
+    E_SYS_I2C0_CLK  = 8,
+    E_SYS_I2C1_CLK  = 9,
+    E_SYS_SPI0_CLK  = 12,
+    E_SYS_SPI1_CLK  = 13,
+    E_SYS_SPI2_CLK  = 14,
+    E_SYS_SPI3_CLK  = 15,
+    E_SYS_UART0_CLK = 16,
+    E_SYS_UART1_CLK = 17,
+    E_SYS_UART2_CLK = 18,
+    E_SYS_PWM01_CLK = 20,
+    E_SYS_PWM23_CLK = 21,
+    E_SYS_PWM45_CLK = 22,
+    E_SYS_PWM67_CLK = 23,
+    E_SYS_CAN0_CLK  = 24,
+    E_SYS_USBD_CLK  = 27,
+    E_SYS_ADC_CLK   = 28,
+    E_SYS_I2S_CLK   = 29,
+    E_SYS_ACMP_CLK  = 30,
+    E_SYS_PS2_CLK   = 31,
+    E_SYS_PDMA_CLK  = 33,
+    E_SYS_ISP_CLK   = 34,
+    E_SYS_EBI_CLK   = 35
+}E_SYS_IP_CLK;
+
+
+ 
+ 
+ 
+typedef enum 
+{
+    E_SYS_ADC_DIV,
+    E_SYS_UART_DIV,
+    E_SYS_USB_DIV,
+    E_SYS_HCLK_DIV
+
+}E_SYS_IP_DIV;
+
+
+ 
+ 
+ 
+typedef enum 
+{
+    E_SYS_WDT_CLKSRC,
+    E_SYS_ADC_CLKSRC,
+    E_SYS_TMR0_CLKSRC,
+    E_SYS_TMR1_CLKSRC,
+    E_SYS_TMR2_CLKSRC,
+    E_SYS_TMR3_CLKSRC,
+    E_SYS_UART_CLKSRC,
+    E_SYS_PWM01_CLKSRC,
+    E_SYS_PWM23_CLKSRC,
+    E_SYS_I2S_CLKSRC,
+    E_SYS_FRQDIV_CLKSRC,
+    E_SYS_PWM45_CLKSRC,
+    E_SYS_PWM67_CLKSRC
+
+}E_SYS_IP_CLKSRC;
+
+
+ 
+ 
+ 
+typedef enum 
+{
+    E_SYS_XTL12M,
+    E_SYS_XTL32K,
+    E_SYS_OSC22M,
+    E_SYS_OSC10K,
+    E_SYS_PLL,
+}E_SYS_CHIP_CLKSRC;
+
+
+ 
+ 
+ 
+typedef enum 
+{
+    E_SYS_IMMEDIATE, 
+    E_SYS_WAIT_FOR_CPU
+}E_SYS_PD_TYPE;
+
+
+typedef void (*BOD_CALLBACK)(void);
+typedef void (*PWRWU_CALLBACK)(void);
+
+ 
+ 
+ 
+void     DrvSYS_ClearClockSwitchStatus(void);
+uint32_t DrvSYS_ClearResetSource(uint32_t u32Src);
+
+void     DrvSYS_Delay(uint32_t us);
+void     DrvSYS_DisableBODLowPowerMode(void);
+void     DrvSYS_DisableHighPerformanceMode(void);
+void     DrvSYS_DisableLowVoltReset(void);
+void     DrvSYS_DisablePOR(void);
+void     DrvSYS_DisableTemperatureSensor(void);
+
+void     DrvSYS_EnableBODLowPowerMode(void);
+void     DrvSYS_EnableHighPerformanceMode(void);
+void     DrvSYS_EnableLowVoltReset(void);
+void     DrvSYS_EnablePOR(void);
+void     DrvSYS_EnableTemperatureSensor(void);
+void     DrvSYS_EnterPowerDown(E_SYS_PD_TYPE ePDType);
+
+uint32_t DrvSYS_GetBODState(void);
+int32_t  DrvSYS_GetChipClockSourceStatus(E_SYS_CHIP_CLKSRC eClkSrc);
+uint32_t DrvSYS_GetClockSwitchStatus(void);
+uint32_t DrvSYS_GetExtClockFreq(void);
+uint32_t DrvSYS_GetHCLKFreq(void);
+uint32_t DrvSYS_GetPLLClockFreq(void);
+uint32_t DrvSYS_GetPLLContent(E_SYS_PLL_CLKSRC ePllSrc, uint32_t u32PllClk);
+uint32_t DrvSYS_GetResetSource(void);
+uint32_t DrvSYS_GetVersion(void);
+
+int32_t  DrvSYS_IsProtectedRegLocked(void);
+
+int32_t  DrvSYS_LockProtectedReg(void);
+
+int32_t  DrvSYS_Open(uint32_t u32Hclk);
+
+uint32_t DrvSYS_ReadProductID(void);
+void     DrvSYS_ResetChip(void);
+void     DrvSYS_ResetCPU(void);
+void     DrvSYS_ResetIP(E_SYS_IP_RST eIpRst);
+
+void     DrvSYS_SelectBODVolt(uint8_t u8Volt);
+int32_t  DrvSYS_SelectHCLKSource(uint8_t u8ClkSrcSel);
+int32_t  DrvSYS_SelectIPClockSource(E_SYS_IP_CLKSRC eIpClkSrc, uint8_t u8ClkSrcSel);
+void     DrvSYS_SelectPLLSource(E_SYS_PLL_CLKSRC ePllSrc);
+int32_t  DrvSYS_SelectSysTickSource(uint8_t u8ClkSrcSel);
+void     DrvSYS_SetBODFunction(int32_t i32Enable, int32_t i32Mode, BOD_CALLBACK bodcallbackFn);
+int32_t  DrvSYS_SetClockDivider(E_SYS_IP_DIV eIpDiv , int32_t i32value);
+int32_t  DrvSYS_SetFreqDividerOutput(int32_t i32Flag, uint8_t u8Divider);
+void     DrvSYS_SetIPClock(E_SYS_IP_CLK eIpClk, int32_t i32Enable);
+int32_t  DrvSYS_SetOscCtrl(E_SYS_CHIP_CLKSRC eClkSrc, int32_t i32Enable);
+void     DrvSYS_SetPLLContent(uint32_t u32PllContent);
+void     DrvSYS_SetPLLMode(int32_t i32Flag);
+void     DrvSYS_SetPowerDownWakeUpInt(int32_t i32Enable, PWRWU_CALLBACK pdwucallbackFn, int32_t i32enWUDelay);
+
+int32_t  DrvSYS_UnlockProtectedReg(void);
+
+
+
+#line 5 "..\\Src\\NUC1xx-LB_002\\Seven_Segment.c"
+#line 1 "..\\Include\\NUC1xx-LB_002\\Seven_Segment.h"
+
+
+extern void OpenSevenSegment(void);
+extern void ShowSevenSegment(unsigned char no, unsigned char number);
+extern void CloseSevenSegment(void);
+
+
+#line 6 "..\\Src\\NUC1xx-LB_002\\Seven_Segment.c"
+
+#line 23 "..\\Src\\NUC1xx-LB_002\\Seven_Segment.c"
+
+uint8_t SEG_BUF[16]={0x82, 0xEE, 0x07, 0x46, 0x6A, 0x52, 0x12, 0xE6, 0x02, 0x62, 0x22, 0x1A, 0x93, 0x0E, 0x13, 0x33}; 
+void OpenSevenSegment(void)
+{
+	DrvGPIO_Open(E_GPC, 4, E_IO_OUTPUT);
+	DrvGPIO_Open(E_GPC, 5, E_IO_OUTPUT);
+	DrvGPIO_Open(E_GPC, 6, E_IO_OUTPUT);
+	DrvGPIO_Open(E_GPC, 7, E_IO_OUTPUT);
+
+
+
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4))))=0;
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=0;
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=0;
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=0;
+	DrvGPIO_Open(E_GPE, 0, E_IO_QUASI);
+	DrvGPIO_Open(E_GPE, 1, E_IO_QUASI);
+	DrvGPIO_Open(E_GPE, 2, E_IO_QUASI);
+	DrvGPIO_Open(E_GPE, 3, E_IO_QUASI);
+	DrvGPIO_Open(E_GPE, 4, E_IO_QUASI);
+	DrvGPIO_Open(E_GPE, 5, E_IO_QUASI);
+	DrvGPIO_Open(E_GPE, 6, E_IO_QUASI);
+	DrvGPIO_Open(E_GPE, 7, E_IO_QUASI);
+	DrvGPIO_Open(E_GPE, 8, E_IO_QUASI);
+	DrvGPIO_Open(E_GPE, 9, E_IO_QUASI);
+
+
+
+
+
+
+
+
+  (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*0))))=0;
+  (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*1))))=0;
+  (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*2))))=0;
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*3))))=0;
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*4))))=0;
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*5))))=0;
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*6))))=0;
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*7))))=0;
+}
+
+void ShowSevenSegment(uint8_t no, uint8_t number)
+{
+  uint8_t temp,i;
+	temp=SEG_BUF[number];
 	
-	print_lcd(0, buffer); 
-	
-} 
+	for(i=0;i<8;i++)
+	    {
+		if((temp&0x01)==0x01)		   		   
+			 switch(i) {
+				 case 0: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*0))))=1; break;
+				 case 1: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*1))))=1; break;
+				 case 2: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*2))))=1; break;
+				 case 3: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*3))))=1; break;
+				 case 4: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*4))))=1; break;
+				 case 5: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*5))))=1; break;
+				 case 6: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*6))))=1; break;
+				 case 7: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*7))))=1; break;
+			   }		
+		   else
+				 switch(i) {
+				 case 0: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*0))))=0; break;
+				 case 1: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*1))))=0; break;
+				 case 2: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*2))))=0; break;
+				 case 3: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*3))))=0; break;
+				 case 4: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*4))))=0; break;
+				 case 5: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*5))))=0; break;
+				 case 6: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*6))))=0; break;
+				 case 7: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*4)) + (0x4*7))))=0; break;
+				 }	  
+		   temp=temp>>1;
+		}
+			switch(no) {
+				case 0: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4))))=1; break;
+				case 1: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=1; break;
+				case 2: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=1; break;
+				case 3: (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=1; break;
+			}
+}
+
+void CloseSevenSegment(void)
+{
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4))))=0;	
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=0;	
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=0;	
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

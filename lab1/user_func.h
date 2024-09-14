@@ -12,11 +12,14 @@ Video resource: https://www.youtube.com/watch?v=ma_bPt2FN8w
 
 /* Declaration of Functions*/
 
-//Lab1a, Lab1b
+//
 void blinky_Drv(void);
 void TMR0_callback(void);
 void heartbeat(void);
 void TMR1_IRQHandler(void);
 
-//Lab1c
+//Lab1a part 4??????
 void outStringLCD(char str[]);
+
+//Lab1b part 1
+void multiplex7segment(int first,int second,int third,int fourth);

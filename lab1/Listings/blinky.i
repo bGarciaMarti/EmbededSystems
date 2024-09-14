@@ -927,6 +927,9 @@ void TMR1_IRQHandler(void);
 
 
 void outStringLCD(char str[]);
+
+
+void multiplex7segment(int first,int second,int third,int fourth);
 #line 8 "blinky.c"
 #line 1 "..\\Include\\Driver\\DrvTimer.h"
  

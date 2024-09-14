@@ -463,6 +463,11 @@
               <FileType>1</FileType>
               <FilePath>..\Src\NUC1xx-LB_002\LCD_Driver.c</FilePath>
             </File>
+            <File>
+              <FileName>Seven_Segment.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\NUC1xx-LB_002\Seven_Segment.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -489,14 +494,14 @@
               <FilePath>.\helloWorld.c</FilePath>
             </File>
             <File>
-              <FileName>heartbeat.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\heartbeat.c</FilePath>
-            </File>
-            <File>
               <FileName>blinky.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\blinky.c</FilePath>
+            </File>
+            <File>
+              <FileName>7seg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\7seg.c</FilePath>
             </File>
           </Files>
         </Group>
