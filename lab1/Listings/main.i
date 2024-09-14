@@ -9101,7 +9101,8 @@ void TMR1_IRQHandler(void);
 void outStringLCD(char str[]);
 
 
-void multiplex7segment(int first,int second,int third,int fourth);
+void multiplex7segment(int num);
+int nthdig(int n, int k);
 #line 14 "main.c"
 
 int main (void) {
@@ -9123,7 +9124,7 @@ int main (void) {
 		
 		
 	
-		multiplex7segment(2,0,2,4);
+		multiplex7segment(2024);
 	}
 	
 } 

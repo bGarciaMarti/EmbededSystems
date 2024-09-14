@@ -29,23 +29,34 @@ Resource https://www.youtube.com/watch?v=T8_NBwYa9vo
 5. repeat for third and fourth segemnt
 */
 
+// https://stackoverflow.com/questions/9302681/c-how-to-break-apart-a-multi-digit-number-into-separate-variables
+// find the nth digit in a number
+int nthdig(int n, int k){
+     while(n--)
+         k/=10;
+     return k%10;
+}
 
-void multiplex7segment(int first,int second,int third,int fourth){
+
+void multiplex7segment(int num){
+
+	
 		OpenSevenSegment(); // init 7-segment
 			GPC_7=SEGMENT_ON; GPC_6=SEGMENT_OFF; GPC_5=SEGMENT_OFF; GPC_4 = SEGMENT_OFF;
-			ShowSevenSegment(3,first); // ShowSevenSegment(uint8_t no, uint8_t number)
+			
+			ShowSevenSegment(3,nthdig(3, num)); // first
 			DrvSYS_Delay(475); //wait 475 us
 	
 			GPC_7=SEGMENT_OFF; GPC_6=SEGMENT_ON; GPC_5=SEGMENT_OFF; GPC_4 = SEGMENT_OFF;
-			ShowSevenSegment(2,second); // ShowSevenSegment(uint8_t no, uint8_t number)
+			ShowSevenSegment(2,nthdig(2, num)); // second
 			DrvSYS_Delay(475); //wait 475 us
 	
 			GPC_7=SEGMENT_OFF; GPC_6=SEGMENT_OFF; GPC_5=SEGMENT_ON; GPC_4 = SEGMENT_OFF;
-			ShowSevenSegment(1,third); // ShowSevenSegment(uint8_t no, uint8_t number)
+			ShowSevenSegment(1,nthdig(1, num)); // third
 			DrvSYS_Delay(475); //wait 475 us
 	
 			GPC_7=SEGMENT_OFF; GPC_6=SEGMENT_OFF; GPC_5=SEGMENT_OFF; GPC_4 = SEGMENT_ON;
-			ShowSevenSegment(0,fourth); // ShowSevenSegment(uint8_t no, uint8_t number)
+			ShowSevenSegment(0,nthdig(0, num)); // fourth
 			DrvSYS_Delay(475); //wait 475 us
 		CloseSevenSegment();
 }

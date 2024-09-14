@@ -22,4 +22,5 @@ void TMR1_IRQHandler(void);
 void outStringLCD(char str[]);
 
 //Lab1b part 1
-void multiplex7segment(int first,int second,int third,int fourth);
+void multiplex7segment(int num);
+int nthdig(int n, int k);

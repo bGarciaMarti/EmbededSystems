@@ -31,7 +31,7 @@ int main (void) {
 		//heartbeat(); // wip // ISR to blink LED
 		//TMR1_IRQHandler(); // wip // ISR to blink LED
 	
-		multiplex7segment(2,0,2,4);
+		multiplex7segment(2024);
 	}
 	
 } //end main

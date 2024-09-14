@@ -930,7 +930,8 @@ void TMR1_IRQHandler(void);
 void outStringLCD(char str[]);
 
 
-void multiplex7segment(int first,int second,int third,int fourth);
+void multiplex7segment(int num);
+int nthdig(int n, int k);
 #line 9 "7seg.c"
 
 #line 1 "..\\Include\\Driver\\DrvTimer.h"
@@ -9512,22 +9513,33 @@ extern void CloseSevenSegment(void);
  
 
 
-void multiplex7segment(int first,int second,int third,int fourth){
+
+int nthdig(int n, int k){
+     while(n--)
+         k/=10;
+     return k%10;
+}
+
+
+void multiplex7segment(int num){
+
+	
 		OpenSevenSegment(); 
 			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=1; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 0;
-			ShowSevenSegment(3,first); 
+			
+			ShowSevenSegment(3,nthdig(3, num)); 
 			DrvSYS_Delay(475); 
 	
 			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=1; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 0;
-			ShowSevenSegment(2,second); 
+			ShowSevenSegment(2,nthdig(2, num)); 
 			DrvSYS_Delay(475); 
 	
 			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=1; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 0;
-			ShowSevenSegment(1,third); 
+			ShowSevenSegment(1,nthdig(1, num)); 
 			DrvSYS_Delay(475); 
 	
 			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 1;
-			ShowSevenSegment(0,fourth); 
+			ShowSevenSegment(0,nthdig(0, num)); 
 			DrvSYS_Delay(475); 
 		CloseSevenSegment();
 }

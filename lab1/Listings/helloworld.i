@@ -8964,7 +8964,8 @@ void TMR1_IRQHandler(void);
 void outStringLCD(char str[]);
 
 
-void multiplex7segment(int first,int second,int third,int fourth);
+void multiplex7segment(int num);
+int nthdig(int n, int k);
 #line 14 "helloWorld.c"
 
 
