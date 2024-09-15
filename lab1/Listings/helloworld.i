@@ -9525,7 +9525,8 @@ void multiplex7segment(int num);
 int nth_digit(int n, int k);
 
 
-void keypad_input(char k);
+void keypad_input(int* k);
+void displayKeypadInput7seg(int num);
 
 
 void pfEINT1Callback(void);

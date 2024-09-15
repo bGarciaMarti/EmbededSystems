@@ -30,7 +30,8 @@ void multiplex7segment(int num);
 int nth_digit(int n, int k);
 
 //Lab1b part 4
-void keypad_input(char k);
+void keypad_input(int* k);
+void displayKeypadInput7seg(int num);
 
 //Lab1b part 3
 void pfEINT1Callback(void);

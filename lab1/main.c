@@ -34,7 +34,7 @@ int main (void) {
 	
 		//multiplex7segment(2024); // display 2024 on the 7-segment display
 		
-		keypad_input(prevInputKeypad);//wip
+		keypad_input(&prevInputKeypad);//wip
 		CloseKeyPad();//wip
 		
 		beep();
