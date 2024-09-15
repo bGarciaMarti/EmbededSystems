@@ -6,10 +6,9 @@ Lab 1b part 4a and 4b, displaying keypad input on the LCD and the 7 segment
 
 #include "user_func.h"
 
-void keypad_input(void){
+void keypad_input(char k){
 	//capture key value
 	int temp;
-	char k;
 	char Line1[15];
 	sprintf(Line1, "%s", "key = "); //has 6 characters
 	
@@ -22,4 +21,5 @@ void keypad_input(void){
 	
 	multiplex7segment(k); // display 2024 on the 7-segment display
 	print_lcd(0, Line1); //void print_lcd(unsigned char line, char *str)
+	
 }

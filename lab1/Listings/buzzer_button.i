@@ -1,11 +1,9 @@
-#line 1 "7seg.c"
-
+#line 1 "buzzer_button.c"
 
 
 
 
  
-
 #line 1 "user_func.h"
 
 
@@ -9528,7 +9526,7 @@ void keypad_input(char k);
 
 void pfEINT1Callback(void);
 void beep(void);
-#line 9 "7seg.c"
+#line 7 "buzzer_button.c"
 
 
 
@@ -9538,38 +9536,12 @@ void beep(void);
 
 
 
-
-
-
- 
-
-
-
-int nth_digit(int n, int k){
-     while(n--)
-         k/=10;
-     return k%10;
+void beep(void){
+	DrvGPIO_EnableEINT1(E_IO_BOTH_EDGE, E_MODE_EDGE, (GPIO_EINT1_CALLBACK)pfEINT1Callback);
 }
 
-
-void multiplex7segment(int num){
-
-		OpenSevenSegment(); 
-			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=1; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 0;
-			
-			ShowSevenSegment(3,nth_digit(3, num)); 
-			DrvSYS_Delay(475); 
+void pfEINT1Callback(void) 
+{
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*1)) + (0x4*15)))) = 0; 
 	
-			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=1; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 0;
-			ShowSevenSegment(2,nth_digit(2, num)); 
-			DrvSYS_Delay(475); 
-	
-			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=1; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 0;
-			ShowSevenSegment(1,nth_digit(1, num)); 
-			DrvSYS_Delay(475); 
-	
-			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 1;
-			ShowSevenSegment(0,nth_digit(0, num)); 
-			DrvSYS_Delay(475); 
-		CloseSevenSegment();
 }

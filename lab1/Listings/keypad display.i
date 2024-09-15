@@ -9522,13 +9522,16 @@ void multiplex7segment(int num);
 int nth_digit(int n, int k);
 
 
-void keypad_input(void);
+void keypad_input(char k);
+
+
+void pfEINT1Callback(void);
+void beep(void);
 #line 8 "keypad display.c"
 
-void keypad_input(void){
+void keypad_input(char k){
 	
 	int temp;
-	char k;
 	char Line1[15];
 	sprintf(Line1, "%s", "key = "); 
 	
@@ -9541,5 +9544,5 @@ void keypad_input(void){
 	
 	multiplex7segment(k); 
 	print_lcd(0, Line1); 
+	
 }
-

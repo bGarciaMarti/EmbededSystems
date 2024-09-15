@@ -9526,11 +9526,16 @@ void multiplex7segment(int num);
 int nth_digit(int n, int k);
 
 
-void keypad_input(void);
+void keypad_input(char k);
+
+
+void pfEINT1Callback(void);
+void beep(void);
 #line 12 "main.c"
 
 int main (void) {
-
+	
+	int prevInputKeypad = 0;
 	 
 	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 1; 
 	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 1; 
@@ -9544,7 +9549,6 @@ int main (void) {
 	OpenKeyPad(); 
 	
 	
-
 	while(1){
 		blinky_Drv(); 
 		
@@ -9553,8 +9557,10 @@ int main (void) {
 	
 		
 		
-		keypad_input();
+		keypad_input(prevInputKeypad);
 		CloseKeyPad();
+		
+		beep();
 	}
 	
 } 

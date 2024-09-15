@@ -513,6 +513,11 @@
               <FileType>1</FileType>
               <FilePath>.\keypad display.c</FilePath>
             </File>
+            <File>
+              <FileName>buzzer_button.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\buzzer_button.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

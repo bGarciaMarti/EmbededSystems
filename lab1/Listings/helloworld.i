@@ -9525,7 +9525,11 @@ void multiplex7segment(int num);
 int nth_digit(int n, int k);
 
 
-void keypad_input(void);
+void keypad_input(char k);
+
+
+void pfEINT1Callback(void);
+void beep(void);
 #line 11 "helloWorld.c"
 
 
@@ -9533,9 +9537,10 @@ void keypad_input(void);
 
 
 void outStringLCD(char str[]){
-	char buffer[16];
-	int count = 2024;
-	sprintf(buffer, str, count);
+	
+	
+	char buffer[15];
+	sprintf(buffer, "%s", str);
 	
 	print_lcd(0, buffer); 
 	

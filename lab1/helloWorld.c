@@ -14,9 +14,10 @@ https://github.com/hoangdesu/BONK-game-NUC140/blob/main/src/main.c
 //~~~~~~~~~~~~~~~~~~~~~//
 
 void outStringLCD(char str[]){
-	char buffer[16];
-	int count = 2024;
-	sprintf(buffer, str, count);
+	
+	
+	char buffer[15];
+	sprintf(buffer, "%s", str);
 	
 	print_lcd(0, buffer); //void print_lcd(unsigned char line, char *str)
 	

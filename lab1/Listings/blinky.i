@@ -9522,7 +9522,11 @@ void multiplex7segment(int num);
 int nth_digit(int n, int k);
 
 
-void keypad_input(void);
+void keypad_input(char k);
+
+
+void pfEINT1Callback(void);
+void beep(void);
 #line 8 "blinky.c"
 
 
