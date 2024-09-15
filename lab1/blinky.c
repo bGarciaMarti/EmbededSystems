@@ -5,7 +5,7 @@ Lab 1a part 3, using driver to make a blinky LED
 */
 
 #include "user_func.h"
-
+#include "DrvTimer.h"
 //~~~~~~~~~~~~~~~~~~~~~//
 /*Functions that us timer/ "Driver method" to blind the green RGB LEDs */
 //~~~~~~~~~~~~~~~~~~~~~//

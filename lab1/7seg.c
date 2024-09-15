@@ -31,7 +31,6 @@ int nth_digit(int n, int k){
 
 void multiplex7segment(int num){
 
-		OpenSevenSegment(); // init 7-segment
 			GPC_7=SEGMENT_ON; GPC_6=SEGMENT_OFF; GPC_5=SEGMENT_OFF; GPC_4 = SEGMENT_OFF;
 			
 			ShowSevenSegment(3,nth_digit(3, num)); // first

@@ -7,7 +7,6 @@
 .\objects\helloworld.o: ..\NUC1xx\system_NUC1xx.h
 .\objects\helloworld.o: ..\Include\System\SysInfra.h
 .\objects\helloworld.o: ..\Include\System\ModuleID.h
-.\objects\helloworld.o: ..\Include\Driver\DrvTimer.h
 .\objects\helloworld.o: ..\Include\Driver\DrvGPIO.h
 .\objects\helloworld.o: ..\Include\NUC1xx-LB_002\LCD_Driver.h
 .\objects\helloworld.o: ..\Include\Driver\DrvSYS.h

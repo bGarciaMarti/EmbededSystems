@@ -21,7 +21,7 @@ int main (void) {
 	
 	Initial_panel(); // init LCD
 	clr_all_panel(); // from LCD_Driver.c
-	//outStringLCD("howdy world");
+	outStringLCD("howdy world");
 	
 	
 	OpenSevenSegment(); // init 7-segment
@@ -29,17 +29,17 @@ int main (void) {
 	
 	
 	while(1){
-		blinky_Drv(); // timer to blink green LED
+		//blinky_Drv(); // timer to blink green LED
 		
-		//heartbeat(); // wip // ISR to blink LED
-		//TMR1_IRQHandler(); // wip // ISR to blink LED
+		heartbeat(); // wip // ISR to blink LED
+		NVIC_EnableIRQ(TMR1_IRQn);
+		
 	
 		//multiplex7segment(2024); // display 2024 on the 7-segment display
 		
-		keypad_input(&prevInputKeypad);//wip
-		CloseKeyPad();//wip
+		//keypad_input(&prevInputKeypad);
+		//CloseKeyPad();
 		
-		beep();
 	}
 	
 } //end main

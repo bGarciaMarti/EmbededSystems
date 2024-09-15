@@ -7,9 +7,9 @@
 .\objects\blinky.o: ..\NUC1xx\system_NUC1xx.h
 .\objects\blinky.o: ..\Include\System\SysInfra.h
 .\objects\blinky.o: ..\Include\System\ModuleID.h
-.\objects\blinky.o: ..\Include\Driver\DrvTimer.h
 .\objects\blinky.o: ..\Include\Driver\DrvGPIO.h
 .\objects\blinky.o: ..\Include\NUC1xx-LB_002\LCD_Driver.h
 .\objects\blinky.o: ..\Include\Driver\DrvSYS.h
 .\objects\blinky.o: ..\Include\NUC1xx-LB_002\Seven_Segment.h
 .\objects\blinky.o: ..\Include\NUC1xx-LB_002\ScanKey.h
+.\objects\blinky.o: ..\Include\Driver\DrvTimer.h

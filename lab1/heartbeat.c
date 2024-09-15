@@ -8,8 +8,7 @@ Lab 1b part 1, create a heartbeat signal using an
 	interrupt service routine and one of the RGB LEDs
 */
 
-#include "user_func.h"
-#include "DrvTimer.h"
+
 #include "DrvSYS.h"
 #include "DrvGPIO.h"
 
@@ -29,6 +28,8 @@ void heartbeat(void)
 	//Enable Interrupt
 	TIMER1->TCSR.IE = 1;
 	TIMER1->TISR.TIF = 1; // clear flag
+	
+	//NVIC_EnableIRQ(TMR1_IRQn);
 	
 	TIMER1->TCSR.TDR_EN = 1;
 	

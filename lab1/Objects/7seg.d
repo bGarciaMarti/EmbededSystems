@@ -7,7 +7,6 @@
 .\objects\7seg.o: ..\NUC1xx\system_NUC1xx.h
 .\objects\7seg.o: ..\Include\System\SysInfra.h
 .\objects\7seg.o: ..\Include\System\ModuleID.h
-.\objects\7seg.o: ..\Include\Driver\DrvTimer.h
 .\objects\7seg.o: ..\Include\Driver\DrvGPIO.h
 .\objects\7seg.o: ..\Include\NUC1xx-LB_002\LCD_Driver.h
 .\objects\7seg.o: ..\Include\Driver\DrvSYS.h

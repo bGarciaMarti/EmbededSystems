@@ -7,7 +7,6 @@
 .\objects\buzzer_button.o: ..\NUC1xx\system_NUC1xx.h
 .\objects\buzzer_button.o: ..\Include\System\SysInfra.h
 .\objects\buzzer_button.o: ..\Include\System\ModuleID.h
-.\objects\buzzer_button.o: ..\Include\Driver\DrvTimer.h
 .\objects\buzzer_button.o: ..\Include\Driver\DrvGPIO.h
 .\objects\buzzer_button.o: ..\Include\NUC1xx-LB_002\LCD_Driver.h
 .\objects\buzzer_button.o: ..\Include\Driver\DrvSYS.h
