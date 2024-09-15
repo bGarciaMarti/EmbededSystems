@@ -23,6 +23,8 @@ int main (void) {
 	clr_all_panel(); // from LCD_Driver.c
 	//outStringLCD("howdy world");
 	
+	
+	OpenSevenSegment(); // init 7-segment
 	OpenKeyPad(); //initialize Keypad
 	
 	

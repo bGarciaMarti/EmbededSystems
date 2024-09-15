@@ -9523,7 +9523,6 @@ int nth_digit(int n, int k);
 
 
 void keypad_input(int* k);
-void displayKeypadInput7seg(int num);
 
 
 void pfEINT1Callback(void);
@@ -9546,29 +9545,7 @@ void keypad_input(int* k){
 	
 	sprintf(Line1+6, "%d", *k);
 	
-	displayKeypadInput7seg(*k); 
+	ShowSevenSegment(0,*k); 
 	print_lcd(0, Line1); 
 	
-}
-
-void displayKeypadInput7seg(int num){
-
-		OpenSevenSegment(); 
-			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=1; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 0;
-			
-			ShowSevenSegment(3,nth_digit(3, num)); 
-			DrvSYS_Delay(475); 
-	
-			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=1; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 0;
-			ShowSevenSegment(2,nth_digit(2, num)); 
-			DrvSYS_Delay(475); 
-	
-			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=1; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 0;
-			ShowSevenSegment(1,nth_digit(1, num)); 
-			DrvSYS_Delay(475); 
-	
-			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 1;
-			ShowSevenSegment(0,nth_digit(0, num)); 
-			DrvSYS_Delay(475); 
-		CloseSevenSegment();
 }

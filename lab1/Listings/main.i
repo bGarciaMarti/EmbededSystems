@@ -9527,7 +9527,6 @@ int nth_digit(int n, int k);
 
 
 void keypad_input(int* k);
-void displayKeypadInput7seg(int num);
 
 
 void pfEINT1Callback(void);
@@ -9547,6 +9546,8 @@ int main (void) {
 	clr_all_panel(); 
 	
 	
+	
+	OpenSevenSegment(); 
 	OpenKeyPad(); 
 	
 	
