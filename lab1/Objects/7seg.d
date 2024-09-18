@@ -12,3 +12,4 @@
 .\objects\7seg.o: ..\Include\Driver\DrvSYS.h
 .\objects\7seg.o: ..\Include\NUC1xx-LB_002\Seven_Segment.h
 .\objects\7seg.o: ..\Include\NUC1xx-LB_002\ScanKey.h
+.\objects\7seg.o: ..\Include\Driver\DrvTIMER.h

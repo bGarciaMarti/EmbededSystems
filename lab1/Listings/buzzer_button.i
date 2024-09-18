@@ -9338,12 +9338,185 @@ uint8_t Scankey(void);
 
 
 #line 17 "user_func.h"
+#line 1 "..\\Include\\Driver\\DrvTIMER.h"
+ 
+ 
+ 
+ 
+ 
+
+
+
+#line 10 "..\\Include\\Driver\\DrvTIMER.h"
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+
+
+
+
+ 
+ 
+ 
+#line 32 "..\\Include\\Driver\\DrvTIMER.h"
+
+ 
+                                                                             
+ 
+typedef void (*TIMER_CALLBACK)(uint32_t data);	 
+typedef void (*WDT_CALLBACK)(uint32_t data);	 
+
+ 
+ 
+ 
+typedef struct timeEvent_t
+{
+    int32_t              active;
+    int32_t              initTick;
+    int32_t              curTick;
+    TIMER_CALLBACK       funPtr;
+    uint32_t             transParam;
+} TIMER_EVENT_T;
+
+ 
+ 
+ 
+typedef enum {
+    E_TMR0      = 0,
+    E_TMR1      = 1,
+	E_TMR2      = 2,
+	E_TMR3      = 3        
+} E_TIMER_CHANNEL;
+
+ 
+ 
+ 
+typedef enum{                   
+    E_ONESHOT_MODE 		= 0,
+    E_PERIODIC_MODE   	= 1,
+    E_TOGGLE_MODE     	= 2, 
+	E_CONTINUOUS_MODE 	= 3     
+} E_TIMER_OPMODE ;
+
+ 
+ 
+ 
+typedef enum{                   
+    E_PHASE_FALLING     = 0,
+    E_PHASE_RISING      = 1,
+} E_TIMER_TX_PHASE ;
+
+ 
+ 
+ 
+typedef enum{                   
+    E_EDGE_FALLING      = 0,
+    E_EDGE_RISING       = 1,
+    E_EDGE_BOTH         = 2,
+} E_TIMER_TEX_EDGE ;
+
+ 
+ 
+ 
+typedef enum{                   
+    E_CAPTURE           = 0,
+    E_RESET             = 1,
+} E_TIMER_RSTCAP_MODE ;
+
+ 
+ 
+ 
+typedef enum {
+    E_WDT_IOC_START_TIMER       = 0,
+    E_WDT_IOC_STOP_TIMER        = 1,
+    E_WDT_IOC_ENABLE_INT        = 2,
+    E_WDT_IOC_DISABLE_INT       = 3,
+    E_WDT_IOC_ENABLE_WAKEUP     = 4, 
+    E_WDT_IOC_DISABLE_WAKEUP    = 5, 
+    E_WDT_IOC_RESET_TIMER       = 6,
+    E_WDT_IOC_ENABLE_RESET_FUNC = 7,
+    E_WDT_IOC_DISABLE_RESET_FUNC= 8,
+	E_WDT_IOC_SET_INTERVAL      = 9
+} E_WDT_CMD; 
+
+ 
+ 
+ 
+typedef enum{
+    E_WDT_LEVEL0      = 0,          
+    E_WDT_LEVEL1      = 1,          
+    E_WDT_LEVEL2      = 2,           
+    E_WDT_LEVEL3      = 3,          
+	E_WDT_LEVEL4      = 4,          
+	E_WDT_LEVEL5      = 5,          
+	E_WDT_LEVEL6      = 6,          
+	E_WDT_LEVEL7      = 7           
+} E_WDT_INTERVAL;
+
+ 
+ 
+ 
+void DrvTIMER_Init(void);
+int32_t DrvTIMER_Open(E_TIMER_CHANNEL ch, uint32_t uTicksPerSecond, E_TIMER_OPMODE op_mode);
+int32_t DrvTIMER_Close(E_TIMER_CHANNEL ch);
+int32_t DrvTIMER_SetTimerEvent(E_TIMER_CHANNEL ch, uint32_t uInterruptTicks, TIMER_CALLBACK pTimerCallback, uint32_t parameter);
+void DrvTIMER_ClearTimerEvent(E_TIMER_CHANNEL ch, uint32_t uTimerEventNo);
+int32_t DrvTIMER_EnableInt(E_TIMER_CHANNEL ch);
+int32_t DrvTIMER_DisableInt(E_TIMER_CHANNEL ch);
+int32_t DrvTIMER_GetIntFlag(E_TIMER_CHANNEL ch);
+int32_t DrvTIMER_ClearIntFlag(E_TIMER_CHANNEL ch);
+int32_t DrvTIMER_Start(E_TIMER_CHANNEL ch);
+uint32_t DrvTIMER_GetIntTicks(E_TIMER_CHANNEL ch);
+int32_t DrvTIMER_ResetIntTicks(E_TIMER_CHANNEL ch);
+void DrvTIMER_Delay(E_TIMER_CHANNEL ch, uint32_t uTicks);
+int32_t DrvTIMER_OpenCounter(E_TIMER_CHANNEL ch, uint32_t uCounterBoundary, E_TIMER_OPMODE op_mode);
+int32_t DrvTIMER_StartCounter(E_TIMER_CHANNEL ch);
+uint32_t DrvTIMER_GetCounters(E_TIMER_CHANNEL ch);
+int32_t DrvTIMER_OpenCapture(E_TIMER_CHANNEL ch, E_TIMER_RSTCAP_MODE mode);
+int32_t DrvTIMER_CloseCapture(E_TIMER_CHANNEL ch);
+int32_t DrvTIMER_SelectExternalMode(E_TIMER_CHANNEL ch, E_TIMER_RSTCAP_MODE mode);
+int32_t DrvTIMER_SelectCaptureEdge(E_TIMER_CHANNEL ch, E_TIMER_TEX_EDGE edge);
+int32_t DrvTIMER_EnableCaptureInt(E_TIMER_CHANNEL ch);
+int32_t DrvTIMER_DisableCaptureInt(E_TIMER_CHANNEL ch);
+int32_t DrvTIMER_EnableCapture(E_TIMER_CHANNEL ch);
+int32_t DrvTIMER_DisableCapture(E_TIMER_CHANNEL ch);
+uint32_t DrvTIMER_GetCaptureData(E_TIMER_CHANNEL ch);
+int32_t DrvTIMER_GetCaptureIntFlag(E_TIMER_CHANNEL ch);
+int32_t DrvTIMER_ClearCaptureIntFlag(E_TIMER_CHANNEL ch);
+int32_t DrvTIMER_EnableCaptureDebounce(E_TIMER_CHANNEL ch);
+int32_t DrvTIMER_DisableCaptureDebounce(E_TIMER_CHANNEL ch);
+int32_t DrvTIMER_EnableCounterDebounce(E_TIMER_CHANNEL ch);
+int32_t DrvTIMER_DisableCounterDebounce(E_TIMER_CHANNEL ch);
+int32_t DrvTIMER_SelectCounterDetectPhase(E_TIMER_CHANNEL ch, E_TIMER_TX_PHASE phase);
+uint32_t DrvTIMER_GetVersion(void);
+
+int32_t DrvWDT_Open(E_WDT_INTERVAL WDTlevel);
+void DrvWDT_Close(void);
+void DrvWDT_InstallISR(WDT_CALLBACK pvWDTISR);
+int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
+
+
+
+
+
+#line 18 "user_func.h"
+
+
+void init_tutorialBlinky(void);
+void tutorialBlinky (void);
 
 
 void blinky_Drv(void);
 void TMR0_callback(void);
+
+
 void heartbeat(void);
-void TMR1_IRQHandler(void);
 
 
 void outStringLCD(char str[]);
@@ -9369,11 +9542,10 @@ void beep(void);
 
 
 void beep(void){
-	DrvGPIO_EnableEINT1(E_IO_BOTH_EDGE, E_MODE_EDGE, (GPIO_EINT1_CALLBACK)pfEINT1Callback);
-}
-
-void pfEINT1Callback(void) 
-{
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*1)) + (0x4*15)))) = 0; 
-	
+			if ((*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*1)) + (0x4*15))))==0){
+				(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*1)) + (0x4*11))))=0;
+			}
+			else{
+				(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*1)) + (0x4*11))))=1;
+			}
 }

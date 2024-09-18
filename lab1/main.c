@@ -11,34 +11,33 @@ Lab 1abc
 #include "user_func.h"
 
 int main (void) {
-	
 	int prevInputKeypad = 0;
-	/* DrvGPIO.h gives us the option to use the pins/ports directly for this chip */
-	GPC_13 = 1; //off, green
-	GPC_14 = 1; //off ?
 	
-	NVIC_EnableIRQ(	TMR1_IRQn	); //enable timer ISR
+	heartbeat(); // ISR to blink LED
+	
+	//init_tutorialBlinky();
+	
 	
 	Initial_panel(); // init LCD
 	clr_all_panel(); // from LCD_Driver.c
-	outStringLCD("howdy world");
-	
+	//outStringLCD("hello world");
 	
 	OpenSevenSegment(); // init 7-segment
 	OpenKeyPad(); //initialize Keypad
 	
 	
 	while(1){
+		//tutorialBlinky(); //myTutorial blink
+		
 		//blinky_Drv(); // timer to blink green LED
 		
-		heartbeat(); // wip // ISR to blink LED
-		NVIC_EnableIRQ(TMR1_IRQn);
-		
+		GPB_11=GPB_15;
+		//beep(); //retired
 	
 		//multiplex7segment(2024); // display 2024 on the 7-segment display
-		
-		//keypad_input(&prevInputKeypad);
-		//CloseKeyPad();
+
+		keypad_input(&prevInputKeypad);
+		CloseKeyPad();
 		
 	}
 	

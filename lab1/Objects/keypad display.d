@@ -12,3 +12,4 @@
 .\objects\keypad display.o: ..\Include\Driver\DrvSYS.h
 .\objects\keypad display.o: ..\Include\NUC1xx-LB_002\Seven_Segment.h
 .\objects\keypad display.o: ..\Include\NUC1xx-LB_002\ScanKey.h
+.\objects\keypad display.o: ..\Include\Driver\DrvTIMER.h

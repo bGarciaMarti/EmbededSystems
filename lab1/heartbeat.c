@@ -28,9 +28,8 @@ void heartbeat(void)
 	//Enable Interrupt
 	TIMER1->TCSR.IE = 1;
 	TIMER1->TISR.TIF = 1; // clear flag
-	
-	//NVIC_EnableIRQ(TMR1_IRQn);
-	
+	NVIC_EnableIRQ(TMR1_IRQn); //init timer interrupt things
+
 	TIMER1->TCSR.TDR_EN = 1;
 	
 	//Enable Timer
@@ -42,6 +41,6 @@ void heartbeat(void)
 void TMR1_IRQHandler(void) // flashes led (?)
 {
 	GPA_14 = ~GPA_14;
-	TIMER0->TISR.TIF = 1; //clear flag
+	TIMER1->TISR.TIF = 1; //clear flag
 }
 

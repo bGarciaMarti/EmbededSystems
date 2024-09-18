@@ -9339,28 +9339,7 @@ uint8_t Scankey(void);
 
 
 #line 17 "user_func.h"
-
-
-void blinky_Drv(void);
-void TMR0_callback(void);
-void heartbeat(void);
-void TMR1_IRQHandler(void);
-
-
-void outStringLCD(char str[]);
-
-
-void multiplex7segment(int num);
-int nth_digit(int n, int k);
-
-
-void keypad_input(int* k);
-
-
-void pfEINT1Callback(void);
-void beep(void);
-#line 8 "blinky.c"
-#line 1 "..\\Include\\Driver\\DrvTimer.h"
+#line 1 "..\\Include\\Driver\\DrvTIMER.h"
  
  
  
@@ -9369,7 +9348,7 @@ void beep(void);
 
 
 
-#line 10 "..\\Include\\Driver\\DrvTimer.h"
+#line 10 "..\\Include\\Driver\\DrvTIMER.h"
 
  
  
@@ -9386,7 +9365,7 @@ void beep(void);
  
  
  
-#line 32 "..\\Include\\Driver\\DrvTimer.h"
+#line 32 "..\\Include\\Driver\\DrvTIMER.h"
 
  
                                                                              
@@ -9527,6 +9506,33 @@ int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
 
 
 
+#line 18 "user_func.h"
+
+
+void init_tutorialBlinky(void);
+void tutorialBlinky (void);
+
+
+void blinky_Drv(void);
+void TMR0_callback(void);
+
+
+void heartbeat(void);
+
+
+void outStringLCD(char str[]);
+
+
+void multiplex7segment(int num);
+int nth_digit(int n, int k);
+
+
+void keypad_input(int* k);
+
+
+void pfEINT1Callback(void);
+void beep(void);
+#line 8 "blinky.c"
 #line 9 "blinky.c"
 
  
@@ -9545,8 +9551,6 @@ void blinky_Drv(void)
 	DrvTIMER_SetTimerEvent(E_TMR0,1,(TIMER_CALLBACK)TMR0_callback,1);
 	
 	DrvTIMER_EnableInt(E_TMR0);
-	
-	DrvTIMER_ClearIntFlag(E_TMR0);
 	
 	DrvTIMER_Start(E_TMR0); 
 }

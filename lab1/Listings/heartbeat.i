@@ -8410,8 +8410,8 @@ void heartbeat(void)
 	
 	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TCSR.IE = 1;
 	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TISR.TIF = 1; 
-	
-	
+	NVIC_EnableIRQ(TMR1_IRQn); 
+
 	
 	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TCSR.TDR_EN = 1;
 	
@@ -8424,6 +8424,6 @@ void heartbeat(void)
 void TMR1_IRQHandler(void) 
 {
 	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*0)) + (0x4*14)))) = ~(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*0)) + (0x4*14))));
-	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10000))->TISR.TIF = 1; 
+	((TIMER_T *) ((( uint32_t)0x40000000) + 0x10020))->TISR.TIF = 1; 
 }
 

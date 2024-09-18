@@ -12,3 +12,4 @@
 .\objects\helloworld.o: ..\Include\Driver\DrvSYS.h
 .\objects\helloworld.o: ..\Include\NUC1xx-LB_002\Seven_Segment.h
 .\objects\helloworld.o: ..\Include\NUC1xx-LB_002\ScanKey.h
+.\objects\helloworld.o: ..\Include\Driver\DrvTIMER.h

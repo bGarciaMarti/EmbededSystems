@@ -14,11 +14,10 @@ Lab 1b part 3, connect the interrupt button and the buzzer
 
 
 void beep(void){
-	DrvGPIO_EnableEINT1(E_IO_BOTH_EDGE, E_MODE_EDGE, (GPIO_EINT1_CALLBACK)pfEINT1Callback);
-}
-
-void pfEINT1Callback(void) //sound the buzzer
-{
-	GPB_15 = 0; //on
-	//DrvTIMER_ClearIntFlag(E_TMR0); // or TIMER1->TISR.TIF = 1;
+			if (GPB_15==0){
+				GPB_11=0;
+			}
+			else{
+				GPB_11=1;
+			}
 }

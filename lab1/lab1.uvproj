@@ -484,11 +484,6 @@
               <FilePath>.\main.c</FilePath>
             </File>
             <File>
-              <FileName>heartbeat.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\heartbeat.c</FilePath>
-            </File>
-            <File>
               <FileName>7seg.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\7seg.c</FilePath>
@@ -507,6 +502,21 @@
               <FileName>user_func.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\user_func.h</FilePath>
+            </File>
+            <File>
+              <FileName>myTutorial.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\myTutorial.c</FilePath>
+            </File>
+            <File>
+              <FileName>buzzer_button.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\buzzer_button.c</FilePath>
+            </File>
+            <File>
+              <FileName>heartbeat.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\heartbeat.c</FilePath>
             </File>
           </Files>
         </Group>

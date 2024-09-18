@@ -14,12 +14,18 @@ Video resource: https://www.youtube.com/watch?v=ma_bPt2FN8w
 #include "DrvSYS.h"
 #include "Seven_Segment.h"
 #include "ScanKey.h"
+#include "DrvTIMER.h"
+
+//My tutorial func
+void init_tutorialBlinky(void);
+void tutorialBlinky (void);
 
 //
 void blinky_Drv(void);
 void TMR0_callback(void);
+
+
 void heartbeat(void);
-void TMR1_IRQHandler(void);
 
 //Lab1a part 4??????
 void outStringLCD(char str[]);

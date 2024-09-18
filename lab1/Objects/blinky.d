@@ -12,4 +12,4 @@
 .\objects\blinky.o: ..\Include\Driver\DrvSYS.h
 .\objects\blinky.o: ..\Include\NUC1xx-LB_002\Seven_Segment.h
 .\objects\blinky.o: ..\Include\NUC1xx-LB_002\ScanKey.h
-.\objects\blinky.o: ..\Include\Driver\DrvTimer.h
+.\objects\blinky.o: ..\Include\Driver\DrvTIMER.h

@@ -5,7 +5,7 @@ Lab 1a part 3, using driver to make a blinky LED
 */
 
 #include "user_func.h"
-#include "DrvTimer.h"
+#include "DrvTIMER.h"
 //~~~~~~~~~~~~~~~~~~~~~//
 /*Functions that us timer/ "Driver method" to blind the green RGB LEDs */
 //~~~~~~~~~~~~~~~~~~~~~//
@@ -23,8 +23,6 @@ void blinky_Drv(void)
 	DrvTIMER_SetTimerEvent(E_TMR0,1,(TIMER_CALLBACK)TMR0_callback,1);
 	//Enable timer ISR
 	DrvTIMER_EnableInt(E_TMR0);
-	// Clear interrupt flag
-	DrvTIMER_ClearIntFlag(E_TMR0);
 	//Enable timer
 	DrvTIMER_Start(E_TMR0); //start counting TCSR.CEN = 1
 }
@@ -32,5 +30,5 @@ void blinky_Drv(void)
 void TMR0_callback(void) //flashes led (green)
 {
 	GPA_13 = ~GPA_13;
-	DrvTIMER_ClearIntFlag(E_TMR0); // or TIMER1->TISR.TIF = 1;
+	DrvTIMER_ClearIntFlag(E_TMR0); // or TIMER1->TISR.TIF = 1; //clearing 
 }

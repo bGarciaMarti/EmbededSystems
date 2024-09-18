@@ -1,0 +1,10 @@
+.\objects\mytutorial.o: myTutorial.c
+.\objects\mytutorial.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\mytutorial.o: ..\NUC1xx\NUC1xx.h
+.\objects\mytutorial.o: ..\CoreSupport\core_cm0.h
+.\objects\mytutorial.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\mytutorial.o: ..\NUC1xx\system_NUC1xx.h
+.\objects\mytutorial.o: ..\Include\System\SysInfra.h
+.\objects\mytutorial.o: ..\Include\System\ModuleID.h
+.\objects\mytutorial.o: ..\Include\Driver\DrvSYS.h
+.\objects\mytutorial.o: ..\Include\Driver\DrvGPIO.h

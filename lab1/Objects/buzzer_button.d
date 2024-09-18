@@ -12,3 +12,4 @@
 .\objects\buzzer_button.o: ..\Include\Driver\DrvSYS.h
 .\objects\buzzer_button.o: ..\Include\NUC1xx-LB_002\Seven_Segment.h
 .\objects\buzzer_button.o: ..\Include\NUC1xx-LB_002\ScanKey.h
+.\objects\buzzer_button.o: ..\Include\Driver\DrvTIMER.h
