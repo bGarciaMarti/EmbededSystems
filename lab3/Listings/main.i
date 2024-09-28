@@ -9528,21 +9528,44 @@ int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
 
 #line 18 "user_func.h"
 
-	void heartbeat(void);
+	
+	 
 	void keypad_input(int* k);
+	
+	
+	
+	 
+	void toggleLEDs_on(void);
+	void toggleLEDs_off(void);
+	void heartbeat(void);
 #line 28 "main.c"
 
 int main (void) {
-	int prevInputKeypad = 0; 
+	int prevInputKeypad = 0;
+	int count = 0;
 	heartbeat();
 	
-	OpenSevenSegment(); 
-	OpenKeyPad(); 
+	 
+	OpenSevenSegment();
+	OpenKeyPad();
 	
 	while(1){
+		keypad_input(&prevInputKeypad);
+		switch(prevInputKeypad){
+			case 1:
+				toggleLEDs_on();
+				count += 1;
+			break;
+			case 2:
+				toggleLEDs_off();
+			default:
+				toggleLEDs_off();
+		}
 		
+		ShowSevenSegment(0,count);
+			
+
 		
-	keypad_input(&prevInputKeypad);
 	CloseKeyPad();
 	}
 } 

@@ -1,0 +1,15 @@
+.\objects\buzzer_button.o: buzzer_button.c
+.\objects\buzzer_button.o: user_func.h
+.\objects\buzzer_button.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\buzzer_button.o: ..\NUC1xx\NUC1xx.h
+.\objects\buzzer_button.o: ..\CoreSupport\core_cm0.h
+.\objects\buzzer_button.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\buzzer_button.o: ..\NUC1xx\system_NUC1xx.h
+.\objects\buzzer_button.o: ..\Include\System\SysInfra.h
+.\objects\buzzer_button.o: ..\Include\System\ModuleID.h
+.\objects\buzzer_button.o: ..\Include\Driver\DrvGPIO.h
+.\objects\buzzer_button.o: ..\Include\NUC1xx-LB_002\LCD_Driver.h
+.\objects\buzzer_button.o: ..\Include\Driver\DrvSYS.h
+.\objects\buzzer_button.o: ..\Include\NUC1xx-LB_002\Seven_Segment.h
+.\objects\buzzer_button.o: ..\Include\NUC1xx-LB_002\ScanKey.h
+.\objects\buzzer_button.o: ..\Include\Driver\DrvTIMER.h

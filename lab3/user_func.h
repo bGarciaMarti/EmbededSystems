@@ -16,5 +16,13 @@ Video resource: https://www.youtube.com/watch?v=ma_bPt2FN8w
 #include "ScanKey.h"
 #include "DrvTIMER.h"
 
-	void heartbeat(void);
+	
+	/* ~~~~~~~~~~~input functions~~~~~~~~~~~~~~~~ */
 	void keypad_input(int* k);
+	
+	
+	
+	/* ~~~~~~~~~~~~~LED functions ~~~~~~~~~~~~~~ */
+	void toggleLEDs_on(void);
+	void toggleLEDs_off(void);
+	void heartbeat(void);

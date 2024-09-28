@@ -27,16 +27,34 @@ to stop the counter in main.
 #include "user_func.h"
 
 int main (void) {
-	int prevInputKeypad = 0; // from lab 1
+	int prevInputKeypad = 0;
+	int count = 0;
 	heartbeat();
 	
-	OpenSevenSegment(); // init 7-segment
-	OpenKeyPad(); //initialize Keypad
+	/* initialize peripheral hardware */
+	OpenSevenSegment();
+	OpenKeyPad();
 	
 	while(1){
+		keypad_input(&prevInputKeypad);
+		switch(prevInputKeypad){
+			case 1:
+				toggleLEDs_on();
+				count += 1;
+			break;
+			case 2: // button 2 is unreliable hardware, so it's the reset button
+				toggleLEDs_off();
+			break;
+			case 3:
+				toggleLEDs_off(); //stop counting
+			default:
+				toggleLEDs_off();
+		}
 		
+		ShowSevenSegment(0,count);
+			
+
 		
-	keypad_input(&prevInputKeypad);
 	CloseKeyPad();
 	}//end while
 } //end main
