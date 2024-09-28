@@ -1,0 +1,9 @@
+.\drvgpio.o: ..\Src\Driver\DrvGPIO.c
+.\drvgpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\drvgpio.o: ..\NUC1xx\NUC1xx.h
+.\drvgpio.o: ..\CoreSupport\core_cm0.h
+.\drvgpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\drvgpio.o: ..\NUC1xx\system_NUC1xx.h
+.\drvgpio.o: ..\Include\System\SysInfra.h
+.\drvgpio.o: ..\Include\System\ModuleID.h
+.\drvgpio.o: ..\Include\Driver\DrvGPIO.h

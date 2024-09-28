@@ -1,0 +1,15 @@
+.\blink_2.o: Blink_2.c
+.\blink_2.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\blink_2.o: ..\NUC1xx\NUC1xx.h
+.\blink_2.o: ..\CoreSupport\core_cm0.h
+.\blink_2.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\blink_2.o: ..\NUC1xx\system_NUC1xx.h
+.\blink_2.o: ..\Include\System\SysInfra.h
+.\blink_2.o: ..\Include\System\ModuleID.h
+.\blink_2.o: user_func.h
+.\blink_2.o: ..\Include\Driver\DrvGPIO.h
+.\blink_2.o: ..\Include\NUC1xx-LB_002\LCD_Driver.h
+.\blink_2.o: ..\Include\Driver\DrvSYS.h
+.\blink_2.o: ..\Include\NUC1xx-LB_002\Seven_Segment.h
+.\blink_2.o: ..\Include\NUC1xx-LB_002\ScanKey.h
+.\blink_2.o: ..\Include\Driver\DrvTIMER.h

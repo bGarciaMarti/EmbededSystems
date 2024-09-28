@@ -1,0 +1,14 @@
+.\main_2.o: main_2.c
+.\main_2.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\main_2.o: ..\NUC1xx\NUC1xx.h
+.\main_2.o: ..\CoreSupport\core_cm0.h
+.\main_2.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\main_2.o: ..\NUC1xx\system_NUC1xx.h
+.\main_2.o: ..\Include\System\SysInfra.h
+.\main_2.o: ..\Include\System\ModuleID.h
+.\main_2.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\main_2.o: user_func.h
+.\main_2.o: ..\Include\Driver\DrvGPIO.h
+.\main_2.o: ..\Include\NUC1xx-LB_002\LCD_Driver.h
+.\main_2.o: ..\Include\Driver\DrvSYS.h
+.\main_2.o: ..\Include\Driver\DrvADC.h

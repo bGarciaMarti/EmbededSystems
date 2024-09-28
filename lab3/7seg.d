@@ -1,0 +1,15 @@
+.\7seg.o: 7seg.c
+.\7seg.o: user_func.h
+.\7seg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\7seg.o: ..\NUC1xx\NUC1xx.h
+.\7seg.o: ..\CoreSupport\core_cm0.h
+.\7seg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\7seg.o: ..\NUC1xx\system_NUC1xx.h
+.\7seg.o: ..\Include\System\SysInfra.h
+.\7seg.o: ..\Include\System\ModuleID.h
+.\7seg.o: ..\Include\Driver\DrvGPIO.h
+.\7seg.o: ..\Include\NUC1xx-LB_002\LCD_Driver.h
+.\7seg.o: ..\Include\Driver\DrvSYS.h
+.\7seg.o: ..\Include\NUC1xx-LB_002\Seven_Segment.h
+.\7seg.o: ..\Include\NUC1xx-LB_002\ScanKey.h
+.\7seg.o: ..\Include\Driver\DrvTIMER.h

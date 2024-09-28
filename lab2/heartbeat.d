@@ -1,0 +1,9 @@
+.\heartbeat.o: heartbeat.c
+.\heartbeat.o: ..\Include\Driver\DrvSYS.h
+.\heartbeat.o: ..\NUC1xx\NUC1xx.h
+.\heartbeat.o: ..\CoreSupport\core_cm0.h
+.\heartbeat.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\heartbeat.o: ..\NUC1xx\system_NUC1xx.h
+.\heartbeat.o: ..\Include\System\SysInfra.h
+.\heartbeat.o: ..\Include\System\ModuleID.h
+.\heartbeat.o: ..\Include\Driver\DrvGPIO.h
