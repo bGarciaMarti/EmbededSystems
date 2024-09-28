@@ -9540,9 +9540,11 @@ int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
 	void heartbeat(void);
 #line 28 "main.c"
 
+int count = 0;
+
 int main (void) {
 	int prevInputKeypad = 0;
-	int count = 0;
+	
 	heartbeat();
 	
 	 
@@ -9556,8 +9558,11 @@ int main (void) {
 				toggleLEDs_on();
 				count += 1;
 			break;
-			case 2:
+			case 2: 
 				toggleLEDs_off();
+			break;
+			case 3:
+				toggleLEDs_off(); 
 			default:
 				toggleLEDs_off();
 		}

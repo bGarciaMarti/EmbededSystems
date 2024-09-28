@@ -26,9 +26,11 @@ to stop the counter in main.
 
 #include "user_func.h"
 
+int count = 0;
+
 int main (void) {
 	int prevInputKeypad = 0;
-	int count = 0;
+	
 	heartbeat();
 	
 	/* initialize peripheral hardware */
