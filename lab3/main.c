@@ -2,6 +2,10 @@
 Created by: Brenardo Garcia Marti
 For ECE 4330
 
+Resources:
+https://www.youtube.com/watch?v=iQXH1_MAkrM
+https://www.youtube.com/watch?v=7bHpIM_KJrY
+
 Write software for the M0 that counts the number of times the optical sensor is
 blocked/unblocked. Your design should include hardware and software so that the user
 can indicate when to start and stop the count. Also, the user should “know” when the
@@ -26,7 +30,7 @@ to stop the counter in main.
 
 #include "user_func.h"
 
-int count = 0000;
+int count = 8888;
 bool cs = false;
 
 int main (void) {
@@ -61,8 +65,8 @@ int main (void) {
 		}
 		
 		
-	multiplex7segment(count);
-	//ShowSevenSegment(0,count);	
+	//multiplex7segment(count);
+	ShowSevenSegment(0,count);	
 	CloseKeyPad();
 	}//end while
 } //end main

@@ -9563,7 +9563,7 @@ int nth_digit(int n, int k);
 void multiplex7segment(int num);
 #line 28 "main.c"
 
-int count = 0000;
+int count = 8888;
 _Bool cs = 0;
 
 int main (void) {
@@ -9595,13 +9595,11 @@ int main (void) {
 			case 2: 
 				count = 0;
 			break;
-			
-				
 		}
 		
 		
-	multiplex7segment(count);
 	
+	ShowSevenSegment(0,count);	
 	CloseKeyPad();
 	}
 } 

@@ -48,21 +48,25 @@ int nth_digit(int n, int k){
      return k%10;
 }
 void multiplex7segment(int num){
+			CloseSevenSegment();
 			GPC_7=SEGMENT_ON; GPC_6=SEGMENT_OFF; GPC_5=SEGMENT_OFF; GPC_4 = SEGMENT_OFF;
-			
 			ShowSevenSegment(3,nth_digit(3, num)); // thous
 			DrvSYS_Delay(475); //wait 475 us
 	
+			CloseSevenSegment();
 			GPC_7=SEGMENT_OFF; GPC_6=SEGMENT_ON; GPC_5=SEGMENT_OFF; GPC_4 = SEGMENT_OFF;
 			ShowSevenSegment(2,nth_digit(2, num)); // hunds
 			DrvSYS_Delay(475); //wait 475 us
 	
+			CloseSevenSegment();
 			GPC_7=SEGMENT_OFF; GPC_6=SEGMENT_OFF; GPC_5=SEGMENT_ON; GPC_4 = SEGMENT_OFF;
 			ShowSevenSegment(1,nth_digit(1, num)); // tens
 			DrvSYS_Delay(475); //wait 475 us
-
+			
+			CloseSevenSegment();
 			GPC_7=SEGMENT_OFF; GPC_6=SEGMENT_OFF; GPC_5=SEGMENT_OFF; GPC_4 = SEGMENT_ON;
 			ShowSevenSegment(0,nth_digit(0, num)); // ones
 			DrvSYS_Delay(475); //wait 475 us
-		CloseSevenSegment();
+		
+	CloseSevenSegment();
 }

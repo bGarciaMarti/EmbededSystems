@@ -722,7 +722,7 @@ ARM Macro Assembler    Page 12
 Command Line: --16 --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=i
 nterwork --depend=.\startup_nuc1xx.d -o.\startup_nuc1xx.o -IC:\Keil_v5\ARM\RV31
 \INC -IC:\Keil_v5\ARM\CMSIS\Include --predefine="__EVAL SETA 1" --predefine="__
-UVISION_VERSION SETA 533" --list=.\listings\startup_nuc1xx.lst startup_NUC1xx.s
+UVISION_VERSION SETA 531" --list=.\listings\startup_nuc1xx.lst startup_NUC1xx.s
 
 
 
