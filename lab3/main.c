@@ -26,7 +26,8 @@ to stop the counter in main.
 
 #include "user_func.h"
 
-int count = 0;
+int count = 0000;
+bool cs = false;
 
 int main (void) {
 	int prevInputKeypad = 0;
@@ -38,25 +39,30 @@ int main (void) {
 	OpenKeyPad();
 	
 	while(1){
+
+					
 		keypad_input(&prevInputKeypad);
 		switch(prevInputKeypad){
 			case 1:
-				toggleLEDs_on();
-				count += 1;
-			break;
+				if (!GPC_0) { // if voltage is low
+					if (cs == false) {
+					// increment the counter and toggle the led
+					count += 1;		
+					cs = true;
+					}
+				}
+				else{
+					cs = false; }
+				// else the voltage is high
+				break;
 			case 2: // button 2 is unreliable hardware, so it's the reset button
-				toggleLEDs_off();
+				count = 0;
 			break;
-			case 3:
-				toggleLEDs_off(); //stop counting
-			default:
-				toggleLEDs_off();
 		}
 		
-		ShowSevenSegment(0,count);
-			
-
 		
+	multiplex7segment(count);
+	//ShowSevenSegment(0,count);	
 	CloseKeyPad();
 	}//end while
 } //end main

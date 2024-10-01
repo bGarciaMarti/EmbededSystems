@@ -7,6 +7,7 @@
 .\user_func.o: ..\Include\System\SysInfra.h
 .\user_func.o: ..\Include\System\ModuleID.h
 .\user_func.o: user_func.h
+.\user_func.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\user_func.o: ..\Include\Driver\DrvGPIO.h
 .\user_func.o: ..\Include\NUC1xx-LB_002\LCD_Driver.h
 .\user_func.o: ..\Include\Driver\DrvSYS.h

@@ -8949,7 +8949,26 @@ typedef volatile unsigned short vu16;
  
 
 #line 10 "user_func.h"
+#line 1 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdbool.h"
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+#line 25 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdbool.h"
+
+
+
 #line 11 "user_func.h"
+#line 12 "user_func.h"
  
 #line 1 "..\\Include\\Driver\\DrvGPIO.h"
  
@@ -9088,7 +9107,7 @@ int32_t DrvGPIO_GetVersion(void);
 
 
 
-#line 13 "user_func.h"
+#line 14 "user_func.h"
 #line 1 "..\\Include\\NUC1xx-LB_002\\LCD_Driver.h"
 
 
@@ -9103,7 +9122,7 @@ extern void print_lcd(unsigned char line, char *str);
 
 
 extern void clr_all_panel(void);
-#line 14 "user_func.h"
+#line 15 "user_func.h"
 #line 1 "..\\Include\\Driver\\DrvSYS.h"
  
  
@@ -9333,7 +9352,7 @@ int32_t  DrvSYS_UnlockProtectedReg(void);
 
 
 
-#line 15 "user_func.h"
+#line 16 "user_func.h"
 #line 1 "..\\Include\\NUC1xx-LB_002\\Seven_Segment.h"
 
 
@@ -9342,7 +9361,7 @@ extern void ShowSevenSegment(unsigned char no, unsigned char number);
 extern void CloseSevenSegment(void);
 
 
-#line 16 "user_func.h"
+#line 17 "user_func.h"
 #line 1 "..\\Include\\NUC1xx-LB_002\\ScanKey.h"
  
  
@@ -9358,7 +9377,7 @@ uint8_t Scankey(void);
 
 
 
-#line 17 "user_func.h"
+#line 18 "user_func.h"
 #line 1 "..\\Include\\Driver\\DrvTIMER.h"
  
  
@@ -9526,7 +9545,7 @@ int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
 
 
 
-#line 18 "user_func.h"
+#line 19 "user_func.h"
 
 	
 	 
@@ -9538,9 +9557,14 @@ int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
 	void toggleLEDs_on(void);
 	void toggleLEDs_off(void);
 	void heartbeat(void);
+
+	 
+int nth_digit(int n, int k);
+void multiplex7segment(int num);
 #line 28 "main.c"
 
-int count = 0;
+int count = 0000;
+_Bool cs = 0;
 
 int main (void) {
 	int prevInputKeypad = 0;
@@ -9552,25 +9576,32 @@ int main (void) {
 	OpenKeyPad();
 	
 	while(1){
+
+					
 		keypad_input(&prevInputKeypad);
 		switch(prevInputKeypad){
 			case 1:
-				toggleLEDs_on();
-				count += 1;
-			break;
+				if (!(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*0))))) { 
+					if (cs == 0) {
+					
+					count += 1;		
+					cs = 1;
+					}
+				}
+				else{
+					cs = 0; }
+				
+				break;
 			case 2: 
-				toggleLEDs_off();
+				count = 0;
 			break;
-			case 3:
-				toggleLEDs_off(); 
-			default:
-				toggleLEDs_off();
+			
+				
 		}
 		
-		ShowSevenSegment(0,count);
-			
-
 		
+	multiplex7segment(count);
+	
 	CloseKeyPad();
 	}
 } 

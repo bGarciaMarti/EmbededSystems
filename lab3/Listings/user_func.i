@@ -8926,7 +8926,26 @@ typedef volatile unsigned short vu16;
  
 
 #line 10 "user_func.h"
+#line 1 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdbool.h"
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+#line 25 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdbool.h"
+
+
+
 #line 11 "user_func.h"
+#line 12 "user_func.h"
  
 #line 1 "..\\Include\\Driver\\DrvGPIO.h"
  
@@ -9065,7 +9084,7 @@ int32_t DrvGPIO_GetVersion(void);
 
 
 
-#line 13 "user_func.h"
+#line 14 "user_func.h"
 #line 1 "..\\Include\\NUC1xx-LB_002\\LCD_Driver.h"
 
 
@@ -9080,7 +9099,7 @@ extern void print_lcd(unsigned char line, char *str);
 
 
 extern void clr_all_panel(void);
-#line 14 "user_func.h"
+#line 15 "user_func.h"
 #line 1 "..\\Include\\Driver\\DrvSYS.h"
  
  
@@ -9310,7 +9329,7 @@ int32_t  DrvSYS_UnlockProtectedReg(void);
 
 
 
-#line 15 "user_func.h"
+#line 16 "user_func.h"
 #line 1 "..\\Include\\NUC1xx-LB_002\\Seven_Segment.h"
 
 
@@ -9319,7 +9338,7 @@ extern void ShowSevenSegment(unsigned char no, unsigned char number);
 extern void CloseSevenSegment(void);
 
 
-#line 16 "user_func.h"
+#line 17 "user_func.h"
 #line 1 "..\\Include\\NUC1xx-LB_002\\ScanKey.h"
  
  
@@ -9335,7 +9354,7 @@ uint8_t Scankey(void);
 
 
 
-#line 17 "user_func.h"
+#line 18 "user_func.h"
 #line 1 "..\\Include\\Driver\\DrvTIMER.h"
  
  
@@ -9503,7 +9522,7 @@ int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
 
 
 
-#line 18 "user_func.h"
+#line 19 "user_func.h"
 
 	
 	 
@@ -9515,7 +9534,15 @@ int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
 	void toggleLEDs_on(void);
 	void toggleLEDs_off(void);
 	void heartbeat(void);
+
+	 
+int nth_digit(int n, int k);
+void multiplex7segment(int num);
 #line 5 "user_func.c"
+
+
+
+
  
  
  
@@ -9528,9 +9555,10 @@ int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
 void keypad_input(int* k){
 	int temp;
 		temp = Scankey(); 
-		if(temp!=0 && temp < 4){ 
+		if(temp!=0 && temp < 3){ 
 			*k=temp;
 		}
+		
 		
 }
 
@@ -9542,12 +9570,6 @@ void toggleLEDs_on(void){
 	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 0; 
 	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 0; 
 	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 0; 
-		DrvSYS_Delay(550000); 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 1; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 1; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 1; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 1; 
-		DrvSYS_Delay(550000);
 }
 
 void toggleLEDs_off(void){
@@ -9555,5 +9577,29 @@ void toggleLEDs_off(void){
 	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 1; 
 	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 1; 
 	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 1; 
-		DrvSYS_Delay(10000000);
+}
+
+int nth_digit(int n, int k){
+     while(n--)
+         k/=10;
+     return k%10;
+}
+void multiplex7segment(int num){
+			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=1; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 0;
+			
+			ShowSevenSegment(3,nth_digit(3, num)); 
+			DrvSYS_Delay(475); 
+	
+			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=1; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 0;
+			ShowSevenSegment(2,nth_digit(2, num)); 
+			DrvSYS_Delay(475); 
+	
+			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=1; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 0;
+			ShowSevenSegment(1,nth_digit(1, num)); 
+			DrvSYS_Delay(475); 
+
+			(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*7))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*6))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*5))))=0; (*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*4)))) = 1;
+			ShowSevenSegment(0,nth_digit(0, num)); 
+			DrvSYS_Delay(475); 
+		CloseSevenSegment();
 }

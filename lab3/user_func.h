@@ -7,6 +7,7 @@ Video resource: https://www.youtube.com/watch?v=ma_bPt2FN8w
 */
 
 #include <stdio.h>
+#include <stdbool.h>
 #include "NUC1xx.h"
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 #include "DrvGPIO.h"
@@ -26,3 +27,7 @@ Video resource: https://www.youtube.com/watch?v=ma_bPt2FN8w
 	void toggleLEDs_on(void);
 	void toggleLEDs_off(void);
 	void heartbeat(void);
+
+	/* ~~~~~~~~~~~~~7seg functions ~~~~~~~~~~~~~~ */
+int nth_digit(int n, int k);
+void multiplex7segment(int num);
