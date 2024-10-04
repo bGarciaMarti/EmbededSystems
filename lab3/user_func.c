@@ -29,17 +29,22 @@ void keypad_input(int* k){
 /* a function for miscellaneous testing */
 /* blinks the 4 red LEDs in cherrful succession */
 void toggleLEDs_on(void){
-	GPC_12 = 0; //on
-	GPC_13 = 0; //on
 	GPC_14 = 0; //on
 	GPC_15 = 0; //on
 }
 
 void toggleLEDs_off(void){
-	GPC_12 = 1; //off
-	GPC_13 = 1; //off
 	GPC_14 = 1; //off
 	GPC_15 = 1; //off
+}
+
+void countingLEDs_on(void){
+	GPC_12 = 0; //on
+	GPC_13 = 0; //on
+}
+void countingLEDs_off(void){
+	GPC_12 = 1; //off
+	GPC_13 = 1; //off
 }
 
 int nth_digit(int n, int k){

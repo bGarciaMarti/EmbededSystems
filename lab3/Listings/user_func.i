@@ -9533,6 +9533,8 @@ int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
 	 
 	void toggleLEDs_on(void);
 	void toggleLEDs_off(void);
+	void countingLEDs_on(void);
+	void countingLEDs_off(void);
 	void heartbeat(void);
 
 	 
@@ -9566,17 +9568,22 @@ void keypad_input(int* k){
  
  
 void toggleLEDs_on(void){
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 0; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 0; 
 	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 0; 
 	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 0; 
 }
 
 void toggleLEDs_off(void){
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 1; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 1; 
 	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 1; 
 	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 1; 
+}
+
+void countingLEDs_on(void){
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 0; 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 0; 
+}
+void countingLEDs_off(void){
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 1; 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 1; 
 }
 
 int nth_digit(int n, int k){

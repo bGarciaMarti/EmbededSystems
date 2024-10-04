@@ -32,9 +32,14 @@ to stop the counter in main.
 
 int count = 8888;
 bool cs = false;
+int prevInputKeypad = 0;
+
+void EINT1Callback(void){
+		countingLEDs_off();
+		prevInputKeypad = 0;
+}
 
 int main (void) {
-	int prevInputKeypad = 0;
 	
 	heartbeat();
 	
@@ -42,21 +47,28 @@ int main (void) {
 	OpenSevenSegment();
 	OpenKeyPad();
 	
+	/* configure external interrupt pin GPB15 */
+	DrvGPIO_Open(E_GPB, 15, E_IO_INPUT);
+	DrvGPIO_EnableEINT1(E_IO_FALLING, E_MODE_EDGE, EINT1Callback);
+	
 	while(1){
 
 					
 		keypad_input(&prevInputKeypad);
 		switch(prevInputKeypad){
 			case 1:
+				countingLEDs_on(); // indicate to user
 				if (!GPC_0) { // if voltage is low
 					if (cs == false) {
 					// increment the counter and toggle the led
 					count += 1;		
+					toggleLEDs_on();
 					cs = true;
 					}
 				}
 				else{
-					cs = false; }
+					cs = false;
+					toggleLEDs_off(); }
 				// else the voltage is high
 				break;
 			case 2: // button 2 is unreliable hardware, so it's the reset button

@@ -26,6 +26,8 @@ Video resource: https://www.youtube.com/watch?v=ma_bPt2FN8w
 	/* ~~~~~~~~~~~~~LED functions ~~~~~~~~~~~~~~ */
 	void toggleLEDs_on(void);
 	void toggleLEDs_off(void);
+	void countingLEDs_on(void);
+	void countingLEDs_off(void);
 	void heartbeat(void);
 
 	/* ~~~~~~~~~~~~~7seg functions ~~~~~~~~~~~~~~ */

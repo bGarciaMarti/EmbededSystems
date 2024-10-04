@@ -20,6 +20,10 @@
 
 
 
+
+
+
+
  
 
 #line 1 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
@@ -921,7 +925,7 @@ extern __declspec(__nothrow) void __use_no_semihosting(void);
 
  
 
-#line 25 "main.c"
+#line 29 "main.c"
 #line 1 "..\\NUC1xx\\NUC1xx.h"
  
  
@@ -8937,7 +8941,7 @@ typedef volatile unsigned short vu16;
 
 
                                                                                                  
-#line 26 "main.c"
+#line 30 "main.c"
 
 #line 1 "user_func.h"
 
@@ -9556,18 +9560,25 @@ int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
 	 
 	void toggleLEDs_on(void);
 	void toggleLEDs_off(void);
+	void countingLEDs_on(void);
+	void countingLEDs_off(void);
 	void heartbeat(void);
 
 	 
 int nth_digit(int n, int k);
 void multiplex7segment(int num);
-#line 28 "main.c"
+#line 32 "main.c"
 
 int count = 8888;
 _Bool cs = 0;
+int prevInputKeypad = 0;
+
+void EINT1Callback(void){
+		countingLEDs_off();
+		prevInputKeypad = 0;
+}
 
 int main (void) {
-	int prevInputKeypad = 0;
 	
 	heartbeat();
 	
@@ -9575,21 +9586,28 @@ int main (void) {
 	OpenSevenSegment();
 	OpenKeyPad();
 	
+	 
+	DrvGPIO_Open(E_GPB, 15, E_IO_INPUT);
+	DrvGPIO_EnableEINT1(E_IO_FALLING, E_MODE_EDGE, EINT1Callback);
+	
 	while(1){
 
 					
 		keypad_input(&prevInputKeypad);
 		switch(prevInputKeypad){
 			case 1:
+				countingLEDs_on(); 
 				if (!(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*0))))) { 
 					if (cs == 0) {
 					
 					count += 1;		
+					toggleLEDs_on();
 					cs = 1;
 					}
 				}
 				else{
-					cs = 0; }
+					cs = 0;
+					toggleLEDs_off(); }
 				
 				break;
 			case 2: 
