@@ -9569,7 +9569,7 @@ int nth_digit(int n, int k);
 void multiplex7segment(int num);
 #line 32 "main.c"
 
-int count = 8888;
+int count = 0000;
 _Bool cs = 0;
 int prevInputKeypad = 0;
 
@@ -9612,12 +9612,13 @@ int main (void) {
 				break;
 			case 2: 
 				count = 0;
+				countingLEDs_off();
 			break;
 		}
 		
 		
+	multiplex7segment(count);
 	
-	ShowSevenSegment(0,count);	
 	CloseKeyPad();
 	}
 } 

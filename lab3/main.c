@@ -30,7 +30,7 @@ to stop the counter in main.
 
 #include "user_func.h"
 
-int count = 8888;
+int count = 0000;
 bool cs = false;
 int prevInputKeypad = 0;
 
@@ -73,12 +73,13 @@ int main (void) {
 				break;
 			case 2: // button 2 is unreliable hardware, so it's the reset button
 				count = 0;
+				countingLEDs_off();
 			break;
 		}
 		
 		
-	//multiplex7segment(count);
-	ShowSevenSegment(0,count);	
+	multiplex7segment(count);
+	//ShowSevenSegment(0,count);
 	CloseKeyPad();
 	}//end while
 } //end main
