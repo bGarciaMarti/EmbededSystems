@@ -31,22 +31,22 @@
     Program header entries: 1
     Section header entries: 16
 
-    Program header offset: 151016 (0x00024de8)
-    Section header offset: 151048 (0x00024e08)
+    Program header offset: 152080 (0x00025210)
+    Section header offset: 152112 (0x00025230)
 
     Section header string table index: 15
 
 ========================================================================
 
 ** Program header #0 (PT_LOAD) [PF_X + PF_W + PF_R + PF_ARM_ENTRY]
-    Size : 3196 bytes (2072 bytes in file)
+    Size : 3232 bytes (2108 bytes in file)
     Virtual address: 0x00000000 (Alignment 8)
 
 
 ========================================================================
 
 ** Section #1 'ER_RO' (SHT_PROGBITS) [SHF_ALLOC + SHF_EXECINSTR]
-    Size   : 2020 bytes (alignment 4)
+    Size   : 2056 bytes (alignment 4)
     Address: 0x00000000
 
     $d.realdata
@@ -77,7 +77,7 @@
         0x00000058:    0000018f    ....    DCD    399
         0x0000005c:    0000018f    ....    DCD    399
         0x00000060:    0000018f    ....    DCD    399
-        0x00000064:    0000018f    ....    DCD    399
+        0x00000064:    00000721    !...    DCD    1825
         0x00000068:    0000018f    ....    DCD    399
         0x0000006c:    0000018f    ....    DCD    399
         0x00000070:    0000018f    ....    DCD    399
@@ -136,8 +136,8 @@
         0x000000f8:    4333        3C      ORRS     r3,r3,r6
         0x000000fa:    4718        .G      BX       r3
     $d
-        0x000000fc:    000006c8    ....    DCD    1736
-        0x00000100:    000006e8    ....    DCD    1768
+        0x000000fc:    000006ec    ....    DCD    1772
+        0x00000100:    0000070c    ....    DCD    1804
     $t
     !!handler_copy
     __scatterload_copy
@@ -252,7 +252,7 @@
     .ARM.Collect$$rtentry$$0000000D
     __rt_entry_main
     __rt_entry_postli_1
-        0x0000014e:    f000faf5    ....    BL       main ; 0x73c
+        0x0000014e:    f000fb07    ....    BL       main ; 0x760
         0x00000152:    f000f908    ....    BL       exit ; 0x366
     .ARM.Collect$$rtexit$$00000000
     __rt_exit
@@ -312,7 +312,6 @@
     SPI2_IRQHandler
     SPI3_IRQHandler
     TMR0_IRQHandler
-    TMR1_IRQHandler
     TMR2_IRQHandler
     TMR3_IRQHandler
     UART02_IRQHandler
@@ -643,7 +642,7 @@
         0x000003e4:    b500        ..      PUSH     {lr}
         0x000003e6:    4602        .F      MOV      r2,r0
         0x000003e8:    0013        ..      MOVS     r3,r2
-        0x000003ea:    f000f998    ....    BL       __ARM_common_switch8 ; 0x71e
+        0x000003ea:    f000f9ab    ....    BL       __ARM_common_switch8 ; 0x744
     $d
         0x000003ee:    0405        ..      DCW    1029
         0x000003f0:    18130e09    ....    DCD    403901961
@@ -1063,93 +1062,113 @@
     i.SystemInit
     SystemInit
         0x0000071c:    4770        pG      BX       lr
+        0x0000071e:    0000        ..      MOVS     r0,r0
+    i.TMR1_IRQHandler
+    TMR1_IRQHandler
+        0x00000720:    4806        .H      LDR      r0,[pc,#24] ; [0x73c] = 0x50004200
+        0x00000722:    6b80        .k      LDR      r0,[r0,#0x38]
+        0x00000724:    43c0        .C      MVNS     r0,r0
+        0x00000726:    4905        .I      LDR      r1,[pc,#20] ; [0x73c] = 0x50004200
+        0x00000728:    6388        .c      STR      r0,[r1,#0x38]
+        0x0000072a:    4805        .H      LDR      r0,[pc,#20] ; [0x740] = 0x40010000
+        0x0000072c:    6a80        .j      LDR      r0,[r0,#0x28]
+        0x0000072e:    0840        @.      LSRS     r0,r0,#1
+        0x00000730:    0040        @.      LSLS     r0,r0,#1
+        0x00000732:    1c40        @.      ADDS     r0,r0,#1
+        0x00000734:    4902        .I      LDR      r1,[pc,#8] ; [0x740] = 0x40010000
+        0x00000736:    6288        .b      STR      r0,[r1,#0x28]
+        0x00000738:    4770        pG      BX       lr
+    $d
+        0x0000073a:    0000        ..      DCW    0
+        0x0000073c:    50004200    .B.P    DCD    1342194176
+        0x00000740:    40010000    ...@    DCD    1073807360
+    $t
     i.__ARM_common_switch8
     __ARM_common_switch8
-        0x0000071e:    b430        0.      PUSH     {r4,r5}
-        0x00000720:    4674        tF      MOV      r4,lr
-        0x00000722:    1e64        d.      SUBS     r4,r4,#1
-        0x00000724:    7825        %x      LDRB     r5,[r4,#0]
-        0x00000726:    1c64        d.      ADDS     r4,r4,#1
-        0x00000728:    42ab        .B      CMP      r3,r5
-        0x0000072a:    d304        ..      BCC      0x736 ; __ARM_common_switch8 + 24
-        0x0000072c:    5d63        c]      LDRB     r3,[r4,r5]
-        0x0000072e:    005b        [.      LSLS     r3,r3,#1
-        0x00000730:    18e3        ..      ADDS     r3,r4,r3
-        0x00000732:    bc30        0.      POP      {r4,r5}
-        0x00000734:    4718        .G      BX       r3
-        0x00000736:    461d        .F      MOV      r5,r3
-        0x00000738:    e7f8        ..      B        0x72c ; __ARM_common_switch8 + 14
-        0x0000073a:    0000        ..      MOVS     r0,r0
+        0x00000744:    b430        0.      PUSH     {r4,r5}
+        0x00000746:    4674        tF      MOV      r4,lr
+        0x00000748:    1e64        d.      SUBS     r4,r4,#1
+        0x0000074a:    7825        %x      LDRB     r5,[r4,#0]
+        0x0000074c:    1c64        d.      ADDS     r4,r4,#1
+        0x0000074e:    42ab        .B      CMP      r3,r5
+        0x00000750:    d304        ..      BCC      0x75c ; __ARM_common_switch8 + 24
+        0x00000752:    5d63        c]      LDRB     r3,[r4,r5]
+        0x00000754:    005b        [.      LSLS     r3,r3,#1
+        0x00000756:    18e3        ..      ADDS     r3,r4,r3
+        0x00000758:    bc30        0.      POP      {r4,r5}
+        0x0000075a:    4718        .G      BX       r3
+        0x0000075c:    461d        .F      MOV      r5,r3
+        0x0000075e:    e7f8        ..      B        0x752 ; __ARM_common_switch8 + 14
     i.main
     main
-        0x0000073c:    2059        Y       MOVS     r0,#0x59
-        0x0000073e:    491e        .I      LDR      r1,[pc,#120] ; [0x7b8] = 0x50000100
-        0x00000740:    6008        .`      STR      r0,[r1,#0]
-        0x00000742:    2016        .       MOVS     r0,#0x16
-        0x00000744:    6008        .`      STR      r0,[r1,#0]
-        0x00000746:    2088        .       MOVS     r0,#0x88
-        0x00000748:    6008        .`      STR      r0,[r1,#0]
-        0x0000074a:    2101        .!      MOVS     r1,#1
-        0x0000074c:    2002        .       MOVS     r0,#2
-        0x0000074e:    f7fffed5    ....    BL       DrvSYS_SetOscCtrl ; 0x4fc
-        0x00000752:    bf00        ..      NOP      
-        0x00000754:    2002        .       MOVS     r0,#2
-        0x00000756:    f7fffe45    ..E.    BL       DrvSYS_GetChipClockSourceStatus ; 0x3e4
-        0x0000075a:    2801        .(      CMP      r0,#1
-        0x0000075c:    d1fa        ..      BNE      0x754 ; main + 24
-        0x0000075e:    2007        .       MOVS     r0,#7
-        0x00000760:    f7fffe6c    ..l.    BL       DrvSYS_SelectHCLKSource ; 0x43c
-        0x00000764:    2000        .       MOVS     r0,#0
-        0x00000766:    4914        .I      LDR      r1,[pc,#80] ; [0x7b8] = 0x50000100
+        0x00000760:    2059        Y       MOVS     r0,#0x59
+        0x00000762:    491e        .I      LDR      r1,[pc,#120] ; [0x7dc] = 0x50000100
+        0x00000764:    6008        .`      STR      r0,[r1,#0]
+        0x00000766:    2016        .       MOVS     r0,#0x16
         0x00000768:    6008        .`      STR      r0,[r1,#0]
-        0x0000076a:    2102        .!      MOVS     r1,#2
-        0x0000076c:    2003        .       MOVS     r0,#3
-        0x0000076e:    f7fffe81    ....    BL       DrvSYS_SetClockDivider ; 0x474
-        0x00000772:    e01f        ..      B        0x7b4 ; main + 120
-        0x00000774:    2001        .       MOVS     r0,#1
-        0x00000776:    4911        .I      LDR      r1,[pc,#68] ; [0x7bc] = 0x50004280
-        0x00000778:    63c8        .c      STR      r0,[r1,#0x3c]
-        0x0000077a:    2000        .       MOVS     r0,#0
-        0x0000077c:    6308        .c      STR      r0,[r1,#0x30]
-        0x0000077e:    4810        .H      LDR      r0,[pc,#64] ; [0x7c0] = 0x989680
-        0x00000780:    f7fffe1a    ....    BL       DrvSYS_Delay ; 0x3b8
-        0x00000784:    2001        .       MOVS     r0,#1
-        0x00000786:    490d        .I      LDR      r1,[pc,#52] ; [0x7bc] = 0x50004280
-        0x00000788:    6308        .c      STR      r0,[r1,#0x30]
-        0x0000078a:    2000        .       MOVS     r0,#0
-        0x0000078c:    6348        Hc      STR      r0,[r1,#0x34]
-        0x0000078e:    480c        .H      LDR      r0,[pc,#48] ; [0x7c0] = 0x989680
-        0x00000790:    f7fffe12    ....    BL       DrvSYS_Delay ; 0x3b8
-        0x00000794:    2001        .       MOVS     r0,#1
-        0x00000796:    4909        .I      LDR      r1,[pc,#36] ; [0x7bc] = 0x50004280
-        0x00000798:    6348        Hc      STR      r0,[r1,#0x34]
-        0x0000079a:    2000        .       MOVS     r0,#0
-        0x0000079c:    6388        .c      STR      r0,[r1,#0x38]
-        0x0000079e:    4808        .H      LDR      r0,[pc,#32] ; [0x7c0] = 0x989680
-        0x000007a0:    f7fffe0a    ....    BL       DrvSYS_Delay ; 0x3b8
-        0x000007a4:    2001        .       MOVS     r0,#1
-        0x000007a6:    4905        .I      LDR      r1,[pc,#20] ; [0x7bc] = 0x50004280
-        0x000007a8:    6388        .c      STR      r0,[r1,#0x38]
-        0x000007aa:    2000        .       MOVS     r0,#0
-        0x000007ac:    63c8        .c      STR      r0,[r1,#0x3c]
-        0x000007ae:    4804        .H      LDR      r0,[pc,#16] ; [0x7c0] = 0x989680
-        0x000007b0:    f7fffe02    ....    BL       DrvSYS_Delay ; 0x3b8
-        0x000007b4:    e7de        ..      B        0x774 ; main + 56
+        0x0000076a:    2088        .       MOVS     r0,#0x88
+        0x0000076c:    6008        .`      STR      r0,[r1,#0]
+        0x0000076e:    2101        .!      MOVS     r1,#1
+        0x00000770:    2002        .       MOVS     r0,#2
+        0x00000772:    f7fffec3    ....    BL       DrvSYS_SetOscCtrl ; 0x4fc
+        0x00000776:    bf00        ..      NOP      
+        0x00000778:    2002        .       MOVS     r0,#2
+        0x0000077a:    f7fffe33    ..3.    BL       DrvSYS_GetChipClockSourceStatus ; 0x3e4
+        0x0000077e:    2801        .(      CMP      r0,#1
+        0x00000780:    d1fa        ..      BNE      0x778 ; main + 24
+        0x00000782:    2007        .       MOVS     r0,#7
+        0x00000784:    f7fffe5a    ..Z.    BL       DrvSYS_SelectHCLKSource ; 0x43c
+        0x00000788:    2000        .       MOVS     r0,#0
+        0x0000078a:    4914        .I      LDR      r1,[pc,#80] ; [0x7dc] = 0x50000100
+        0x0000078c:    6008        .`      STR      r0,[r1,#0]
+        0x0000078e:    2102        .!      MOVS     r1,#2
+        0x00000790:    2003        .       MOVS     r0,#3
+        0x00000792:    f7fffe6f    ..o.    BL       DrvSYS_SetClockDivider ; 0x474
+        0x00000796:    e01f        ..      B        0x7d8 ; main + 120
+        0x00000798:    2001        .       MOVS     r0,#1
+        0x0000079a:    4911        .I      LDR      r1,[pc,#68] ; [0x7e0] = 0x50004280
+        0x0000079c:    63c8        .c      STR      r0,[r1,#0x3c]
+        0x0000079e:    2000        .       MOVS     r0,#0
+        0x000007a0:    6308        .c      STR      r0,[r1,#0x30]
+        0x000007a2:    4810        .H      LDR      r0,[pc,#64] ; [0x7e4] = 0x989680
+        0x000007a4:    f7fffe08    ....    BL       DrvSYS_Delay ; 0x3b8
+        0x000007a8:    2001        .       MOVS     r0,#1
+        0x000007aa:    490d        .I      LDR      r1,[pc,#52] ; [0x7e0] = 0x50004280
+        0x000007ac:    6308        .c      STR      r0,[r1,#0x30]
+        0x000007ae:    2000        .       MOVS     r0,#0
+        0x000007b0:    6348        Hc      STR      r0,[r1,#0x34]
+        0x000007b2:    480c        .H      LDR      r0,[pc,#48] ; [0x7e4] = 0x989680
+        0x000007b4:    f7fffe00    ....    BL       DrvSYS_Delay ; 0x3b8
+        0x000007b8:    2001        .       MOVS     r0,#1
+        0x000007ba:    4909        .I      LDR      r1,[pc,#36] ; [0x7e0] = 0x50004280
+        0x000007bc:    6348        Hc      STR      r0,[r1,#0x34]
+        0x000007be:    2000        .       MOVS     r0,#0
+        0x000007c0:    6388        .c      STR      r0,[r1,#0x38]
+        0x000007c2:    4808        .H      LDR      r0,[pc,#32] ; [0x7e4] = 0x989680
+        0x000007c4:    f7fffdf8    ....    BL       DrvSYS_Delay ; 0x3b8
+        0x000007c8:    2001        .       MOVS     r0,#1
+        0x000007ca:    4905        .I      LDR      r1,[pc,#20] ; [0x7e0] = 0x50004280
+        0x000007cc:    6388        .c      STR      r0,[r1,#0x38]
+        0x000007ce:    2000        .       MOVS     r0,#0
+        0x000007d0:    63c8        .c      STR      r0,[r1,#0x3c]
+        0x000007d2:    4804        .H      LDR      r0,[pc,#16] ; [0x7e4] = 0x989680
+        0x000007d4:    f7fffdf0    ....    BL       DrvSYS_Delay ; 0x3b8
+        0x000007d8:    e7de        ..      B        0x798 ; main + 56
     $d
-        0x000007b6:    0000        ..      DCW    0
-        0x000007b8:    50000100    ...P    DCD    1342177536
-        0x000007bc:    50004280    .B.P    DCD    1342194304
-        0x000007c0:    00989680    ....    DCD    10000000
+        0x000007da:    0000        ..      DCW    0
+        0x000007dc:    50000100    ...P    DCD    1342177536
+        0x000007e0:    50004280    .B.P    DCD    1342194304
+        0x000007e4:    00989680    ....    DCD    10000000
     $d.realdata
     Region$$Table$$Base
-        0x000007c4:    000007e4    ....    DCD    2020
-        0x000007c8:    20000000    ...     DCD    536870912
-        0x000007cc:    00000034    4...    DCD    52
-        0x000007d0:    00000104    ....    DCD    260
-        0x000007d4:    00000818    ....    DCD    2072
-        0x000007d8:    20000034    4..     DCD    536870964
-        0x000007dc:    00000464    d...    DCD    1124
-        0x000007e0:    00000120     ...    DCD    288
+        0x000007e8:    00000808    ....    DCD    2056
+        0x000007ec:    20000000    ...     DCD    536870912
+        0x000007f0:    00000034    4...    DCD    52
+        0x000007f4:    00000104    ....    DCD    260
+        0x000007f8:    0000083c    <...    DCD    2108
+        0x000007fc:    20000034    4..     DCD    536870964
+        0x00000800:    00000464    d...    DCD    1124
+        0x00000804:    00000120     ...    DCD    288
     Region$$Table$$Limit
 
 ** Section #2 'ER_RW' (SHT_PROGBITS) [SHF_ALLOC + SHF_WRITE]
@@ -1167,19 +1186,19 @@
 
 
 ** Section #5 '.debug_frame' (SHT_PROGBITS)
-    Size   : 1104 bytes
+    Size   : 1164 bytes
 
 
 ** Section #6 '.debug_info' (SHT_PROGBITS)
-    Size   : 57788 bytes
+    Size   : 58052 bytes
 
 
 ** Section #7 '.debug_line' (SHT_PROGBITS)
-    Size   : 2340 bytes
+    Size   : 2412 bytes
 
 
 ** Section #8 '.debug_loc' (SHT_PROGBITS)
-    Size   : 756 bytes
+    Size   : 776 bytes
 
 
 ** Section #9 '.debug_macinfo' (SHT_PROGBITS)
@@ -1187,17 +1206,17 @@
 
 
 ** Section #10 '.debug_pubnames' (SHT_PROGBITS)
-    Size   : 628 bytes
+    Size   : 666 bytes
 
 
 ** Section #11 '.symtab' (SHT_SYMTAB)
-    Size   : 4928 bytes (alignment 4)
+    Size   : 4992 bytes (alignment 4)
     String table #12 '.strtab'
-    Last local symbol no. 188
+    Last local symbol no. 192
 
 
 ** Section #12 '.strtab' (SHT_STRTAB)
-    Size   : 4756 bytes
+    Size   : 4788 bytes
 
 
 ** Section #13 '.note' (SHT_NOTE)
@@ -1205,7 +1224,7 @@
 
 
 ** Section #14 '.comment' (SHT_PROGBITS)
-    Size   : 3848 bytes
+    Size   : 4324 bytes
 
 
 ** Section #15 '.shstrtab' (SHT_STRTAB)

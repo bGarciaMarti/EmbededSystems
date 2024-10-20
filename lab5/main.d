@@ -1,0 +1,15 @@
+.\main.o: main.c
+.\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\main.o: ..\NUC1xx\NUC1xx.h
+.\main.o: ..\CoreSupport\core_cm0.h
+.\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\main.o: ..\NUC1xx\system_NUC1xx.h
+.\main.o: ..\Include\System\SysInfra.h
+.\main.o: ..\Include\System\ModuleID.h
+.\main.o: user_func.h
+.\main.o: ..\Include\Driver\DrvGPIO.h
+.\main.o: ..\Include\NUC1xx-LB_002\LCD_Driver.h
+.\main.o: ..\Include\Driver\DrvSYS.h
+.\main.o: ..\Include\NUC1xx-LB_002\Seven_Segment.h
+.\main.o: ..\Include\NUC1xx-LB_002\ScanKey.h
+.\main.o: ..\Include\Driver\DrvTIMER.h

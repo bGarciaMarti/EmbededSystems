@@ -31,7 +31,7 @@ to stop the counter in main.
 #include "user_func.h"
 
 int count = 0000;
-bool cs = false;
+bool cs = false; // use current state variable to keep counter from exploding immediately
 int prevInputKeypad = 0;
 
 void EINT1Callback(void){
@@ -48,8 +48,10 @@ int main (void) {
 	OpenKeyPad();
 	
 	/* configure external interrupt pin GPB15 */
-	DrvGPIO_Open(E_GPB, 15, E_IO_INPUT);
+	DrvGPIO_Open(E_GPB, 15, E_IO_INPUT); // unnecessary
 	DrvGPIO_EnableEINT1(E_IO_FALLING, E_MODE_EDGE, EINT1Callback);
+	
+	DrvGPIO_Open(E_GPC, 0, E_IO_INPUT);
 	
 	while(1){
 
