@@ -1,10 +1,4 @@
-#line 1 "main.c"
-
-
-
-
- 
-
+#line 1 "user_func.c"
 #line 1 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
  
  
@@ -904,7 +898,7 @@ extern __declspec(__nothrow) void __use_no_semihosting(void);
 
  
 
-#line 8 "main.c"
+#line 2 "user_func.c"
 #line 1 "..\\NUC1xx\\NUC1xx.h"
  
  
@@ -8920,7 +8914,7 @@ typedef volatile unsigned short vu16;
 
 
                                                                                                  
-#line 9 "main.c"
+#line 3 "user_func.c"
 
 #line 1 "user_func.h"
 
@@ -9520,65 +9514,67 @@ int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
 	void fifty_percent(void);
 	void seventyFive_percent(void);
 	void oneHund_percent(void);
-#line 11 "main.c"
-
-int prevInputKeypad = 0;
-
-void calibrateLight(void){
-	
-
-
-
-
-
+#line 5 "user_func.c"
 
 
 
 
  
-}
+ 
+ 
 
-int main (void) {
-	char output[15];
-	heartbeat();
-	
-		 
-	OpenKeyPad();
-	Initial_panel(); 
-	DrvGPIO_ClrBit(E_GPD,14); 
-	clr_all_panel(); 
-	
-	
-	
-	while(1){
-	
-		keypad_input(&prevInputKeypad);
-		switch(prevInputKeypad){
-			case 1:
-				zero_percent();
-					sprintf(output, " %5.2f %%", 0.0);
-					print_lcd(1, output);
-				break;
-			case 2:
-				twentyfive_percent();
-			break;
-			case 3:
-				fifty_percent();
-			break;
-			case 4:
-				seventyFive_percent();
-			break;
-			case 5:
-				oneHund_percent();
-			break;
-			default:
-				zero_percent();
-			break;
+
+ 
+ 
+ 
+ 
+void keypad_input(int* k){
+	int temp;
+		temp = Scankey(); 
+		if(temp!=0 && temp < 6){ 
+			*k=temp;
 		}
 		
 		
+}
+
+ 
+ 
+ 
+void oneHund_percent(void){
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 0; 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 0; 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 0; 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 0; 
 	
-	CloseKeyPad();
-		
-	}
-} 
+	
+}
+
+void zero_percent(void){
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 1; 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 1; 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 1; 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 1; 
+}
+
+void twentyfive_percent(void){
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 0; 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 1; 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 1; 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 1; 
+}
+
+
+void seventyFive_percent(void){
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 0; 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 0; 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 0; 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 1; 
+}
+
+void fifty_percent(void){
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 0; 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 0; 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 1; 
+	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 1; 
+}

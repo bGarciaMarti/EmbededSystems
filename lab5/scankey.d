@@ -1,0 +1,10 @@
+.\scankey.o: ..\..\Src\NUC1xx-LB_002\ScanKey.c
+.\scankey.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\scankey.o: ..\Include\Driver\DrvGPIO.h
+.\scankey.o: ..\NUC1xx\NUC1xx.h
+.\scankey.o: ..\CoreSupport\core_cm0.h
+.\scankey.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\scankey.o: ..\NUC1xx\system_NUC1xx.h
+.\scankey.o: ..\Include\System\SysInfra.h
+.\scankey.o: ..\Include\System\ModuleID.h
+.\scankey.o: ..\Include\NUC1xx-LB_002\ScanKey.h

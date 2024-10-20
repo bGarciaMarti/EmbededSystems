@@ -1,910 +1,4 @@
-#line 1 "main.c"
-
-
-
-
- 
-
-#line 1 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
- 
- 
- 
-
-
-
-
-
- 
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
- 
-
-
-
-
-  
- 
-
-
-
-
-
-
-
-
-#line 47 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
-
-
-  
-
-
-
-    typedef unsigned int size_t;    
-
-
-
-
-
-
-
-
-
- 
- 
-
- 
-
-
-
-    typedef struct __va_list __va_list;
-
-
-
-
-
-
-   
-
-
-
-
- 
-
-
-
-
-typedef struct __fpos_t_struct {
-    unsigned __int64 __pos;
-    
-
-
-
- 
-    struct {
-        unsigned int __state1, __state2;
-    } __mbstate;
-} fpos_t;
-   
-
-
- 
-
-
-   
-
- 
-
-typedef struct __FILE FILE;
-   
-
-
-
-
-
-
- 
-
-#line 136 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
-
-
-extern FILE __stdin, __stdout, __stderr;
-extern FILE *__aeabi_stdin, *__aeabi_stdout, *__aeabi_stderr;
-
-#line 166 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
-    
-
-    
-
-    
-
-
-
-
-
-     
-
-
-
-   
-
-
- 
-
-
-   
-
-
- 
-
-   
-
-
-
- 
-
-   
-
-
- 
-
-
-
-
-   
-
-
- 
-
-
-
-
-
-    
-
-
- 
-
-
-
-
-
-
-extern __declspec(__nothrow) int remove(const char *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
- 
-extern __declspec(__nothrow) int rename(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) FILE *tmpfile(void);
-   
-
-
-
-
- 
-extern __declspec(__nothrow) char *tmpnam(char *  );
-   
-
-
-
-
-
-
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) int fclose(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int fflush(FILE *  );
-   
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) FILE *fopen(const char * __restrict  ,
-                           const char * __restrict  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) FILE *freopen(const char * __restrict  ,
-                    const char * __restrict  ,
-                    FILE * __restrict  ) __attribute__((__nonnull__(2,3)));
-   
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) void setbuf(FILE * __restrict  ,
-                    char * __restrict  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
- 
-extern __declspec(__nothrow) int setvbuf(FILE * __restrict  ,
-                   char * __restrict  ,
-                   int  , size_t  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-#pragma __printf_args
-extern __declspec(__nothrow) int fprintf(FILE * __restrict  ,
-                    const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-#pragma __printf_args
-extern __declspec(__nothrow) int _fprintf(FILE * __restrict  ,
-                     const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
- 
-#pragma __printf_args
-extern __declspec(__nothrow) int printf(const char * __restrict  , ...) __attribute__((__nonnull__(1)));
-   
-
-
-
-
- 
-#pragma __printf_args
-extern __declspec(__nothrow) int _printf(const char * __restrict  , ...) __attribute__((__nonnull__(1)));
-   
-
-
-
- 
-#pragma __printf_args
-extern __declspec(__nothrow) int sprintf(char * __restrict  , const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
- 
-#pragma __printf_args
-extern __declspec(__nothrow) int _sprintf(char * __restrict  , const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
- 
-
-#pragma __printf_args
-extern __declspec(__nothrow) int __ARM_snprintf(char * __restrict  , size_t  ,
-                     const char * __restrict  , ...) __attribute__((__nonnull__(3)));
-
-
-#pragma __printf_args
-extern __declspec(__nothrow) int snprintf(char * __restrict  , size_t  ,
-                     const char * __restrict  , ...) __attribute__((__nonnull__(3)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-#pragma __printf_args
-extern __declspec(__nothrow) int _snprintf(char * __restrict  , size_t  ,
-                      const char * __restrict  , ...) __attribute__((__nonnull__(3)));
-   
-
-
-
- 
-#pragma __scanf_args
-extern __declspec(__nothrow) int fscanf(FILE * __restrict  ,
-                    const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-#pragma __scanf_args
-extern __declspec(__nothrow) int _fscanf(FILE * __restrict  ,
-                     const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
- 
-#pragma __scanf_args
-extern __declspec(__nothrow) int scanf(const char * __restrict  , ...) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
- 
-#pragma __scanf_args
-extern __declspec(__nothrow) int _scanf(const char * __restrict  , ...) __attribute__((__nonnull__(1)));
-   
-
-
-
- 
-#pragma __scanf_args
-extern __declspec(__nothrow) int sscanf(const char * __restrict  ,
-                    const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
- 
-#pragma __scanf_args
-extern __declspec(__nothrow) int _sscanf(const char * __restrict  ,
-                     const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
- 
-
- 
-extern __declspec(__nothrow) int vfscanf(FILE * __restrict  , const char * __restrict  , __va_list) __attribute__((__nonnull__(1,2)));
-extern __declspec(__nothrow) int vscanf(const char * __restrict  , __va_list) __attribute__((__nonnull__(1)));
-extern __declspec(__nothrow) int vsscanf(const char * __restrict  , const char * __restrict  , __va_list) __attribute__((__nonnull__(1,2)));
-
-extern __declspec(__nothrow) int _vfscanf(FILE * __restrict  , const char * __restrict  , __va_list) __attribute__((__nonnull__(1,2)));
-extern __declspec(__nothrow) int _vscanf(const char * __restrict  , __va_list) __attribute__((__nonnull__(1)));
-extern __declspec(__nothrow) int _vsscanf(const char * __restrict  , const char * __restrict  , __va_list) __attribute__((__nonnull__(1,2)));
-extern __declspec(__nothrow) int __ARM_vsscanf(const char * __restrict  , const char * __restrict  , __va_list) __attribute__((__nonnull__(1,2)));
-
-extern __declspec(__nothrow) int vprintf(const char * __restrict  , __va_list  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
- 
-extern __declspec(__nothrow) int _vprintf(const char * __restrict  , __va_list  ) __attribute__((__nonnull__(1)));
-   
-
-
-
- 
-extern __declspec(__nothrow) int vfprintf(FILE * __restrict  ,
-                    const char * __restrict  , __va_list  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int vsprintf(char * __restrict  ,
-                     const char * __restrict  , __va_list  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int __ARM_vsnprintf(char * __restrict  , size_t  ,
-                     const char * __restrict  , __va_list  ) __attribute__((__nonnull__(3)));
-
-extern __declspec(__nothrow) int vsnprintf(char * __restrict  , size_t  ,
-                     const char * __restrict  , __va_list  ) __attribute__((__nonnull__(3)));
-   
-
-
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) int _vsprintf(char * __restrict  ,
-                      const char * __restrict  , __va_list  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
- 
-extern __declspec(__nothrow) int _vfprintf(FILE * __restrict  ,
-                     const char * __restrict  , __va_list  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
- 
-extern __declspec(__nothrow) int _vsnprintf(char * __restrict  , size_t  ,
-                      const char * __restrict  , __va_list  ) __attribute__((__nonnull__(3)));
-   
-
-
-
- 
-
-#pragma __printf_args
-extern __declspec(__nothrow) int asprintf(char **  , const char * __restrict  , ...) __attribute__((__nonnull__(2)));
-extern __declspec(__nothrow) int vasprintf(char **  , const char * __restrict  , __va_list  ) __attribute__((__nonnull__(2)));
-
-#pragma __printf_args
-extern __declspec(__nothrow) int __ARM_asprintf(char **  , const char * __restrict  , ...) __attribute__((__nonnull__(2)));
-extern __declspec(__nothrow) int __ARM_vasprintf(char **  , const char * __restrict  , __va_list  ) __attribute__((__nonnull__(2)));
-   
-
-
-
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) int fgetc(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) char *fgets(char * __restrict  , int  ,
-                    FILE * __restrict  ) __attribute__((__nonnull__(1,3)));
-   
-
-
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int fputc(int  , FILE *  ) __attribute__((__nonnull__(2)));
-   
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int fputs(const char * __restrict  , FILE * __restrict  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
- 
-extern __declspec(__nothrow) int getc(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
- 
-
-
-
-
-    extern __declspec(__nothrow) int (getchar)(void);
-
-   
-
-
-
-
-
- 
-extern __declspec(__nothrow) char *gets(char *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int putc(int  , FILE *  ) __attribute__((__nonnull__(2)));
-   
-
-
-
-
-
- 
-
-
-
-
-    extern __declspec(__nothrow) int (putchar)(int  );
-
-   
-
-
-
- 
-extern __declspec(__nothrow) int puts(const char *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
- 
-extern __declspec(__nothrow) int ungetc(int  , FILE *  ) __attribute__((__nonnull__(2)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) size_t fread(void * __restrict  ,
-                    size_t  , size_t  , FILE * __restrict  ) __attribute__((__nonnull__(1,4)));
-   
-
-
-
-
-
-
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) size_t __fread_bytes_avail(void * __restrict  ,
-                    size_t  , FILE * __restrict  ) __attribute__((__nonnull__(1,3)));
-   
-
-
-
-
-
-
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) size_t fwrite(const void * __restrict  ,
-                    size_t  , size_t  , FILE * __restrict  ) __attribute__((__nonnull__(1,4)));
-   
-
-
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) int fgetpos(FILE * __restrict  , fpos_t * __restrict  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int fseek(FILE *  , long int  , int  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int fsetpos(FILE * __restrict  , const fpos_t * __restrict  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) long int ftell(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) void rewind(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) void clearerr(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
- 
-
-extern __declspec(__nothrow) int feof(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
- 
-extern __declspec(__nothrow) int ferror(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
- 
-extern __declspec(__nothrow) void perror(const char *  );
-   
-
-
-
-
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) int _fisatty(FILE *   ) __attribute__((__nonnull__(1)));
-    
- 
-
-extern __declspec(__nothrow) void __use_no_semihosting_swi(void);
-extern __declspec(__nothrow) void __use_no_semihosting(void);
-    
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-#line 1021 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
-
-
-
- 
-
-#line 8 "main.c"
+#line 1 "..\\..\\Src\\NUC1xx-LB_002\\LCD_Driver.c"
 #line 1 "..\\NUC1xx\\NUC1xx.h"
  
  
@@ -8920,173 +8014,7 @@ typedef volatile unsigned short vu16;
 
 
                                                                                                  
-#line 9 "main.c"
-
-#line 1 "user_func.h"
-
-
-
-
-
-
- 
-
-#line 10 "user_func.h"
-#line 11 "user_func.h"
- 
-#line 1 "..\\Include\\Driver\\DrvGPIO.h"
- 
- 
- 
- 
- 
-
-
-
-#line 10 "..\\Include\\Driver\\DrvGPIO.h"
-
- 
- 
- 
-
-
-
-
- 
- 
- 
-
-							   
- 
- 
- 
-
-
-
-
-typedef void (*GPIO_GPAB_CALLBACK)(uint32_t u32GPAStatus, uint32_t u32GPBStatus);
-typedef void (*GPIO_GPCDE_CALLBACK)(uint32_t u32GPCStatus, uint32_t u32GPDStatus, uint32_t u32GPEStatus);
-typedef void (*GPIO_EINT0_CALLBACK)(void);
-typedef void (*GPIO_EINT1_CALLBACK)(void);
-
- 
-#line 117 "..\\Include\\Driver\\DrvGPIO.h"
-
-typedef enum 
-{
-	E_GPA = 0,
-	E_GPB = 1, 
-	E_GPC = 2, 
-	E_GPD = 3, 
-	E_GPE = 4
-} E_DRVGPIO_PORT;
-
-typedef enum 
-{
-    E_IO_INPUT = 0,
-    E_IO_OUTPUT,
-    E_IO_OPENDRAIN,
-    E_IO_QUASI
-} E_DRVGPIO_IO;
-
-typedef enum 
-{
-    E_IO_RISING = 0,
-    E_IO_FALLING,
-    E_IO_BOTH_EDGE
-} E_DRVGPIO_INT_TYPE;
-
-typedef enum
-{
-    E_MODE_EDGE = 0,
-    E_MODE_LEVEL
-} E_DRVGPIO_INT_MODE;
-
-typedef enum
-{
-    E_DBCLKSRC_HCLK = 0, 
-    E_DBCLKSRC_10K = 1
-} E_DRVGPIO_DBCLKSRC;	   
-
-typedef enum
-{
-	E_FUNC_GPIO,    E_FUNC_CLKO,    E_FUNC_I2C0,    E_FUNC_I2C1,    E_FUNC_I2S,     E_FUNC_CAN0,	
-    E_FUNC_ACMP0,   E_FUNC_ACMP1,   
-    E_FUNC_SPI0,    E_FUNC_SPI0_SS1,    E_FUNC_SPI0_2BIT_MODE,
-    E_FUNC_SPI1,    E_FUNC_SPI1_SS1,    E_FUNC_SPI1_2BIT_MODE,
-    E_FUNC_SPI2,    E_FUNC_SPI2_SS1,    E_FUNC_SPI2_2BIT_MODE,
-    E_FUNC_SPI3,    E_FUNC_SPI3_SS1,    E_FUNC_SPI3_2BIT_MODE,      
-    E_FUNC_SPI0_QFN36PIN,   E_FUNC_SPI0_SS1_QFN36PIN,   E_FUNC_SPI0_2BIT_MODE_QFN36PIN,
-    E_FUNC_ADC0,    E_FUNC_ADC1,    E_FUNC_ADC2,    E_FUNC_ADC3,    E_FUNC_ADC4,    E_FUNC_ADC5,
-    E_FUNC_ADC6,    E_FUNC_ADC7,    E_FUNC_EXTINT0, E_FUNC_EXTINT1, E_FUNC_TMR0,    E_FUNC_TMR1,      
-    E_FUNC_TMR2,    E_FUNC_TMR3,    E_FUNC_T0EX,    E_FUNC_T1EX,    E_FUNC_T2EX,    E_FUNC_T3EX,
-    E_FUNC_UART0,   E_FUNC_UART0_RX_TX, E_FUNC_UART0_RTS_CTS,
-    E_FUNC_UART1,   E_FUNC_UART1_RX_TX, E_FUNC_UART1_RTS_CTS,       E_FUNC_UART2,
-    E_FUNC_PWM01,   E_FUNC_PWM23,   E_FUNC_PWM45,   E_FUNC_PWM67,   E_FUNC_PWM0,    E_FUNC_PWM1,
-    E_FUNC_PWM2,    E_FUNC_PWM3,    E_FUNC_PWM4,    E_FUNC_PWM5,    E_FUNC_PWM6,    E_FUNC_PWM7,    
-    E_FUNC_EBI_8B,  E_FUNC_EBI_16B,          
-} E_DRVGPIO_FUNC;
-			  
- 
- 
- 
-int32_t DrvGPIO_Open(E_DRVGPIO_PORT port, int32_t i32Bit, E_DRVGPIO_IO mode);
-int32_t DrvGPIO_Close(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_SetBit(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_GetBit(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_ClrBit(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_SetPortBits(E_DRVGPIO_PORT port, int32_t i32Data);
-int32_t DrvGPIO_GetPortBits(E_DRVGPIO_PORT port);
-int32_t DrvGPIO_GetDoutBit(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_GetPortDoutBits(E_DRVGPIO_PORT port);
-int32_t DrvGPIO_SetBitMask(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_GetBitMask(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_ClrBitMask(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_SetPortMask(E_DRVGPIO_PORT port, int32_t i32MaskData);
-int32_t DrvGPIO_GetPortMask(E_DRVGPIO_PORT port);
-int32_t DrvGPIO_ClrPortMask(E_DRVGPIO_PORT port, int32_t i32MaskData);
-int32_t DrvGPIO_EnableDigitalInputBit(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_DisableDigitalInputBit(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_EnableDebounce(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_DisableDebounce(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_SetDebounceTime(uint32_t u32CycleSelection, E_DRVGPIO_DBCLKSRC ClockSource);
-int32_t DrvGPIO_GetDebounceSampleCycle(void);
-int32_t DrvGPIO_EnableInt(E_DRVGPIO_PORT port, int32_t i32Bit, E_DRVGPIO_INT_TYPE TriggerType, E_DRVGPIO_INT_MODE Mode);
-int32_t DrvGPIO_DisableInt(E_DRVGPIO_PORT port, int32_t i32Bit);
-void DrvGPIO_SetIntCallback(GPIO_GPAB_CALLBACK pfGPABCallback, GPIO_GPCDE_CALLBACK pfGPCDECallback);
-void DrvGPIO_EnableEINT0(E_DRVGPIO_INT_TYPE TriggerType, E_DRVGPIO_INT_MODE Mode, GPIO_EINT0_CALLBACK pfEINT0Callback);
-void DrvGPIO_DisableEINT0(void);
-void DrvGPIO_EnableEINT1(E_DRVGPIO_INT_TYPE TriggerType, E_DRVGPIO_INT_MODE Mode, GPIO_EINT1_CALLBACK pfEINT1Callback);
-void DrvGPIO_DisableEINT1(void);
-int32_t DrvGPIO_GetIntStatus(E_DRVGPIO_PORT port);
-int32_t DrvGPIO_InitFunction(E_DRVGPIO_FUNC function);
-int32_t DrvGPIO_GetVersion(void);
-
-
-
-
-
-
-
-
-
-
-#line 13 "user_func.h"
-#line 1 "..\\Include\\NUC1xx-LB_002\\LCD_Driver.h"
-
-
-     
-extern void SysTimerDelay(uint32_t us);
-extern void Initial_panel(void);
-extern void Disable_Buzzer(void);
-
-extern void Show_Word(unsigned char x, unsigned char y,unsigned char ascii_word);
-
-extern void print_lcd(unsigned char line, char *str);
-
-
-extern void clr_all_panel(void);
-#line 14 "user_func.h"
+#line 2 "..\\..\\Src\\NUC1xx-LB_002\\LCD_Driver.c"
 #line 1 "..\\Include\\Driver\\DrvSYS.h"
  
  
@@ -9316,17 +8244,8 @@ int32_t  DrvSYS_UnlockProtectedReg(void);
 
 
 
-#line 15 "user_func.h"
-#line 1 "..\\Include\\NUC1xx-LB_002\\Seven_Segment.h"
-
-
-extern void OpenSevenSegment(void);
-extern void ShowSevenSegment(unsigned char no, unsigned char number);
-extern void CloseSevenSegment(void);
-
-
-#line 16 "user_func.h"
-#line 1 "..\\Include\\NUC1xx-LB_002\\ScanKey.h"
+#line 3 "..\\..\\Src\\NUC1xx-LB_002\\LCD_Driver.c"
+#line 1 "..\\Include\\Driver\\DrvSPI.h"
  
  
  
@@ -9335,27 +8254,17 @@ extern void CloseSevenSegment(void);
 
 
 
-void OpenKeyPad(void);
-void CloseKeyPad(void);
-uint8_t Scankey(void);
+#line 10 "..\\Include\\Driver\\DrvSPI.h"
+#line 11 "..\\Include\\Driver\\DrvSPI.h"
 
-
-
-#line 17 "user_func.h"
-#line 1 "..\\Include\\Driver\\DrvTIMER.h"
- 
- 
  
  
  
 
 
 
-#line 10 "..\\Include\\Driver\\DrvTIMER.h"
 
- 
- 
- 
+
 
  
  
@@ -9366,166 +8275,249 @@ uint8_t Scankey(void);
 
 
  
- 
- 
-#line 32 "..\\Include\\Driver\\DrvTIMER.h"
 
- 
-                                                                             
- 
-typedef void (*TIMER_CALLBACK)(uint32_t data);	 
-typedef void (*WDT_CALLBACK)(uint32_t data);	 
+
+
+
+
 
  
  
  
-typedef struct timeEvent_t
+typedef enum {
+    eDRVSPI_PORT0=0,
+    eDRVSPI_PORT1=1,
+    eDRVSPI_PORT2=2,
+    eDRVSPI_PORT3=3
+} E_DRVSPI_PORT;
+
+typedef enum {
+    eDRVSPI_MASTER,
+    eDRVSPI_SLAVE
+} E_DRVSPI_MODE;
+
+typedef enum {
+    eDRVSPI_TYPE0,
+    eDRVSPI_TYPE1,
+    eDRVSPI_TYPE2,
+    eDRVSPI_TYPE3,
+    eDRVSPI_TYPE4,
+    eDRVSPI_TYPE5,
+    eDRVSPI_TYPE6,
+    eDRVSPI_TYPE7
+} E_DRVSPI_TRANS_TYPE;
+
+typedef enum {
+    eDRVSPI_LSB_FIRST,
+    eDRVSPI_MSB_FIRST
+} E_DRVSPI_ENDIAN;
+
+typedef enum {
+    eDRVSPI_BYTE_REORDER_SUSPEND_DISABLE=0,
+    eDRVSPI_BYTE_REORDER_SUSPEND=1,
+    eDRVSPI_BYTE_REORDER=2,
+    eDRVSPI_BYTE_SUSPEND=3
+} E_DRVSPI_BYTE_REORDER;
+
+typedef enum {
+    eDRVSPI_EDGE_TRIGGER,
+    eDRVSPI_LEVEL_TRIGGER
+} E_DRVSPI_SSLTRIG;
+
+typedef enum {
+    eDRVSPI_ACTIVE_LOW_FALLING,
+    eDRVSPI_ACTIVE_HIGH_RISING
+} E_DRVSPI_SS_ACT_TYPE;
+
+typedef enum {
+    eDRVSPI_NONE,
+    eDRVSPI_SS0,
+    eDRVSPI_SS1,
+    eDRVSPI_SS0_SS1
+} E_DRVSPI_SLAVE_SEL;
+
+typedef enum {
+    eDRVSPI_TX_DMA,
+    eDRVSPI_RX_DMA
+} E_DRVSPI_DMA_MODE;
+
+typedef void (*PFN_DRVSPI_CALLBACK)(uint32_t userData);
+
+ 
+ 
+ 
+int32_t DrvSPI_Open(E_DRVSPI_PORT eSpiPort, E_DRVSPI_MODE eMode, E_DRVSPI_TRANS_TYPE eType, int32_t i32BitLength);
+void DrvSPI_Close(E_DRVSPI_PORT eSpiPort);
+void DrvSPI_Set2BitTransferMode(E_DRVSPI_PORT eSpiPort, uint8_t bEnable);
+void DrvSPI_SetEndian(E_DRVSPI_PORT eSpiPort, E_DRVSPI_ENDIAN eEndian);
+int32_t DrvSPI_SetBitLength(E_DRVSPI_PORT eSpiPort, int32_t i32BitLength);
+int32_t DrvSPI_SetByteReorder(E_DRVSPI_PORT eSpiPort, E_DRVSPI_BYTE_REORDER eOption);
+int32_t DrvSPI_SetSuspendCycle(E_DRVSPI_PORT eSpiPort, int32_t i32Interval);
+void DrvSPI_SetTriggerMode(E_DRVSPI_PORT eSpiPort, E_DRVSPI_SSLTRIG eSSTriggerMode);
+void DrvSPI_SetSlaveSelectActiveLevel(E_DRVSPI_PORT eSpiPort, E_DRVSPI_SS_ACT_TYPE eSSActType);
+uint8_t DrvSPI_GetLevelTriggerStatus(E_DRVSPI_PORT eSpiPort);
+void DrvSPI_EnableAutoSS(E_DRVSPI_PORT eSpiPort, E_DRVSPI_SLAVE_SEL eSlaveSel);
+void DrvSPI_DisableAutoSS(E_DRVSPI_PORT eSpiPort);
+void DrvSPI_SetSS(E_DRVSPI_PORT eSpiPort, E_DRVSPI_SLAVE_SEL eSlaveSel);
+void DrvSPI_ClrSS(E_DRVSPI_PORT eSpiPort, E_DRVSPI_SLAVE_SEL eSlaveSel);
+uint8_t DrvSPI_IsBusy(E_DRVSPI_PORT eSpiPort);
+int32_t DrvSPI_BurstTransfer(E_DRVSPI_PORT eSpiPort, int32_t i32BurstCnt, int32_t i32Interval);
+uint32_t DrvSPI_SetClockFreq(E_DRVSPI_PORT eSpiPort, uint32_t u32Clock1, uint32_t u32Clock2);
+uint32_t DrvSPI_GetClock1Freq(E_DRVSPI_PORT eSpiPort);
+uint32_t DrvSPI_GetClock2Freq(E_DRVSPI_PORT eSpiPort);
+void DrvSPI_SetVariableClockFunction(E_DRVSPI_PORT eSpiPort, uint8_t bEnable, uint32_t u32Pattern);
+void DrvSPI_EnableInt(E_DRVSPI_PORT eSpiPort, PFN_DRVSPI_CALLBACK pfnCallback, uint32_t u32UserData);
+void DrvSPI_DisableInt(E_DRVSPI_PORT eSpiPort);
+uint32_t DrvSPI_GetIntFlag(E_DRVSPI_PORT eSpiPort);
+void DrvSPI_ClrIntFlag(E_DRVSPI_PORT eSpiPort);
+uint8_t DrvSPI_SingleRead(E_DRVSPI_PORT eSpiPort, uint32_t *pu32Data);
+uint8_t DrvSPI_SingleWrite(E_DRVSPI_PORT eSpiPort, uint32_t *pu32Data);
+uint8_t DrvSPI_BurstRead(E_DRVSPI_PORT eSpiPort, uint32_t *pu32Buf);
+uint8_t DrvSPI_BurstWrite(E_DRVSPI_PORT eSpiPort, uint32_t *pu32Buf);
+uint32_t DrvSPI_DumpRxRegister(E_DRVSPI_PORT eSpiPort, uint32_t *pu32Buf, uint32_t u32DataCount);
+uint32_t DrvSPI_SetTxRegister(E_DRVSPI_PORT eSpiPort, uint32_t *pu32Buf, uint32_t u32DataCount);
+void DrvSPI_SetGo(E_DRVSPI_PORT eSpiPort);
+void DrvSPI_ClrGo(E_DRVSPI_PORT eSpiPort);
+void DrvSPI_SetPDMA(E_DRVSPI_PORT eSpiPort, E_DRVSPI_DMA_MODE eDmaMode, uint8_t bEnable);
+void DrvSPI_EnableDivOne(E_DRVSPI_PORT eSpiPort);
+void DrvSPI_DisableDivOne(E_DRVSPI_PORT eSpiPort);
+void DrvSPI_Enable3Wire(E_DRVSPI_PORT eSpiPort);
+void DrvSPI_Disable3Wire(E_DRVSPI_PORT eSpiPort);
+void DrvSPI_3WireAbort(E_DRVSPI_PORT eSpiPort);
+void DrvSPI_Enable3WireStartInt(E_DRVSPI_PORT eSpiPort, PFN_DRVSPI_CALLBACK pfnCallback, uint32_t u32UserData);
+void DrvSPI_DisableInt(E_DRVSPI_PORT eSpiPort);
+uint32_t DrvSPI_Get3WireStartIntFlag(E_DRVSPI_PORT eSpiPort);
+void DrvSPI_Clr3WireStartIntFlag(E_DRVSPI_PORT eSpiPort);
+uint32_t DrvSPI_GetVersion(void);
+
+#line 4 "..\\..\\Src\\NUC1xx-LB_002\\LCD_Driver.c"
+#line 1 "..\\Include\\Driver\\DrvGPIO.h"
+ 
+ 
+ 
+ 
+ 
+
+
+
+#line 10 "..\\Include\\Driver\\DrvGPIO.h"
+
+ 
+ 
+ 
+
+
+
+
+ 
+ 
+ 
+
+							   
+ 
+ 
+ 
+
+
+
+
+typedef void (*GPIO_GPAB_CALLBACK)(uint32_t u32GPAStatus, uint32_t u32GPBStatus);
+typedef void (*GPIO_GPCDE_CALLBACK)(uint32_t u32GPCStatus, uint32_t u32GPDStatus, uint32_t u32GPEStatus);
+typedef void (*GPIO_EINT0_CALLBACK)(void);
+typedef void (*GPIO_EINT1_CALLBACK)(void);
+
+ 
+#line 117 "..\\Include\\Driver\\DrvGPIO.h"
+
+typedef enum 
 {
-    int32_t              active;
-    int32_t              initTick;
-    int32_t              curTick;
-    TIMER_CALLBACK       funPtr;
-    uint32_t             transParam;
-} TIMER_EVENT_T;
+	E_GPA = 0,
+	E_GPB = 1, 
+	E_GPC = 2, 
+	E_GPD = 3, 
+	E_GPE = 4
+} E_DRVGPIO_PORT;
 
+typedef enum 
+{
+    E_IO_INPUT = 0,
+    E_IO_OUTPUT,
+    E_IO_OPENDRAIN,
+    E_IO_QUASI
+} E_DRVGPIO_IO;
+
+typedef enum 
+{
+    E_IO_RISING = 0,
+    E_IO_FALLING,
+    E_IO_BOTH_EDGE
+} E_DRVGPIO_INT_TYPE;
+
+typedef enum
+{
+    E_MODE_EDGE = 0,
+    E_MODE_LEVEL
+} E_DRVGPIO_INT_MODE;
+
+typedef enum
+{
+    E_DBCLKSRC_HCLK = 0, 
+    E_DBCLKSRC_10K = 1
+} E_DRVGPIO_DBCLKSRC;	   
+
+typedef enum
+{
+	E_FUNC_GPIO,    E_FUNC_CLKO,    E_FUNC_I2C0,    E_FUNC_I2C1,    E_FUNC_I2S,     E_FUNC_CAN0,	
+    E_FUNC_ACMP0,   E_FUNC_ACMP1,   
+    E_FUNC_SPI0,    E_FUNC_SPI0_SS1,    E_FUNC_SPI0_2BIT_MODE,
+    E_FUNC_SPI1,    E_FUNC_SPI1_SS1,    E_FUNC_SPI1_2BIT_MODE,
+    E_FUNC_SPI2,    E_FUNC_SPI2_SS1,    E_FUNC_SPI2_2BIT_MODE,
+    E_FUNC_SPI3,    E_FUNC_SPI3_SS1,    E_FUNC_SPI3_2BIT_MODE,      
+    E_FUNC_SPI0_QFN36PIN,   E_FUNC_SPI0_SS1_QFN36PIN,   E_FUNC_SPI0_2BIT_MODE_QFN36PIN,
+    E_FUNC_ADC0,    E_FUNC_ADC1,    E_FUNC_ADC2,    E_FUNC_ADC3,    E_FUNC_ADC4,    E_FUNC_ADC5,
+    E_FUNC_ADC6,    E_FUNC_ADC7,    E_FUNC_EXTINT0, E_FUNC_EXTINT1, E_FUNC_TMR0,    E_FUNC_TMR1,      
+    E_FUNC_TMR2,    E_FUNC_TMR3,    E_FUNC_T0EX,    E_FUNC_T1EX,    E_FUNC_T2EX,    E_FUNC_T3EX,
+    E_FUNC_UART0,   E_FUNC_UART0_RX_TX, E_FUNC_UART0_RTS_CTS,
+    E_FUNC_UART1,   E_FUNC_UART1_RX_TX, E_FUNC_UART1_RTS_CTS,       E_FUNC_UART2,
+    E_FUNC_PWM01,   E_FUNC_PWM23,   E_FUNC_PWM45,   E_FUNC_PWM67,   E_FUNC_PWM0,    E_FUNC_PWM1,
+    E_FUNC_PWM2,    E_FUNC_PWM3,    E_FUNC_PWM4,    E_FUNC_PWM5,    E_FUNC_PWM6,    E_FUNC_PWM7,    
+    E_FUNC_EBI_8B,  E_FUNC_EBI_16B,          
+} E_DRVGPIO_FUNC;
+			  
  
  
  
-typedef enum {
-    E_TMR0      = 0,
-    E_TMR1      = 1,
-	E_TMR2      = 2,
-	E_TMR3      = 3        
-} E_TIMER_CHANNEL;
-
- 
- 
- 
-typedef enum{                   
-    E_ONESHOT_MODE 		= 0,
-    E_PERIODIC_MODE   	= 1,
-    E_TOGGLE_MODE     	= 2, 
-	E_CONTINUOUS_MODE 	= 3     
-} E_TIMER_OPMODE ;
-
- 
- 
- 
-typedef enum{                   
-    E_PHASE_FALLING     = 0,
-    E_PHASE_RISING      = 1,
-} E_TIMER_TX_PHASE ;
-
- 
- 
- 
-typedef enum{                   
-    E_EDGE_FALLING      = 0,
-    E_EDGE_RISING       = 1,
-    E_EDGE_BOTH         = 2,
-} E_TIMER_TEX_EDGE ;
-
- 
- 
- 
-typedef enum{                   
-    E_CAPTURE           = 0,
-    E_RESET             = 1,
-} E_TIMER_RSTCAP_MODE ;
-
- 
- 
- 
-typedef enum {
-    E_WDT_IOC_START_TIMER       = 0,
-    E_WDT_IOC_STOP_TIMER        = 1,
-    E_WDT_IOC_ENABLE_INT        = 2,
-    E_WDT_IOC_DISABLE_INT       = 3,
-    E_WDT_IOC_ENABLE_WAKEUP     = 4, 
-    E_WDT_IOC_DISABLE_WAKEUP    = 5, 
-    E_WDT_IOC_RESET_TIMER       = 6,
-    E_WDT_IOC_ENABLE_RESET_FUNC = 7,
-    E_WDT_IOC_DISABLE_RESET_FUNC= 8,
-	E_WDT_IOC_SET_INTERVAL      = 9
-} E_WDT_CMD; 
-
- 
- 
- 
-typedef enum{
-    E_WDT_LEVEL0      = 0,          
-    E_WDT_LEVEL1      = 1,          
-    E_WDT_LEVEL2      = 2,           
-    E_WDT_LEVEL3      = 3,          
-	E_WDT_LEVEL4      = 4,          
-	E_WDT_LEVEL5      = 5,          
-	E_WDT_LEVEL6      = 6,          
-	E_WDT_LEVEL7      = 7           
-} E_WDT_INTERVAL;
-
- 
- 
- 
-void DrvTIMER_Init(void);
-int32_t DrvTIMER_Open(E_TIMER_CHANNEL ch, uint32_t uTicksPerSecond, E_TIMER_OPMODE op_mode);
-int32_t DrvTIMER_Close(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_SetTimerEvent(E_TIMER_CHANNEL ch, uint32_t uInterruptTicks, TIMER_CALLBACK pTimerCallback, uint32_t parameter);
-void DrvTIMER_ClearTimerEvent(E_TIMER_CHANNEL ch, uint32_t uTimerEventNo);
-int32_t DrvTIMER_EnableInt(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableInt(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_GetIntFlag(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_ClearIntFlag(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_Start(E_TIMER_CHANNEL ch);
-uint32_t DrvTIMER_GetIntTicks(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_ResetIntTicks(E_TIMER_CHANNEL ch);
-void DrvTIMER_Delay(E_TIMER_CHANNEL ch, uint32_t uTicks);
-int32_t DrvTIMER_OpenCounter(E_TIMER_CHANNEL ch, uint32_t uCounterBoundary, E_TIMER_OPMODE op_mode);
-int32_t DrvTIMER_StartCounter(E_TIMER_CHANNEL ch);
-uint32_t DrvTIMER_GetCounters(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_OpenCapture(E_TIMER_CHANNEL ch, E_TIMER_RSTCAP_MODE mode);
-int32_t DrvTIMER_CloseCapture(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_SelectExternalMode(E_TIMER_CHANNEL ch, E_TIMER_RSTCAP_MODE mode);
-int32_t DrvTIMER_SelectCaptureEdge(E_TIMER_CHANNEL ch, E_TIMER_TEX_EDGE edge);
-int32_t DrvTIMER_EnableCaptureInt(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableCaptureInt(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_EnableCapture(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableCapture(E_TIMER_CHANNEL ch);
-uint32_t DrvTIMER_GetCaptureData(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_GetCaptureIntFlag(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_ClearCaptureIntFlag(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_EnableCaptureDebounce(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableCaptureDebounce(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_EnableCounterDebounce(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableCounterDebounce(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_SelectCounterDetectPhase(E_TIMER_CHANNEL ch, E_TIMER_TX_PHASE phase);
-uint32_t DrvTIMER_GetVersion(void);
-
-int32_t DrvWDT_Open(E_WDT_INTERVAL WDTlevel);
-void DrvWDT_Close(void);
-void DrvWDT_InstallISR(WDT_CALLBACK pvWDTISR);
-int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
-
-
-
-
-
-#line 18 "user_func.h"
-
-	void heartbeat(void);
-	
-	void keypad_input(int* k);
-
-	void zero_percent(void);
-	void twentyfive_percent(void);
-	void fifty_percent(void);
-	void seventyFive_percent(void);
-	void oneHund_percent(void);
-#line 11 "main.c"
-
-int prevInputKeypad = 0;
-
-void calibrateLight(void){
-	
+int32_t DrvGPIO_Open(E_DRVGPIO_PORT port, int32_t i32Bit, E_DRVGPIO_IO mode);
+int32_t DrvGPIO_Close(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_SetBit(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_GetBit(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_ClrBit(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_SetPortBits(E_DRVGPIO_PORT port, int32_t i32Data);
+int32_t DrvGPIO_GetPortBits(E_DRVGPIO_PORT port);
+int32_t DrvGPIO_GetDoutBit(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_GetPortDoutBits(E_DRVGPIO_PORT port);
+int32_t DrvGPIO_SetBitMask(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_GetBitMask(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_ClrBitMask(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_SetPortMask(E_DRVGPIO_PORT port, int32_t i32MaskData);
+int32_t DrvGPIO_GetPortMask(E_DRVGPIO_PORT port);
+int32_t DrvGPIO_ClrPortMask(E_DRVGPIO_PORT port, int32_t i32MaskData);
+int32_t DrvGPIO_EnableDigitalInputBit(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_DisableDigitalInputBit(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_EnableDebounce(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_DisableDebounce(E_DRVGPIO_PORT port, int32_t i32Bit);
+int32_t DrvGPIO_SetDebounceTime(uint32_t u32CycleSelection, E_DRVGPIO_DBCLKSRC ClockSource);
+int32_t DrvGPIO_GetDebounceSampleCycle(void);
+int32_t DrvGPIO_EnableInt(E_DRVGPIO_PORT port, int32_t i32Bit, E_DRVGPIO_INT_TYPE TriggerType, E_DRVGPIO_INT_MODE Mode);
+int32_t DrvGPIO_DisableInt(E_DRVGPIO_PORT port, int32_t i32Bit);
+void DrvGPIO_SetIntCallback(GPIO_GPAB_CALLBACK pfGPABCallback, GPIO_GPCDE_CALLBACK pfGPCDECallback);
+void DrvGPIO_EnableEINT0(E_DRVGPIO_INT_TYPE TriggerType, E_DRVGPIO_INT_MODE Mode, GPIO_EINT0_CALLBACK pfEINT0Callback);
+void DrvGPIO_DisableEINT0(void);
+void DrvGPIO_EnableEINT1(E_DRVGPIO_INT_TYPE TriggerType, E_DRVGPIO_INT_MODE Mode, GPIO_EINT1_CALLBACK pfEINT1Callback);
+void DrvGPIO_DisableEINT1(void);
+int32_t DrvGPIO_GetIntStatus(E_DRVGPIO_PORT port);
+int32_t DrvGPIO_InitFunction(E_DRVGPIO_FUNC function);
+int32_t DrvGPIO_GetVersion(void);
 
 
 
@@ -9535,50 +8527,186 @@ void calibrateLight(void){
 
 
 
- 
+
+#line 5 "..\\..\\Src\\NUC1xx-LB_002\\LCD_Driver.c"
+#line 1 "..\\Include\\NUC1xx-LB_002\\LCD_Driver.h"
+
+
+     
+extern void SysTimerDelay(uint32_t us);
+extern void Initial_panel(void);
+extern void Disable_Buzzer(void);
+
+extern void Show_Word(unsigned char x, unsigned char y,unsigned char ascii_word);
+
+extern void print_lcd(unsigned char line, char *str);
+
+
+extern void clr_all_panel(void);
+#line 6 "..\\..\\Src\\NUC1xx-LB_002\\LCD_Driver.c"
+
+extern  SPI_T * SPI_PORT[4]={((SPI_T *) ((( uint32_t)0x40000000) + 0x30000)), ((SPI_T *) ((( uint32_t)0x40100000) + 0x34000)), ((SPI_T *) ((( uint32_t)0x40100000) + 0x30000)), ((SPI_T *) ((( uint32_t)0x40100000) + 0x34000))};
+
+extern  char Ascii[];
+
+void SysTimerDelay(uint32_t us)
+{
+    ((SysTick_Type *) ((0xE000E000) + 0x0010))->LOAD = us * 22;  
+    ((SysTick_Type *) ((0xE000E000) + 0x0010))->VAL   =  (0x00);
+    ((SysTick_Type *) ((0xE000E000) + 0x0010))->CTRL = (1 << 2) | (1<<0);
+
+     
+    while((((SysTick_Type *) ((0xE000E000) + 0x0010))->CTRL & (1 << 16)) == 0);
 }
 
-int main (void) {
-	char output[15];
-	heartbeat();
+void Initial_panel(void)
+{
 	
-		 
-	OpenKeyPad();
-	Initial_panel(); 
-	DrvGPIO_ClrBit(E_GPD,14); 
-	clr_all_panel(); 
+	((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->APBCLK.SPI3_EN  =1;			 
+	((GCR_T *) ((( uint32_t)0x50000000) + 0x00000))->IPRSTC2.SPI3_RST   =1;			 
+	((GCR_T *) ((( uint32_t)0x50000000) + 0x00000))->IPRSTC2.SPI3_RST   =0;
+
+	 
+	((GCR_T *) ((( uint32_t)0x50000000) + 0x00000))->GPDMFP.SPI3_SS0 	=1;
+	((GCR_T *) ((( uint32_t)0x50000000) + 0x00000))->GPDMFP.SPI3_CLK 	=1;
 	
+	((GCR_T *) ((( uint32_t)0x50000000) + 0x00000))->GPDMFP.SPI3_MOSI0 	=1;
+
+	SPI_PORT[eDRVSPI_PORT3]->CNTRL.CLKP = 1;							
+	SPI_PORT[eDRVSPI_PORT3]->CNTRL.TX_BIT_LEN = 9;						
+	SPI_PORT[eDRVSPI_PORT3]->CNTRL.TX_NEG = 1;							
+	SPI_PORT[eDRVSPI_PORT3]->DIVIDER.DIVIDER=0X03;					    
+
+	SPI_PORT[eDRVSPI_PORT3]->SSR.SSR=1;									
 	
+	SPI_PORT[eDRVSPI_PORT3]->TX[0] =0xEB;
+	SPI_PORT[eDRVSPI_PORT3]->CNTRL.GO_BUSY = 1;
+    while ( SPI_PORT[eDRVSPI_PORT3]->CNTRL.GO_BUSY == 1 );
 	
-	while(1){
+	SPI_PORT[eDRVSPI_PORT3]->SSR.SSR=0;
+
+	SPI_PORT[eDRVSPI_PORT3]->SSR.SSR=1;
 	
-		keypad_input(&prevInputKeypad);
-		switch(prevInputKeypad){
-			case 1:
-				zero_percent();
-					sprintf(output, " %5.2f %%", 0.0);
-					print_lcd(1, output);
-				break;
-			case 2:
-				twentyfive_percent();
-			break;
-			case 3:
-				fifty_percent();
-			break;
-			case 4:
-				seventyFive_percent();
-			break;
-			case 5:
-				oneHund_percent();
-			break;
-			default:
-				zero_percent();
-			break;
-		}
-		
-		
+	SPI_PORT[eDRVSPI_PORT3]->TX[0] =0x81;
+	SPI_PORT[eDRVSPI_PORT3]->CNTRL.GO_BUSY = 1;
+    while ( SPI_PORT[eDRVSPI_PORT3]->CNTRL.GO_BUSY == 1 );
+	SPI_PORT[eDRVSPI_PORT3]->TX[0] =0xa0;
+	SPI_PORT[eDRVSPI_PORT3]->CNTRL.GO_BUSY = 1;
+    while ( SPI_PORT[eDRVSPI_PORT3]->CNTRL.GO_BUSY == 1 );
+	SPI_PORT[eDRVSPI_PORT3]->SSR.SSR=0;
+
+	SPI_PORT[eDRVSPI_PORT3]->SSR.SSR=1;
 	
-	CloseKeyPad();
-		
+	SPI_PORT[eDRVSPI_PORT3]->TX[0] =0xc0;	
+	SPI_PORT[eDRVSPI_PORT3]->CNTRL.GO_BUSY = 1;
+    while ( SPI_PORT[eDRVSPI_PORT3]->CNTRL.GO_BUSY == 1 );
+	
+	SPI_PORT[eDRVSPI_PORT3]->SSR.SSR=0;
+
+	SPI_PORT[eDRVSPI_PORT3]->SSR.SSR=1;
+	SPI_PORT[eDRVSPI_PORT3]->TX[0] = 0XAF;
+	SPI_PORT[eDRVSPI_PORT3]->CNTRL.GO_BUSY = 1;
+    while ( SPI_PORT[eDRVSPI_PORT3]->CNTRL.GO_BUSY == 1 );
+	SPI_PORT[eDRVSPI_PORT3]->SSR.SSR=0;
+}
+
+
+
+
+void WriteData(unsigned char data)
+{
+	
+	SPI_PORT[eDRVSPI_PORT3]->SSR.SSR=1;	   
+	SPI_PORT[eDRVSPI_PORT3]->TX[0] =0x100 | data;    	
+	SPI_PORT[eDRVSPI_PORT3]->CNTRL.GO_BUSY = 1;
+    while ( SPI_PORT[eDRVSPI_PORT3]->CNTRL.GO_BUSY == 1 ); 
+	SPI_PORT[eDRVSPI_PORT3]->SSR.SSR=0;
+}
+
+
+
+
+void SetPACA(unsigned char PA, unsigned char CA)
+{
+	
+
+	SPI_PORT[eDRVSPI_PORT3]->SSR.SSR=1; 	
+	SPI_PORT[eDRVSPI_PORT3]->TX[0] = 0xB0 | PA;	
+	SPI_PORT[eDRVSPI_PORT3]->CNTRL.GO_BUSY = 1;
+    while ( SPI_PORT[eDRVSPI_PORT3]->CNTRL.GO_BUSY == 1 );	 
+	
+	SPI_PORT[eDRVSPI_PORT3]->SSR.SSR=0;
+
+	SPI_PORT[eDRVSPI_PORT3]->SSR.SSR=1;	
+	SPI_PORT[eDRVSPI_PORT3]->TX[0] =0x10 |(CA>>4)&0xF;
+	SPI_PORT[eDRVSPI_PORT3]->CNTRL.GO_BUSY = 1;
+    while ( SPI_PORT[eDRVSPI_PORT3]->CNTRL.GO_BUSY == 1 );	  
+ 	
+	SPI_PORT[eDRVSPI_PORT3]->SSR.SSR=0;
+
+	SPI_PORT[eDRVSPI_PORT3]->SSR.SSR=1;
+	SPI_PORT[eDRVSPI_PORT3]->TX[0] =0x00 | (CA & 0xF);		
+	SPI_PORT[eDRVSPI_PORT3]->CNTRL.GO_BUSY = 1;
+    while ( SPI_PORT[eDRVSPI_PORT3]->CNTRL.GO_BUSY == 1 );	  
+	SPI_PORT[eDRVSPI_PORT3]->SSR.SSR=0;
+}
+
+void Disable_Buzzer(void)
+{
+ 	DrvGPIO_Open(E_GPB,11, E_IO_OUTPUT);	
+	DrvGPIO_SetBit(E_GPB,11);	
+}
+
+
+
+void Show_Word(unsigned char x, unsigned char y,unsigned char ascii_word)
+{
+int i=0,k=0;
+	unsigned char temp;	  
+	  k=(ascii_word-32)*16;	  
+	  
+	  for(i=0;i<8;i++)
+	  {
+	  SetPACA((x*2),(129-(y*8)-i));
+	  temp=Ascii[k+i];	 
+      WriteData(temp);
+	  }
+
+      for(i=0;i<8;i++)
+	  {
+	  SetPACA((x*2)+1,(129-(y*8)-i));	 
+      temp=Ascii[k+i+8];
+	  WriteData(temp);
+	  }
+}
+
+
+
+
+void print_lcd(unsigned char line, char *str)
+{
+int i=0; 
+  do{   
+    Show_Word(line,i,*str++); 
+  	i++;
+  	if(i>15)
+	  break;
+    }
+   while(*str!='\0');
+}
+
+
+
+void clr_all_panel(void)
+{
+ int i=0;
+	 
+	SetPACA(0x0, 0x0);
+
+	for (i = 0; i < 132 *8; i++)
+	{
+		WriteData(0x00);
 	}
-} 
+	WriteData(0x0f);
+}
+

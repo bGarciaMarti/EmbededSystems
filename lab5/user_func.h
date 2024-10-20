@@ -17,4 +17,11 @@ Video resource: https://www.youtube.com/watch?v=ma_bPt2FN8w
 #include "DrvTIMER.h"
 
 	void heartbeat(void);
+	
+	void keypad_input(int* k);
 
+	void zero_percent(void);
+	void twentyfive_percent(void);
+	void fifty_percent(void);
+	void seventyFive_percent(void);
+	void oneHund_percent(void);
