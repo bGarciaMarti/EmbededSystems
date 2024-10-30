@@ -13,3 +13,5 @@
 .\user_func.o: ..\Include\NUC1xx-LB_002\Seven_Segment.h
 .\user_func.o: ..\Include\NUC1xx-LB_002\ScanKey.h
 .\user_func.o: ..\Include\Driver\DrvTIMER.h
+.\user_func.o: ..\Include\Driver\DrvPWM.h
+.\user_func.o: ..\Include\Driver\DrvADC.h

@@ -1,0 +1,9 @@
+.\drvpwm.o: ..\..\Src\Driver\DrvPWM.c
+.\drvpwm.o: ..\Include\Driver\DrvPWM.h
+.\drvpwm.o: ..\NUC1xx\NUC1xx.h
+.\drvpwm.o: ..\CoreSupport\core_cm0.h
+.\drvpwm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\drvpwm.o: ..\NUC1xx\system_NUC1xx.h
+.\drvpwm.o: ..\Include\System\SysInfra.h
+.\drvpwm.o: ..\Include\System\ModuleID.h
+.\drvpwm.o: ..\Include\Driver\DrvSYS.h

@@ -1,917 +1,26 @@
-#line 1 "main.c"
-
-
-
-
-
-
-
-
-
-
-
- 
-
-#line 1 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
- 
- 
- 
-
-
-
-
-
- 
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
- 
-
-
-
-
-  
- 
-
-
-
-
-
-
-
-
-#line 47 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
-
-
-  
-
-
-
-    typedef unsigned int size_t;    
-
-
-
-
-
-
-
-
-
- 
- 
-
- 
-
-
-
-    typedef struct __va_list __va_list;
-
-
-
-
-
-
-   
-
-
-
-
- 
-
-
-
-
-typedef struct __fpos_t_struct {
-    unsigned __int64 __pos;
-    
-
-
-
- 
-    struct {
-        unsigned int __state1, __state2;
-    } __mbstate;
-} fpos_t;
-   
-
-
- 
-
-
-   
-
- 
-
-typedef struct __FILE FILE;
-   
-
-
-
-
-
-
- 
-
-#line 136 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
-
-
-extern FILE __stdin, __stdout, __stderr;
-extern FILE *__aeabi_stdin, *__aeabi_stdout, *__aeabi_stderr;
-
-#line 166 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
-    
-
-    
-
-    
-
-
-
-
-
-     
-
-
-
-   
-
-
- 
-
-
-   
-
-
- 
-
-   
-
-
-
- 
-
-   
-
-
- 
-
-
-
-
-   
-
-
- 
-
-
-
-
-
-    
-
-
- 
-
-
-
-
-
-
-extern __declspec(__nothrow) int remove(const char *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
- 
-extern __declspec(__nothrow) int rename(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) FILE *tmpfile(void);
-   
-
-
-
-
- 
-extern __declspec(__nothrow) char *tmpnam(char *  );
-   
-
-
-
-
-
-
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) int fclose(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int fflush(FILE *  );
-   
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) FILE *fopen(const char * __restrict  ,
-                           const char * __restrict  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) FILE *freopen(const char * __restrict  ,
-                    const char * __restrict  ,
-                    FILE * __restrict  ) __attribute__((__nonnull__(2,3)));
-   
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) void setbuf(FILE * __restrict  ,
-                    char * __restrict  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
- 
-extern __declspec(__nothrow) int setvbuf(FILE * __restrict  ,
-                   char * __restrict  ,
-                   int  , size_t  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-#pragma __printf_args
-extern __declspec(__nothrow) int fprintf(FILE * __restrict  ,
-                    const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-#pragma __printf_args
-extern __declspec(__nothrow) int _fprintf(FILE * __restrict  ,
-                     const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
- 
-#pragma __printf_args
-extern __declspec(__nothrow) int printf(const char * __restrict  , ...) __attribute__((__nonnull__(1)));
-   
-
-
-
-
- 
-#pragma __printf_args
-extern __declspec(__nothrow) int _printf(const char * __restrict  , ...) __attribute__((__nonnull__(1)));
-   
-
-
-
- 
-#pragma __printf_args
-extern __declspec(__nothrow) int sprintf(char * __restrict  , const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
- 
-#pragma __printf_args
-extern __declspec(__nothrow) int _sprintf(char * __restrict  , const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
- 
-
-#pragma __printf_args
-extern __declspec(__nothrow) int __ARM_snprintf(char * __restrict  , size_t  ,
-                     const char * __restrict  , ...) __attribute__((__nonnull__(3)));
-
-
-#pragma __printf_args
-extern __declspec(__nothrow) int snprintf(char * __restrict  , size_t  ,
-                     const char * __restrict  , ...) __attribute__((__nonnull__(3)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-#pragma __printf_args
-extern __declspec(__nothrow) int _snprintf(char * __restrict  , size_t  ,
-                      const char * __restrict  , ...) __attribute__((__nonnull__(3)));
-   
-
-
-
- 
-#pragma __scanf_args
-extern __declspec(__nothrow) int fscanf(FILE * __restrict  ,
-                    const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-#pragma __scanf_args
-extern __declspec(__nothrow) int _fscanf(FILE * __restrict  ,
-                     const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
- 
-#pragma __scanf_args
-extern __declspec(__nothrow) int scanf(const char * __restrict  , ...) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
- 
-#pragma __scanf_args
-extern __declspec(__nothrow) int _scanf(const char * __restrict  , ...) __attribute__((__nonnull__(1)));
-   
-
-
-
- 
-#pragma __scanf_args
-extern __declspec(__nothrow) int sscanf(const char * __restrict  ,
-                    const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
- 
-#pragma __scanf_args
-extern __declspec(__nothrow) int _sscanf(const char * __restrict  ,
-                     const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
- 
-
- 
-extern __declspec(__nothrow) int vfscanf(FILE * __restrict  , const char * __restrict  , __va_list) __attribute__((__nonnull__(1,2)));
-extern __declspec(__nothrow) int vscanf(const char * __restrict  , __va_list) __attribute__((__nonnull__(1)));
-extern __declspec(__nothrow) int vsscanf(const char * __restrict  , const char * __restrict  , __va_list) __attribute__((__nonnull__(1,2)));
-
-extern __declspec(__nothrow) int _vfscanf(FILE * __restrict  , const char * __restrict  , __va_list) __attribute__((__nonnull__(1,2)));
-extern __declspec(__nothrow) int _vscanf(const char * __restrict  , __va_list) __attribute__((__nonnull__(1)));
-extern __declspec(__nothrow) int _vsscanf(const char * __restrict  , const char * __restrict  , __va_list) __attribute__((__nonnull__(1,2)));
-extern __declspec(__nothrow) int __ARM_vsscanf(const char * __restrict  , const char * __restrict  , __va_list) __attribute__((__nonnull__(1,2)));
-
-extern __declspec(__nothrow) int vprintf(const char * __restrict  , __va_list  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
- 
-extern __declspec(__nothrow) int _vprintf(const char * __restrict  , __va_list  ) __attribute__((__nonnull__(1)));
-   
-
-
-
- 
-extern __declspec(__nothrow) int vfprintf(FILE * __restrict  ,
-                    const char * __restrict  , __va_list  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int vsprintf(char * __restrict  ,
-                     const char * __restrict  , __va_list  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int __ARM_vsnprintf(char * __restrict  , size_t  ,
-                     const char * __restrict  , __va_list  ) __attribute__((__nonnull__(3)));
-
-extern __declspec(__nothrow) int vsnprintf(char * __restrict  , size_t  ,
-                     const char * __restrict  , __va_list  ) __attribute__((__nonnull__(3)));
-   
-
-
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) int _vsprintf(char * __restrict  ,
-                      const char * __restrict  , __va_list  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
- 
-extern __declspec(__nothrow) int _vfprintf(FILE * __restrict  ,
-                     const char * __restrict  , __va_list  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
- 
-extern __declspec(__nothrow) int _vsnprintf(char * __restrict  , size_t  ,
-                      const char * __restrict  , __va_list  ) __attribute__((__nonnull__(3)));
-   
-
-
-
- 
-
-#pragma __printf_args
-extern __declspec(__nothrow) int asprintf(char **  , const char * __restrict  , ...) __attribute__((__nonnull__(2)));
-extern __declspec(__nothrow) int vasprintf(char **  , const char * __restrict  , __va_list  ) __attribute__((__nonnull__(2)));
-
-#pragma __printf_args
-extern __declspec(__nothrow) int __ARM_asprintf(char **  , const char * __restrict  , ...) __attribute__((__nonnull__(2)));
-extern __declspec(__nothrow) int __ARM_vasprintf(char **  , const char * __restrict  , __va_list  ) __attribute__((__nonnull__(2)));
-   
-
-
-
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) int fgetc(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) char *fgets(char * __restrict  , int  ,
-                    FILE * __restrict  ) __attribute__((__nonnull__(1,3)));
-   
-
-
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int fputc(int  , FILE *  ) __attribute__((__nonnull__(2)));
-   
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int fputs(const char * __restrict  , FILE * __restrict  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
- 
-extern __declspec(__nothrow) int getc(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
- 
-
-
-
-
-    extern __declspec(__nothrow) int (getchar)(void);
-
-   
-
-
-
-
-
- 
-extern __declspec(__nothrow) char *gets(char *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
-
-
+#line 1 "..\\..\\Src\\Driver\\DrvPWM.c"
  
-extern __declspec(__nothrow) int putc(int  , FILE *  ) __attribute__((__nonnull__(2)));
-   
-
-
-
-
-
- 
-
-
-
-
-    extern __declspec(__nothrow) int (putchar)(int  );
-
-   
-
-
-
- 
-extern __declspec(__nothrow) int puts(const char *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
- 
-extern __declspec(__nothrow) int ungetc(int  , FILE *  ) __attribute__((__nonnull__(2)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  
-
-extern __declspec(__nothrow) size_t fread(void * __restrict  ,
-                    size_t  , size_t  , FILE * __restrict  ) __attribute__((__nonnull__(1,4)));
-   
-
-
-
-
-
-
-
-
-
-
-
  
-
-extern __declspec(__nothrow) size_t __fread_bytes_avail(void * __restrict  ,
-                    size_t  , FILE * __restrict  ) __attribute__((__nonnull__(1,3)));
-   
-
-
-
-
-
-
-
-
-
-
-
  
-
-extern __declspec(__nothrow) size_t fwrite(const void * __restrict  ,
-                    size_t  , size_t  , FILE * __restrict  ) __attribute__((__nonnull__(1,4)));
-   
-
-
-
-
-
-
-
  
-
-extern __declspec(__nothrow) int fgetpos(FILE * __restrict  , fpos_t * __restrict  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
 
-
-
-
  
-extern __declspec(__nothrow) int fseek(FILE *  , long int  , int  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  
-extern __declspec(__nothrow) int fsetpos(FILE * __restrict  , const fpos_t * __restrict  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
-
-
  
-extern __declspec(__nothrow) long int ftell(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
-
-
-
-
+#line 1 "..\\Include\\Driver\\DrvPWM.h"
  
-extern __declspec(__nothrow) void rewind(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
  
-
-extern __declspec(__nothrow) void clearerr(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
  
-
-extern __declspec(__nothrow) int feof(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
  
-extern __declspec(__nothrow) int ferror(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
  
-extern __declspec(__nothrow) void perror(const char *  );
-   
-
-
-
 
 
 
-
-
-
- 
-
-extern __declspec(__nothrow) int _fisatty(FILE *   ) __attribute__((__nonnull__(1)));
-    
  
-
-extern __declspec(__nothrow) void __use_no_semihosting_swi(void);
-extern __declspec(__nothrow) void __use_no_semihosting(void);
-    
-
-
-
-
-
  
-
-
-
-
-
-
-
-
-
-
-
-#line 1021 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
-
-
-
  
 
-#line 15 "main.c"
 #line 1 "..\\NUC1xx\\NUC1xx.h"
  
  
@@ -8927,30 +8036,12 @@ typedef volatile unsigned short vu16;
 
 
                                                                                                  
-#line 16 "main.c"
-
-#line 1 "user_func.h"
+#line 14 "..\\Include\\Driver\\DrvPWM.h"
 
 
 
 
 
-
- 
-
-#line 10 "user_func.h"
-#line 11 "user_func.h"
- 
-#line 1 "..\\Include\\Driver\\DrvGPIO.h"
- 
- 
- 
- 
- 
-
-
-
-#line 10 "..\\Include\\Driver\\DrvGPIO.h"
 
  
  
@@ -8963,7 +8054,7 @@ typedef volatile unsigned short vu16;
  
  
 
-							   
+                               
  
  
  
@@ -8971,103 +8062,121 @@ typedef volatile unsigned short vu16;
 
 
 
-typedef void (*GPIO_GPAB_CALLBACK)(uint32_t u32GPAStatus, uint32_t u32GPBStatus);
-typedef void (*GPIO_GPCDE_CALLBACK)(uint32_t u32GPCStatus, uint32_t u32GPDStatus, uint32_t u32GPEStatus);
-typedef void (*GPIO_EINT0_CALLBACK)(void);
-typedef void (*GPIO_EINT1_CALLBACK)(void);
 
  
-#line 117 "..\\Include\\Driver\\DrvGPIO.h"
+ 
+ 
+#line 51 "..\\Include\\Driver\\DrvPWM.h"
 
-typedef enum 
+ 
+ 
+ 
+#line 63 "..\\Include\\Driver\\DrvPWM.h"
+
+ 
+ 
+ 
+
+
+
+
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+
+
+
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+typedef struct
 {
-	E_GPA = 0,
-	E_GPB = 1, 
-	E_GPC = 2, 
-	E_GPD = 3, 
-	E_GPE = 4
-} E_DRVGPIO_PORT;
+    uint8_t   u8Mode;
+    uint8_t   u8HighPulseRatio;
+    uint8_t   u8ClockSelector;
+    uint8_t   u8PreScale;
+    uint32_t  u32Frequency; 
+    uint32_t  u32Duty;
+    int32_t   i32Inverter;
+}S_DRVPWM_TIME_DATA_T;
 
-typedef enum 
-{
-    E_IO_INPUT = 0,
-    E_IO_OUTPUT,
-    E_IO_OPENDRAIN,
-    E_IO_QUASI
-} E_DRVGPIO_IO;
-
-typedef enum 
-{
-    E_IO_RISING = 0,
-    E_IO_FALLING,
-    E_IO_BOTH_EDGE
-} E_DRVGPIO_INT_TYPE;
-
-typedef enum
-{
-    E_MODE_EDGE = 0,
-    E_MODE_LEVEL
-} E_DRVGPIO_INT_MODE;
-
-typedef enum
-{
-    E_DBCLKSRC_HCLK = 0, 
-    E_DBCLKSRC_10K = 1
-} E_DRVGPIO_DBCLKSRC;	   
-
-typedef enum
-{
-	E_FUNC_GPIO,    E_FUNC_CLKO,    E_FUNC_I2C0,    E_FUNC_I2C1,    E_FUNC_I2S,     E_FUNC_CAN0,	
-    E_FUNC_ACMP0,   E_FUNC_ACMP1,   
-    E_FUNC_SPI0,    E_FUNC_SPI0_SS1,    E_FUNC_SPI0_2BIT_MODE,
-    E_FUNC_SPI1,    E_FUNC_SPI1_SS1,    E_FUNC_SPI1_2BIT_MODE,
-    E_FUNC_SPI2,    E_FUNC_SPI2_SS1,    E_FUNC_SPI2_2BIT_MODE,
-    E_FUNC_SPI3,    E_FUNC_SPI3_SS1,    E_FUNC_SPI3_2BIT_MODE,      
-    E_FUNC_SPI0_QFN36PIN,   E_FUNC_SPI0_SS1_QFN36PIN,   E_FUNC_SPI0_2BIT_MODE_QFN36PIN,
-    E_FUNC_ADC0,    E_FUNC_ADC1,    E_FUNC_ADC2,    E_FUNC_ADC3,    E_FUNC_ADC4,    E_FUNC_ADC5,
-    E_FUNC_ADC6,    E_FUNC_ADC7,    E_FUNC_EXTINT0, E_FUNC_EXTINT1, E_FUNC_TMR0,    E_FUNC_TMR1,      
-    E_FUNC_TMR2,    E_FUNC_TMR3,    E_FUNC_T0EX,    E_FUNC_T1EX,    E_FUNC_T2EX,    E_FUNC_T3EX,
-    E_FUNC_UART0,   E_FUNC_UART0_RX_TX, E_FUNC_UART0_RTS_CTS,
-    E_FUNC_UART1,   E_FUNC_UART1_RX_TX, E_FUNC_UART1_RTS_CTS,       E_FUNC_UART2,
-    E_FUNC_PWM01,   E_FUNC_PWM23,   E_FUNC_PWM45,   E_FUNC_PWM67,   E_FUNC_PWM0,    E_FUNC_PWM1,
-    E_FUNC_PWM2,    E_FUNC_PWM3,    E_FUNC_PWM4,    E_FUNC_PWM5,    E_FUNC_PWM6,    E_FUNC_PWM7,    
-    E_FUNC_EBI_8B,  E_FUNC_EBI_16B,          
-} E_DRVGPIO_FUNC;
-			  
  
  
  
-int32_t DrvGPIO_Open(E_DRVGPIO_PORT port, int32_t i32Bit, E_DRVGPIO_IO mode);
-int32_t DrvGPIO_Close(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_SetBit(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_GetBit(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_ClrBit(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_SetPortBits(E_DRVGPIO_PORT port, int32_t i32Data);
-int32_t DrvGPIO_GetPortBits(E_DRVGPIO_PORT port);
-int32_t DrvGPIO_GetDoutBit(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_GetPortDoutBits(E_DRVGPIO_PORT port);
-int32_t DrvGPIO_SetBitMask(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_GetBitMask(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_ClrBitMask(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_SetPortMask(E_DRVGPIO_PORT port, int32_t i32MaskData);
-int32_t DrvGPIO_GetPortMask(E_DRVGPIO_PORT port);
-int32_t DrvGPIO_ClrPortMask(E_DRVGPIO_PORT port, int32_t i32MaskData);
-int32_t DrvGPIO_EnableDigitalInputBit(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_DisableDigitalInputBit(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_EnableDebounce(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_DisableDebounce(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_SetDebounceTime(uint32_t u32CycleSelection, E_DRVGPIO_DBCLKSRC ClockSource);
-int32_t DrvGPIO_GetDebounceSampleCycle(void);
-int32_t DrvGPIO_EnableInt(E_DRVGPIO_PORT port, int32_t i32Bit, E_DRVGPIO_INT_TYPE TriggerType, E_DRVGPIO_INT_MODE Mode);
-int32_t DrvGPIO_DisableInt(E_DRVGPIO_PORT port, int32_t i32Bit);
-void DrvGPIO_SetIntCallback(GPIO_GPAB_CALLBACK pfGPABCallback, GPIO_GPCDE_CALLBACK pfGPCDECallback);
-void DrvGPIO_EnableEINT0(E_DRVGPIO_INT_TYPE TriggerType, E_DRVGPIO_INT_MODE Mode, GPIO_EINT0_CALLBACK pfEINT0Callback);
-void DrvGPIO_DisableEINT0(void);
-void DrvGPIO_EnableEINT1(E_DRVGPIO_INT_TYPE TriggerType, E_DRVGPIO_INT_MODE Mode, GPIO_EINT1_CALLBACK pfEINT1Callback);
-void DrvGPIO_DisableEINT1(void);
-int32_t DrvGPIO_GetIntStatus(E_DRVGPIO_PORT port);
-int32_t DrvGPIO_InitFunction(E_DRVGPIO_FUNC function);
-int32_t DrvGPIO_GetVersion(void);
+typedef void (*PFN_DRVPWM_CALLBACK)(void);
+
+ 
+ 
+ 
+typedef struct
+{
+    PFN_DRVPWM_CALLBACK pfnPWM0CallBack;    
+    PFN_DRVPWM_CALLBACK pfnCAP0CallBack;
+   
+    PFN_DRVPWM_CALLBACK pfnPWM1CallBack;    
+    PFN_DRVPWM_CALLBACK pfnCAP1CallBack;
+    
+    PFN_DRVPWM_CALLBACK pfnPWM2CallBack;    
+    PFN_DRVPWM_CALLBACK pfnCAP2CallBack;
+    
+    PFN_DRVPWM_CALLBACK pfnPWM3CallBack;    
+    PFN_DRVPWM_CALLBACK pfnCAP3CallBack;        
+   
+}S_DRVPWM_CALLBACK_T;
+
+ 
+ 
+ 
+void     DrvPWM_ClearCaptureIntStatus(uint8_t u8Capture, uint8_t u8IntType);
+void     DrvPWM_ClearInt(uint8_t u8Timer);
+void     DrvPWM_Close(void);
+
+void     DrvPWM_DisableInt(uint8_t u8Timer);
+
+void     DrvPWM_Enable(uint8_t u8Timer, int32_t i32Enable);
+void     DrvPWM_EnableDeadZone(uint8_t u8Timer, uint8_t u8Length, int32_t i32EnableDeadZone);
+void     DrvPWM_EnableInt(uint8_t u8Timer, uint8_t u8Int, PFN_DRVPWM_CALLBACK pfncallback);
+
+int32_t  DrvPWM_GetCaptureIntStatus(uint8_t u8Capture, uint8_t u8IntType);
+
+uint16_t DrvPWM_GetFallingCounter(uint8_t u8Capture);
+int32_t  DrvPWM_GetIntFlag(uint8_t u8Timer);
+uint16_t DrvPWM_GetRisingCounter(uint8_t u8Capture);
+uint32_t DrvPWM_GetTimerCounter(uint8_t u8Timer);
+uint32_t DrvPWM_GetVersion (void);
+
+int32_t  DrvPWM_IsTimerEnabled(uint8_t u8Timer);
+
+void     DrvPWM_Open(void);
+
+int32_t  DrvPWM_SelectClearLatchFlagOption(int32_t i32option);
+void     DrvPWM_SelectClockSource(uint8_t u8Timer, uint8_t u8ClockSourceSelector);
+uint32_t DrvPWM_SetTimerClk(uint8_t u8Timer, S_DRVPWM_TIME_DATA_T *sPt);
+void     DrvPWM_SetTimerCounter(uint8_t u8Timer, uint16_t u16Counter);
+void     DrvPWM_SetTimerIO(uint8_t u8Timer, int32_t i32Enable);
 
 
 
@@ -9077,23 +8186,7 @@ int32_t DrvGPIO_GetVersion(void);
 
 
 
-
-#line 13 "user_func.h"
-#line 1 "..\\Include\\NUC1xx-LB_002\\LCD_Driver.h"
-
-
-     
-extern void SysTimerDelay(uint32_t us);
-extern void Initial_panel(void);
-extern void Disable_Buzzer(void);
-
-extern void Show_Word(unsigned char x, unsigned char y,unsigned char ascii_word);
-
-extern void print_lcd(unsigned char line, char *str);
-
-
-extern void clr_all_panel(void);
-#line 14 "user_func.h"
+#line 11 "..\\..\\Src\\Driver\\DrvPWM.c"
 #line 1 "..\\Include\\Driver\\DrvSYS.h"
  
  
@@ -9323,46 +8416,7 @@ int32_t  DrvSYS_UnlockProtectedReg(void);
 
 
 
-#line 15 "user_func.h"
-#line 1 "..\\Include\\NUC1xx-LB_002\\Seven_Segment.h"
-
-
-extern void OpenSevenSegment(void);
-extern void ShowSevenSegment(unsigned char no, unsigned char number);
-extern void CloseSevenSegment(void);
-
-
-#line 16 "user_func.h"
-#line 1 "..\\Include\\NUC1xx-LB_002\\ScanKey.h"
- 
- 
- 
- 
- 
-
-
-
-void OpenKeyPad(void);
-void CloseKeyPad(void);
-uint8_t Scankey(void);
-
-
-
-#line 17 "user_func.h"
-#line 1 "..\\Include\\Driver\\DrvTIMER.h"
- 
- 
- 
- 
- 
-
-
-
-#line 10 "..\\Include\\Driver\\DrvTIMER.h"
-
- 
- 
- 
+#line 12 "..\\..\\Src\\Driver\\DrvPWM.c"
 
  
  
@@ -9372,533 +8426,1687 @@ uint8_t Scankey(void);
 
 
 
- 
- 
- 
-#line 32 "..\\Include\\Driver\\DrvTIMER.h"
+
+
+
+
+
+
+
+
 
  
-                                                                             
  
-typedef void (*TIMER_CALLBACK)(uint32_t data);	 
-typedef void (*WDT_CALLBACK)(uint32_t data);	 
+ 
+static S_DRVPWM_CALLBACK_T g_sDrvPWMAHandler = {0};
+static S_DRVPWM_CALLBACK_T g_sDrvPWMBHandler = {0};
 
+static int32_t s_i32Option = 0;
  
  
  
-typedef struct timeEvent_t
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+uint32_t DrvPWM_GetVersion(void)
 {
-    int32_t              active;
-    int32_t              initTick;
-    int32_t              curTick;
-    TIMER_CALLBACK       funPtr;
-    uint32_t             transParam;
-} TIMER_EVENT_T;
+    return (((1) << 16) | ((03) << 8) | (2));
+}
 
  
  
  
-typedef enum {
-    E_TMR0      = 0,
-    E_TMR1      = 1,
-	E_TMR2      = 2,
-	E_TMR3      = 3        
-} E_TIMER_CHANNEL;
-
  
  
  
-typedef enum{                   
-    E_ONESHOT_MODE 		= 0,
-    E_PERIODIC_MODE   	= 1,
-    E_TOGGLE_MODE     	= 2, 
-	E_CONTINUOUS_MODE 	= 3     
-} E_TIMER_OPMODE ;
-
  
  
  
-typedef enum{                   
-    E_PHASE_FALLING     = 0,
-    E_PHASE_RISING      = 1,
-} E_TIMER_TX_PHASE ;
-
  
  
- 
-typedef enum{                   
-    E_EDGE_FALLING      = 0,
-    E_EDGE_RISING       = 1,
-    E_EDGE_BOTH         = 2,
-} E_TIMER_TEX_EDGE ;
-
- 
- 
- 
-typedef enum{                   
-    E_CAPTURE           = 0,
-    E_RESET             = 1,
-} E_TIMER_RSTCAP_MODE ;
-
- 
- 
- 
-typedef enum {
-    E_WDT_IOC_START_TIMER       = 0,
-    E_WDT_IOC_STOP_TIMER        = 1,
-    E_WDT_IOC_ENABLE_INT        = 2,
-    E_WDT_IOC_DISABLE_INT       = 3,
-    E_WDT_IOC_ENABLE_WAKEUP     = 4, 
-    E_WDT_IOC_DISABLE_WAKEUP    = 5, 
-    E_WDT_IOC_RESET_TIMER       = 6,
-    E_WDT_IOC_ENABLE_RESET_FUNC = 7,
-    E_WDT_IOC_DISABLE_RESET_FUNC= 8,
-	E_WDT_IOC_SET_INTERVAL      = 9
-} E_WDT_CMD; 
-
- 
- 
- 
-typedef enum{
-    E_WDT_LEVEL0      = 0,          
-    E_WDT_LEVEL1      = 1,          
-    E_WDT_LEVEL2      = 2,           
-    E_WDT_LEVEL3      = 3,          
-	E_WDT_LEVEL4      = 4,          
-	E_WDT_LEVEL5      = 5,          
-	E_WDT_LEVEL6      = 6,          
-	E_WDT_LEVEL7      = 7           
-} E_WDT_INTERVAL;
-
- 
- 
- 
-void DrvTIMER_Init(void);
-int32_t DrvTIMER_Open(E_TIMER_CHANNEL ch, uint32_t uTicksPerSecond, E_TIMER_OPMODE op_mode);
-int32_t DrvTIMER_Close(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_SetTimerEvent(E_TIMER_CHANNEL ch, uint32_t uInterruptTicks, TIMER_CALLBACK pTimerCallback, uint32_t parameter);
-void DrvTIMER_ClearTimerEvent(E_TIMER_CHANNEL ch, uint32_t uTimerEventNo);
-int32_t DrvTIMER_EnableInt(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableInt(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_GetIntFlag(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_ClearIntFlag(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_Start(E_TIMER_CHANNEL ch);
-uint32_t DrvTIMER_GetIntTicks(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_ResetIntTicks(E_TIMER_CHANNEL ch);
-void DrvTIMER_Delay(E_TIMER_CHANNEL ch, uint32_t uTicks);
-int32_t DrvTIMER_OpenCounter(E_TIMER_CHANNEL ch, uint32_t uCounterBoundary, E_TIMER_OPMODE op_mode);
-int32_t DrvTIMER_StartCounter(E_TIMER_CHANNEL ch);
-uint32_t DrvTIMER_GetCounters(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_OpenCapture(E_TIMER_CHANNEL ch, E_TIMER_RSTCAP_MODE mode);
-int32_t DrvTIMER_CloseCapture(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_SelectExternalMode(E_TIMER_CHANNEL ch, E_TIMER_RSTCAP_MODE mode);
-int32_t DrvTIMER_SelectCaptureEdge(E_TIMER_CHANNEL ch, E_TIMER_TEX_EDGE edge);
-int32_t DrvTIMER_EnableCaptureInt(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableCaptureInt(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_EnableCapture(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableCapture(E_TIMER_CHANNEL ch);
-uint32_t DrvTIMER_GetCaptureData(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_GetCaptureIntFlag(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_ClearCaptureIntFlag(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_EnableCaptureDebounce(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableCaptureDebounce(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_EnableCounterDebounce(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableCounterDebounce(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_SelectCounterDetectPhase(E_TIMER_CHANNEL ch, E_TIMER_TX_PHASE phase);
-uint32_t DrvTIMER_GetVersion(void);
-
-int32_t DrvWDT_Open(E_WDT_INTERVAL WDTlevel);
-void DrvWDT_Close(void);
-void DrvWDT_InstallISR(WDT_CALLBACK pvWDTISR);
-int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
-
-
-
-
-
-#line 18 "user_func.h"
-#line 1 "..\\Include\\Driver\\DrvPWM.h"
- 
- 
- 
- 
- 
-
-
-
- 
- 
- 
-
-#line 14 "..\\Include\\Driver\\DrvPWM.h"
-
-
-
-
-
-
- 
- 
- 
-
-
-
-
- 
- 
- 
-
-                               
- 
- 
- 
-
-
-
-
-
- 
- 
- 
-#line 51 "..\\Include\\Driver\\DrvPWM.h"
-
- 
- 
- 
-#line 63 "..\\Include\\Driver\\DrvPWM.h"
-
- 
- 
- 
-
-
-
-
- 
- 
- 
-
-
-
- 
- 
- 
-
-
-
-
-
-
- 
- 
- 
-
-
-
-
-
- 
- 
- 
-
-
-
- 
- 
- 
-typedef struct
-{
-    uint8_t   u8Mode;
-    uint8_t   u8HighPulseRatio;
-    uint8_t   u8ClockSelector;
-    uint8_t   u8PreScale;
-    uint32_t  u32Frequency; 
-    uint32_t  u32Duty;
-    int32_t   i32Inverter;
-}S_DRVPWM_TIME_DATA_T;
-
- 
- 
- 
-typedef void (*PFN_DRVPWM_CALLBACK)(void);
-
- 
- 
- 
-typedef struct
-{
-    PFN_DRVPWM_CALLBACK pfnPWM0CallBack;    
-    PFN_DRVPWM_CALLBACK pfnCAP0CallBack;
-   
-    PFN_DRVPWM_CALLBACK pfnPWM1CallBack;    
-    PFN_DRVPWM_CALLBACK pfnCAP1CallBack;
+void PWMA_IRQHandler(void)
+{    
+    uint32_t u32pwmIntFlag, u32CapIntFlag0, u32CapIntFlag1;
     
-    PFN_DRVPWM_CALLBACK pfnPWM2CallBack;    
-    PFN_DRVPWM_CALLBACK pfnCAP2CallBack;
+         
+    u32pwmIntFlag = *((volatile uint32_t *) &((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIIR);
     
-    PFN_DRVPWM_CALLBACK pfnPWM3CallBack;    
-    PFN_DRVPWM_CALLBACK pfnCAP3CallBack;        
-   
-}S_DRVPWM_CALLBACK_T;
+    if (u32pwmIntFlag & 0x00000001)
+    {
+        *((volatile uint32_t *) &((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIIR) = 0x00000001;         
+        if (g_sDrvPWMAHandler.pfnPWM0CallBack != 0)
+        {                           
+            g_sDrvPWMAHandler.pfnPWM0CallBack();
+        }   
+    }   
+
+    if (u32pwmIntFlag & 0x00000002)
+    {
+        *((volatile uint32_t *) &((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIIR) = 0x00000002;         
+        if (g_sDrvPWMAHandler.pfnPWM1CallBack != 0)
+        {
+            g_sDrvPWMAHandler.pfnPWM1CallBack();
+        }   
+    }   
+    
+    if (u32pwmIntFlag & 0x00000004)
+    {
+        *((volatile uint32_t *) &((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIIR) = 0x00000004;         
+        if (g_sDrvPWMAHandler.pfnPWM2CallBack != 0)
+        {
+            g_sDrvPWMAHandler.pfnPWM2CallBack();
+        }   
+    }
+
+    if (u32pwmIntFlag & 0x00000008)
+    {
+        *((volatile uint32_t *) &((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIIR) = 0x00000008;         
+        if (g_sDrvPWMAHandler.pfnPWM3CallBack != 0)
+        {
+            g_sDrvPWMAHandler.pfnPWM3CallBack();
+        }   
+    }
+    
+     
+    u32CapIntFlag0 = *((volatile uint32_t *) &((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0);
+    u32CapIntFlag1 = *((volatile uint32_t *) &((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2);
+
+    if (u32CapIntFlag0 & 0x00000010) 
+    {
+        if (s_i32Option)
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & (0x000F000F | 0x00000010);
+        else
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & ~0x00100000;   
+
+        if (g_sDrvPWMAHandler.pfnCAP0CallBack != 0)
+        {
+            g_sDrvPWMAHandler.pfnCAP0CallBack();
+        }
+    }
+    
+    if (u32CapIntFlag0 & 0x00100000) 
+    {
+        if (s_i32Option)
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & (0x000F000F | 0x00100000);
+        else
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & ~0x00000010;        
+
+        if (g_sDrvPWMAHandler.pfnCAP1CallBack != 0)
+        {
+            g_sDrvPWMAHandler.pfnCAP1CallBack();
+        }
+    }
+
+    if (u32CapIntFlag1 & 0x00000010) 
+    {
+        if (s_i32Option)
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & (0x000F000F | 0x00000010);
+        else
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & ~0x00100000;
+
+        if (g_sDrvPWMAHandler.pfnCAP2CallBack != 0)
+        {
+            g_sDrvPWMAHandler.pfnCAP2CallBack();
+        }
+    }
+    
+    if (u32CapIntFlag1 & 0x00100000) 
+    {
+        if (s_i32Option)
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & (0x000F000F | 0x00100000);
+        else
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & ~0x00000010;
+
+        if (g_sDrvPWMAHandler.pfnCAP3CallBack != 0)
+        {
+            g_sDrvPWMAHandler.pfnCAP3CallBack();
+        }
+    }
+}
 
  
  
  
-void     DrvPWM_ClearCaptureIntStatus(uint8_t u8Capture, uint8_t u8IntType);
-void     DrvPWM_ClearInt(uint8_t u8Timer);
-void     DrvPWM_Close(void);
-
-void     DrvPWM_DisableInt(uint8_t u8Timer);
-
-void     DrvPWM_Enable(uint8_t u8Timer, int32_t i32Enable);
-void     DrvPWM_EnableDeadZone(uint8_t u8Timer, uint8_t u8Length, int32_t i32EnableDeadZone);
-void     DrvPWM_EnableInt(uint8_t u8Timer, uint8_t u8Int, PFN_DRVPWM_CALLBACK pfncallback);
-
-int32_t  DrvPWM_GetCaptureIntStatus(uint8_t u8Capture, uint8_t u8IntType);
-
-uint16_t DrvPWM_GetFallingCounter(uint8_t u8Capture);
-int32_t  DrvPWM_GetIntFlag(uint8_t u8Timer);
-uint16_t DrvPWM_GetRisingCounter(uint8_t u8Capture);
-uint32_t DrvPWM_GetTimerCounter(uint8_t u8Timer);
-uint32_t DrvPWM_GetVersion (void);
-
-int32_t  DrvPWM_IsTimerEnabled(uint8_t u8Timer);
-
-void     DrvPWM_Open(void);
-
-int32_t  DrvPWM_SelectClearLatchFlagOption(int32_t i32option);
-void     DrvPWM_SelectClockSource(uint8_t u8Timer, uint8_t u8ClockSourceSelector);
-uint32_t DrvPWM_SetTimerClk(uint8_t u8Timer, S_DRVPWM_TIME_DATA_T *sPt);
-void     DrvPWM_SetTimerCounter(uint8_t u8Timer, uint16_t u16Counter);
-void     DrvPWM_SetTimerIO(uint8_t u8Timer, int32_t i32Enable);
-
-
-
-
-
-
-
-
-
-#line 19 "user_func.h"
-#line 1 "..\\Include\\Driver\\DrvADC.h"
  
  
  
  
  
+ 
+ 
+ 
+void PWMB_IRQHandler(void)
+{    
+    uint32_t u32pwmIntFlag, u32CapIntFlag0, u32CapIntFlag1;
 
+     
+    u32pwmIntFlag = *((volatile uint32_t *) &((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIIR);
+    
+    if (u32pwmIntFlag & 0x00000001)
+    {
+        *((volatile uint32_t *) &((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIIR) = 0x00000001;         
+        if (g_sDrvPWMBHandler.pfnPWM0CallBack != 0)
+        {
+            g_sDrvPWMBHandler.pfnPWM0CallBack();
+        }   
+    }   
 
+    if (u32pwmIntFlag & 0x00000002)
+    {
+        *((volatile uint32_t *) &((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIIR) = 0x00000002;         
+        if (g_sDrvPWMBHandler.pfnPWM1CallBack != 0)
+        {
+            g_sDrvPWMBHandler.pfnPWM1CallBack();
+        }   
+    }   
+    
+    if (u32pwmIntFlag & 0x00000004)
+    {
+        *((volatile uint32_t *) &((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIIR) = 0x00000004;         
+        if (g_sDrvPWMBHandler.pfnPWM2CallBack != 0)
+        {
+            g_sDrvPWMBHandler.pfnPWM2CallBack();
+        }   
+    }
+
+    if (u32pwmIntFlag & 0x00000008)
+    {
+        *((volatile uint32_t *) &((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIIR) = 0x00000008;         
+        if (g_sDrvPWMBHandler.pfnPWM3CallBack != 0)
+        {
+            g_sDrvPWMBHandler.pfnPWM3CallBack();
+        }   
+    }
+
+     
+    u32CapIntFlag0 = *((volatile uint32_t *) &((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0);
+    u32CapIntFlag1 = *((volatile uint32_t *) &((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2);
+
+    if (u32CapIntFlag0 & 0x00000010) 
+    {
+        if (s_i32Option)
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & (0x000F000F | 0x00000010);
+        else
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & ~0x00100000; 
+        
+        if (g_sDrvPWMBHandler.pfnCAP0CallBack != 0)
+        {
+            g_sDrvPWMBHandler.pfnCAP0CallBack();
+        }
+    }
+    
+    if (u32CapIntFlag0 & 0x00100000) 
+    {
+        if (s_i32Option)
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & (0x000F000F | 0x00100000);
+        else
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & ~0x00000010;  
+                    
+        if (g_sDrvPWMBHandler.pfnCAP1CallBack != 0)
+        {
+            g_sDrvPWMBHandler.pfnCAP1CallBack();
+        }
+    }
+
+    if (u32CapIntFlag1 & 0x00000010) 
+    {
+        if (s_i32Option)
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & (0x000F000F | 0x00000010);
+        else
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & ~0x00100000;
+                   
+        if (g_sDrvPWMBHandler.pfnCAP2CallBack != 0)
+        {
+            g_sDrvPWMBHandler.pfnCAP2CallBack();
+        }
+    }
+    
+    if (u32CapIntFlag1 & 0x00100000) 
+    {
+        if (s_i32Option)
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & (0x000F000F | 0x00100000);
+        else
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & ~0x00000010;
+                    
+        if (g_sDrvPWMBHandler.pfnCAP3CallBack != 0)
+        {
+            g_sDrvPWMBHandler.pfnCAP3CallBack();
+        }
+    }
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+int32_t DrvPWM_IsTimerEnabled(uint8_t u8Timer)
+{
+    int32_t status;
+
+    status = 0;
+    
+    switch (u8Timer)
+    {
+        case 0x00:
+        case 0x01:
+        case 0x02:
+        case 0x03:
+            status = ( (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PCR))) & (1 << (u8Timer<<3) ) )? 1 : 0;
+            break;      
+        case 0x04:
+        case 0x05:
+        case 0x06:
+        case 0x07:
+            status = ( (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PCR))) & (1 << ((u8Timer-0x04)<<3) ) )? 1 : 0;
+            break;  
+    }
+    return status;
+}
 
 
  
  
  
-#line 14 "..\\Include\\Driver\\DrvADC.h"
-#line 15 "..\\Include\\Driver\\DrvADC.h"
-
- 
-
-
  
  
  
  
-
-
-
-
-
  
-
-
-typedef enum {ADC_SINGLE_END, ADC_DIFFERENTIAL} E_ADC_INPUT_MODE;
-typedef enum {ADC_SINGLE_OP, ADC_SINGLE_CYCLE_OP, ADC_CONTINUOUS_OP} E_ADC_OPERATION_MODE;
-typedef enum {EXTERNAL_12MHZ=0, INTERNAL_PLL=1, INTERNAL_HCLK=2, INTERNAL_RC22MHZ=3} E_ADC_CLK_SRC;
-typedef enum {LOW_LEVEL=0, HIGH_LEVEL=1, FALLING_EDGE=2, RISING_EDGE=3} E_ADC_EXT_TRI_COND;
-typedef enum {EXTERNAL_INPUT_SIGNAL, INTERNAL_BANDGAP, INTERNAL_TEMPERATURE_SENSOR} E_ADC_CH7_SRC;
-typedef enum {LESS_THAN, GREATER_OR_EQUAL} E_ADC_CMP_CONDITION;
-typedef enum {UNSIGNED_OUTPUT, TWOS_COMPLEMENT} E_ADC_DIFF_MODE_OUTPUT_FORMAT;
-
-typedef void (DRVADC_ADC_CALLBACK)(uint32_t u32UserData);
-typedef void (DRVADC_ADCMP0_CALLBACK)(uint32_t u32UserData);
-typedef void (DRVADC_ADCMP1_CALLBACK)(uint32_t u32UserData);
-
-#line 50 "..\\Include\\Driver\\DrvADC.h"
+ 
+ 
+ 
+ 
+ 
+void DrvPWM_SetTimerCounter(uint8_t u8Timer, uint16_t u16Counter)
+{   
+    u8Timer &= 0x0F;
+    
+    if (u8Timer >= 0x04)
+    {
+        *((volatile uint32_t *) (((( uint32_t)0x40100000) + 0x40000) + 0x0C + (u8Timer - 0x04) * 12)) = u16Counter;
+    }
+    else
+    {
+        *((volatile uint32_t *) (((( uint32_t)0x40000000) + 0x40000) + 0x0C + (u8Timer & 0x7) * 12)) = u16Counter;   
+    }
+}
 
  
  
  
-void DrvADC_Open(E_ADC_INPUT_MODE InputMode, E_ADC_OPERATION_MODE OpMode, uint8_t u8ChannelSelBitwise, E_ADC_CLK_SRC ClockSrc, uint8_t u8AdcDivisor);
-void DrvADC_Close(void);
-void DrvADC_SetADCChannel(uint8_t u8ChannelSelBitwise);
-void DrvADC_ConfigADCChannel7(E_ADC_CH7_SRC Ch7Src);
-void DrvADC_SetADCInputMode(E_ADC_INPUT_MODE InputMode);
-void DrvADC_SetADCOperationMode(E_ADC_OPERATION_MODE OpMode);
-void DrvADC_SetADCClkSrc(E_ADC_CLK_SRC ClockSrc);
-void DrvADC_SetADCDivisor(uint8_t u8AdcDivisor);
-void DrvADC_EnableADCInt(DRVADC_ADC_CALLBACK callback, uint32_t u32UserData);
-void DrvADC_DisableADCInt(void);
-void DrvADC_EnableADCCmp0Int(DRVADC_ADCMP0_CALLBACK callback, uint32_t u32UserData);
-void DrvADC_DisableADCCmp0Int(void);
-void DrvADC_EnableADCCmp1Int(DRVADC_ADCMP1_CALLBACK callback, uint32_t u32UserData);
-void DrvADC_DisableADCCmp1Int(void);
-uint32_t DrvADC_GetConversionRate(void);
-void DrvADC_EnableExtTrigger(E_ADC_EXT_TRI_COND TriggerCondition);
-void DrvADC_DisableExtTrigger(void);
-void DrvADC_StartConvert(void);
-void DrvADC_StopConvert(void);
-uint32_t DrvADC_IsConversionDone(void);
-int32_t DrvADC_GetConversionData(uint8_t u8ChannelNum);
-void DrvADC_EnablePDMA(void);
-void DrvADC_DisablePDMA(void);
-uint32_t DrvADC_IsDataValid(uint8_t u8ChannelNum);
-uint32_t DrvADC_IsDataOverrun(uint8_t u8ChannelNum);
-int32_t DrvADC_EnableADCCmp0(uint8_t u8CmpChannelNum, E_ADC_CMP_CONDITION CmpCondition, uint16_t u16CmpData, uint8_t CmpMatchCount);
-int32_t DrvADC_EnableADCCmp1(uint8_t u8CmpChannelNum, E_ADC_CMP_CONDITION CmpCondition, uint16_t u16CmpData, uint8_t CmpMatchCount);
-void DrvADC_DisableADCCmp0(void);
-void DrvADC_DisableADCCmp1(void);
-void DrvADC_EnableSelfCalibration(void);
-uint32_t DrvADC_IsCalibrationDone(void);
-void DrvADC_DisableSelfCalibration(void);
-void DrvADC_DiffModeOutputFormat(E_ADC_DIFF_MODE_OUTPUT_FORMAT OutputFormat);
-uint32_t DrvADC_GetVersion (void);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+uint32_t DrvPWM_GetTimerCounter(uint8_t u8Timer)
+{
+    uint32_t u32Reg = 0;
+    
+    u8Timer &= 0x0F;
+    
+    if (u8Timer >= 0x04)
+    {
+        u32Reg = *((volatile uint32_t *) (((( uint32_t)0x40100000) + 0x40000) + 0x14 + (u8Timer - 0x04) * 12));
+    }
+    else
+    {
+        u32Reg = *((volatile uint32_t *) (((( uint32_t)0x40000000) + 0x40000) + 0x14 + (u8Timer & 0x7) * 12));   
+    }
 
-#line 20 "user_func.h"
-
-	void heartbeat(void);
-	
-	void keypad_input(int* k);
-
-  void displayToUser(int* target);
-	
-	void calibrateLight(double *full_LED_silly, double *no_LED_silly);
-
-#line 18 "main.c"
+    return u32Reg;
+}
 
 
-int prevInputKeypad = 0;
-int update = 0;
-double no_LED = 0.0;
-double full_LED = 0.0;
-double target_reading = 0.0;
-double kp = 1.0;
-int new_duty = 0; 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvPWM_EnableInt(uint8_t u8Timer, uint8_t u8Int, PFN_DRVPWM_CALLBACK pfncallback)
+{
+    int32_t Rflag, Fflag;   
+
+    Rflag = u8Int & 0x01;
+    Fflag = u8Int & 0x02;
+        
+    switch (u8Timer)
+    {   
+        case 0x00:
+            ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIER.PWMIE0 = 1;
+            g_sDrvPWMAHandler.pfnPWM0CallBack = pfncallback;
+            break;
+        case 0x10:           
+            if (Rflag)
+            {
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & 0x000F000F) | 0x00000002;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) | 0x00000002; 
+            }
+            if (Fflag)
+            {
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & 0x000F000F) | 0x00000004;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) | 0x00000004;
+            }
+            g_sDrvPWMAHandler.pfnCAP0CallBack = pfncallback;
+            break;  
+        case 0x01:
+            ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIER.PWMIE1 = 1;
+            g_sDrvPWMAHandler.pfnPWM1CallBack = pfncallback;
+            break;
+        case 0x11:           
+            if (Rflag)
+            {
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & 0x000F000F) | 0x00020000;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) | 0x00020000;            
+            }
+            if (Fflag)
+            {
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & 0x000F000F) | 0x00040000;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) | 0x00040000;            
+            }
+            g_sDrvPWMAHandler.pfnCAP1CallBack = pfncallback;
+            break;
+        case 0x02:
+            ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIER.PWMIE2 = 1;
+            g_sDrvPWMAHandler.pfnPWM2CallBack = pfncallback;
+            break;
+        case 0x12:           
+            if (Rflag)
+            {
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & 0x000F000F) | 0x00000002;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) | 0x00000002;             
+            }
+            if (Fflag)
+            {
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & 0x000F000F) | 0x00000004;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) | 0x00000004;         
+            }
+            g_sDrvPWMAHandler.pfnCAP2CallBack = pfncallback;
+            break;
+        case 0x03:
+            ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIER.PWMIE3 = 1;
+            g_sDrvPWMAHandler.pfnPWM3CallBack = pfncallback;
+            break;
+        case 0x13:           
+            if (Rflag)
+            {
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & 0x000F000F) | 0x00020000;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) | 0x00020000;                
+            }
+            if (Fflag)
+            {
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & 0x000F000F) | 0x00040000;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) | 0x00040000;                
+            }
+            g_sDrvPWMAHandler.pfnCAP3CallBack = pfncallback;
+            break;          
+            
+        case 0x04:
+            ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIER.PWMIE0 = 1;
+            g_sDrvPWMBHandler.pfnPWM0CallBack = pfncallback;
+            break;
+        case 0x14:           
+            if (Rflag)
+            {
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & 0x000F000F) | 0x00000002;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) | 0x00000002; 
+            }
+            if (Fflag)
+            {
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & 0x000F000F) | 0x00000004;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) | 0x00000004;
+            }
+
+            g_sDrvPWMBHandler.pfnCAP0CallBack = pfncallback;
+            break;  
+        case 0x05:
+            ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIER.PWMIE1 = 1;
+            g_sDrvPWMBHandler.pfnPWM1CallBack = pfncallback;
+            break;
+        case 0x15:           
+            if (Rflag)
+            {
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & 0x000F000F) | 0x00020000;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) | 0x00020000;            
+            }
+            if (Fflag)
+            {
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & 0x000F000F) | 0x00040000;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) | 0x00040000;            
+            }
+
+            g_sDrvPWMBHandler.pfnCAP1CallBack = pfncallback;
+            break;
+        case 0x06:
+            ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIER.PWMIE2 = 1;
+            g_sDrvPWMBHandler.pfnPWM2CallBack = pfncallback;
+            break;
+        case 0x16:           
+            if (Rflag)
+            {
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & 0x000F000F) | 0x00000002;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) | 0x00000002;             
+            }
+            if (Fflag)
+            {
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & 0x000F000F) | 0x00000004;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) | 0x00000004;         
+            }
+            g_sDrvPWMBHandler.pfnCAP2CallBack = pfncallback;
+            break;
+        case 0x07:
+            ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIER.PWMIE3 = 1;
+            g_sDrvPWMBHandler.pfnPWM3CallBack = pfncallback;
+            break;
+        case 0x17:           
+            if (Rflag)
+            {
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & 0x000F000F) | 0x00020000;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) | 0x00020000;                
+            }
+            if (Fflag)
+            {
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & 0x000F000F) | 0x00040000;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) | 0x00040000;                
+            }
+
+            g_sDrvPWMBHandler.pfnCAP3CallBack = pfncallback;
+            break;              
+    }                           
+        
+    if (u8Timer & 0x04)
+    {
+        NVIC_SetPriority(PWMB_IRQn, (1<<2) - 2);
+        NVIC_EnableIRQ(PWMB_IRQn);
+    }
+    else
+    {
+        NVIC_SetPriority(PWMA_IRQn, (1<<2) - 2);
+        NVIC_EnableIRQ(PWMA_IRQn);           
+    }
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvPWM_DisableInt(uint8_t u8Timer)
+{       
+    switch(u8Timer)
+    {   
+        case 0x00:
+            ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIER.PWMIE0 = 0;
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIIR))=0x00000001;
+            g_sDrvPWMAHandler.pfnPWM0CallBack = 0;
+            break;
+        case 0x01:
+            ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIER.PWMIE1 = 0;
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIIR))=0x00000002;
+            g_sDrvPWMAHandler.pfnPWM1CallBack = 0;
+            break;          
+        case 0x02:
+            ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIER.PWMIE2 = 0;
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIIR))=0x00000004;
+            g_sDrvPWMAHandler.pfnPWM2CallBack = 0;
+            break;      
+        case 0x03:
+            ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIER.PWMIE3 = 0;
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIIR))=0x00000008;
+            g_sDrvPWMAHandler.pfnPWM3CallBack = 0;
+            break;
+        case 0x04:
+            ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIER.PWMIE0 = 0;
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIIR))=0x00000001;
+            g_sDrvPWMBHandler.pfnPWM0CallBack = 0;
+            break;
+        case 0x05:
+            ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIER.PWMIE1 = 0;
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIIR))=0x00000002;
+            g_sDrvPWMBHandler.pfnPWM1CallBack = 0;
+            break;          
+        case 0x06:
+            ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIER.PWMIE2 = 0;
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIIR))=0x00000004;
+            g_sDrvPWMBHandler.pfnPWM2CallBack = 0;
+            break;      
+        case 0x07:
+            ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIER.PWMIE3 = 0;
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIIR))=0x00000008;
+            g_sDrvPWMBHandler.pfnPWM3CallBack = 0;
+            break;
+        case 0x10:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & 0x000F000F) & ~(0x00000002 | 0x00000004);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) & ~(0x00000002 | 0x00000004);   
+            g_sDrvPWMAHandler.pfnCAP0CallBack = 0;   
+            break;              
+        case 0x11:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & 0x000F000F) & ~(0x00020000 | 0x00040000);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) & ~(0x00020000 | 0x00040000);
+            g_sDrvPWMAHandler.pfnCAP1CallBack = 0;   
+            break;      
+        case 0x12:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & 0x000F000F) & ~(0x00000002 | 0x00000004);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) & ~(0x00000002 | 0x00000004);
+            g_sDrvPWMAHandler.pfnCAP2CallBack = 0;   
+            break;
+        case 0x13:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & 0x000F000F) & ~(0x00020000 | 0x00040000);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) & ~(0x00020000 | 0x00040000);
+            g_sDrvPWMAHandler.pfnCAP3CallBack = 0;   
+            break; 
+        case 0x14:   
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & 0x000F000F) & ~(0x00000002 | 0x00000004);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) & ~(0x00000002 | 0x00000004);   
+
+            g_sDrvPWMBHandler.pfnCAP0CallBack = 0;   
+            break;              
+        case 0x15:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & 0x000F000F) & ~(0x00020000 | 0x00040000);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) & ~(0x00020000 | 0x00040000);
+
+            g_sDrvPWMBHandler.pfnCAP1CallBack = 0;   
+            break;      
+        case 0x16:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & 0x000F000F) & ~(0x00000002 | 0x00000004);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) & ~(0x00000002 | 0x00000004);
+
+            g_sDrvPWMBHandler.pfnCAP2CallBack = 0;   
+            break;
+        case 0x17:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & 0x000F000F) & ~(0x00020000 | 0x00040000);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) & ~(0x00020000 | 0x00040000);
+
+            g_sDrvPWMBHandler.pfnCAP3CallBack = 0;   
+            break; 
+    }
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvPWM_ClearInt(uint8_t u8Timer)
+{
+    switch (u8Timer)
+    {
+        case 0x00:
+        case 0x01:
+        case 0x02:
+        case 0x03:
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIIR))=(1 << u8Timer);
+            break;
+        case 0x04:
+        case 0x05:
+        case 0x06:
+        case 0x07:
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIIR))=(1 << (u8Timer-0x04));
+            break;
+
+        case 0x10:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & (0x000F000F | 0x00000010);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & ~0x00100000;
+            break;
+        case 0x11:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & (0x000F000F | 0x00100000);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & ~0x00000010;
+            break;
+        case 0x12:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & (0x000F000F | 0x00000010);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & ~0x00100000;
+            break;
+        case 0x13:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & (0x000F000F | 0x00100000);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & ~0x00000010;
+            break;
+        case 0x14:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & (0x000F000F | 0x00000010);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & ~0x00100000;
+            break;
+        case 0x15:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & (0x000F000F | 0x00100000);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & ~0x00000010;
+            break;
+        case 0x16:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & (0x000F000F | 0x00000010);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & ~0x00100000;
+            break;
+        case 0x17:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & (0x000F000F | 0x00100000);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & ~0x00000010;
+            break;
+    }
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+int32_t DrvPWM_GetIntFlag(uint8_t u8Timer)
+{
+    int32_t status = 0;
+    
+    switch (u8Timer)
+    {
+        case 0x00:
+        case 0x01:
+        case 0x02:
+        case 0x03:
+            status = ( (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PIIR))) & (1<<u8Timer) )? 1 : 0;
+            break;
+        case 0x04:
+        case 0x05:
+        case 0x06:
+        case 0x07:
+            status = ( (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PIIR))) & (1<<(u8Timer-0x04)) )? 1 : 0;
+            break;
+
+        case 0x10:
+            status = ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0.CAPIF0;
+            break;
+        case 0x11:
+            status = ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0.CAPIF1;             
+            break;
+        case 0x12:
+            status = ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2.CAPIF2;
+            break;
+        case 0x13:
+            status = ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2.CAPIF3;
+            break;
+        case 0x14:
+            status = ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0.CAPIF0;
+            break;
+        case 0x15:
+            status = ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0.CAPIF1;             
+            break;
+        case 0x16:
+            status = ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2.CAPIF2;
+            break;
+        case 0x17:
+            status = ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2.CAPIF3;
+            break;
+    }   
+
+    return status;      
+}
 
 
-int main (void) {
-	char output[15];
-	double iMeas = 0;
-	double voltage = 0.0;
-	double error = 0.0;
-	double temp_error = 0.0;
-	
-	 
-	S_DRVPWM_TIME_DATA_T sPt;
-		sPt.u32Frequency = 1000; 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        
+ 
+ 
+uint16_t DrvPWM_GetRisingCounter(uint8_t u8Capture)
+{
+    uint32_t u32Reg = 0;
+    
+    if (u8Capture >= 0x14)
+    {
+        u32Reg = *((volatile uint32_t *) (((( uint32_t)0x40100000) + 0x40000) + 0x58 + ((u8Capture - 0x14) << 3)));
+    }
+    else
+    {
+        u32Reg = *((volatile uint32_t *) (((( uint32_t)0x40000000) + 0x40000) + 0x58 + ((u8Capture & 0x7) << 3)));  
+    }
 
-		sPt.u8Mode = 1;
-	
-		sPt.u8HighPulseRatio = 20;   
-		sPt.i32Inverter = 0; 
-	
-		sPt.u8ClockSelector = 4; 
-		sPt.u8PreScale = 22;      
-		sPt.u32Duty = 1000;
-	
-	heartbeat();
-	
-		 
-	OpenKeyPad();
-	Initial_panel(); 
-	DrvGPIO_ClrBit(E_GPD,14); 
-	clr_all_panel(); 
-	
-	DrvADC_Open(ADC_SINGLE_END, ADC_SINGLE_OP,0x40,INTERNAL_HCLK,1); 
-	DrvADC_SetADCChannel(0x40);
-	DrvGPIO_DisableDigitalInputBit(E_GPA,6); 
+    return u32Reg;
+}
 
-	 
-	DrvGPIO_InitFunction(E_FUNC_PWM3);
-	DrvPWM_Open();
-	DrvPWM_SelectClockSource(0x03, 2); 
-	DrvPWM_SetTimerClk(0x03, &sPt);
-	DrvPWM_SetTimerIO(0x03,1);
-	DrvPWM_Enable(0x03, 1);
-	
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        
+ 
+ 
+uint16_t DrvPWM_GetFallingCounter(uint8_t u8Capture)
+{
+    uint32_t u32Reg = 0;
+    
+    if (u8Capture >= 0x14)
+    {
+        u32Reg = *((volatile uint32_t *) (((( uint32_t)0x40100000) + 0x40000) + 0x5C + ((u8Capture - 0x14) << 3)));
+    }
+    else
+    {
+        u32Reg = *((volatile uint32_t *) (((( uint32_t)0x40000000) + 0x40000) + 0x5C + ((u8Capture & 0x7) << 3)));  
+    }
 
-	calibrateLight(&full_LED, &no_LED);
-	kp = (no_LED/full_LED); 
-	
-	prevInputKeypad = 3; 
-	
-	clr_all_panel(); 
-	
-	while(1){
-			DrvADC_StartConvert();
-			while(!DrvADC_IsConversionDone());
-			DrvSYS_Delay(1000000);
-			while(DrvADC_IsDataValid(6)) 
-			iMeas = DrvADC_GetConversionData(6); 
+    return u32Reg;
+}
 
-			
-			temp_error = target_reading-iMeas;
-			error = (temp_error)*kp/(full_LED-no_LED)*100;
-			
-			if (error > 5) { error = 5; }
-			else if (error < -5) { error = -5; }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        
+ 
+int32_t DrvPWM_GetCaptureIntStatus(uint8_t u8Capture, uint8_t u8IntType)
+{   
+    int32_t status;
 
-			new_duty = sPt.u8HighPulseRatio + error * 1.2;
-			if (new_duty > 100){ new_duty = 100;	}
-			else if (new_duty < 1) {new_duty = 1; }
-			
-			sPt.u8HighPulseRatio = new_duty; 
-			DrvPWM_SetTimerClk(0x03 , &sPt); 
-			DrvSYS_Delay(100000); 
-			
-			voltage =	(iMeas / 4096.0) * 3.3 ;
-			sprintf(output, " %.2f V %.1f", voltage, iMeas); 
-			print_lcd(0, output);
-			
-			sprintf(output, " %.2f V %5.2f ", ((target_reading / 4096.0) * 3.3), target_reading);
-			print_lcd(1, output);
-			
-			sprintf(output, "%.1f %% error", error);
-			print_lcd(2, output);
-			
-			sprintf(output, "%d duty cycle", new_duty);
-			print_lcd(3, output);
-			
-			
-		keypad_input(&prevInputKeypad);
-		switch(prevInputKeypad){
-			case 1: 
-				target_reading = full_LED;
-				displayToUser(&prevInputKeypad);
-				break;
-			case 2: 
-				target_reading = no_LED +((full_LED - no_LED)*3/4);
-				displayToUser(&prevInputKeypad);
-			break;
-			case 3: 
-				target_reading = no_LED +((full_LED - no_LED)/2);
-				displayToUser(&prevInputKeypad);
-			break;
-			case 4: 
-				target_reading = no_LED +((full_LED - no_LED)*1/4);
-				displayToUser(&prevInputKeypad);
-			break;
-			case 5: 
-				target_reading = no_LED;
-				displayToUser(&prevInputKeypad);
-			break;
-			default:
-				target_reading = no_LED;
-				displayToUser(&prevInputKeypad);
-			break;
-		}
-		
-	CloseKeyPad();
-		
-	}
-} 
+    status = 0; 
+
+    switch (u8Capture)
+    {
+        case 0x10:
+            status = (u8IntType == 6)? ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0.CRLRI0 : ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0.CFLRI0;
+            break;
+        case 0x11:
+            status = (u8IntType == 6)? ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0.CRLRI1 : ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0.CFLRI1;
+            break;
+        case 0x12:
+            status = (u8IntType == 6)? ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2.CRLRI2 : ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2.CFLRI2;
+            break;
+        case 0x13:
+            status = (u8IntType == 6)? ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2.CRLRI3 : ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2.CFLRI3;
+            break;
+        case 0x14:
+            status = (u8IntType == 6)? ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0.CRLRI0 : ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0.CFLRI0;
+            break;
+        case 0x15:
+            status = (u8IntType == 6)? ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0.CRLRI1 : ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0.CFLRI1;
+            break;
+        case 0x16:
+            status = (u8IntType == 6)? ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2.CRLRI2 : ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2.CFLRI2;
+            break;
+        case 0x17:
+            status = (u8IntType == 6)? ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2.CRLRI3 : ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2.CFLRI3;
+            break;
+    }
+    
+    return status;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        
+ 
+void DrvPWM_ClearCaptureIntStatus(uint8_t u8Capture, uint8_t u8IntType)
+{
+    if (s_i32Option)
+    { 
+        switch (u8Capture)
+        {
+            case 0x10:
+                (u8IntType == 6)? (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & (0x000F000F | 0x00000040)) : (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & (0x000F000F | 0x00000080));
+                break;
+            case 0x11:
+                (u8IntType == 6)? (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & (0x000F000F | 0x00400000)) : (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & (0x000F000F | 0x00800000));
+                break;
+            case 0x12:
+                (u8IntType == 6)? (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & (0x000F000F | 0x00000040)) : (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & (0x000F000F | 0x00000080));
+                break;
+            case 0x13:
+                (u8IntType == 6)? (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & (0x000F000F | 0x00400000)) : (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & (0x000F000F | 0x00800000));
+                break;
+
+            case 0x14:
+                (u8IntType == 6)? (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & (0x000F000F | 0x00000040)) : (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & (0x000F000F | 0x00000080));
+                break;
+            case 0x15:
+                (u8IntType == 6)? (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & (0x000F000F | 0x00400000)) : (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & (0x000F000F | 0x00800000));
+                break;
+            case 0x16:
+                (u8IntType == 6)? (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & (0x000F000F | 0x00000040)) : (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & (0x000F000F | 0x00000080));
+                break;
+            case 0x17:
+                (u8IntType == 6)? (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & (0x000F000F | 0x00400000)) : (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & (0x000F000F | 0x00800000));
+                break;
+        }
+    }
+    else
+    {
+        switch (u8Capture)
+        {
+            case 0x10:
+                (u8IntType == 6)? (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) & ~0x00000040) : (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) & ~0x00000080);
+                break;
+            case 0x11:
+                (u8IntType == 6)? (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) & ~0x00400000) : (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) & ~0x00800000);
+                break;
+            case 0x12:
+                (u8IntType == 6)? (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) & ~0x00000040) : (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) & ~0x00000080);
+                break;
+            case 0x13:
+                (u8IntType == 6)? (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) & ~0x00400000) : (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) & ~0x00800000);
+                break;
+
+            case 0x14:
+                (u8IntType == 6)? (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) & ~0x00000040) : (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) & ~0x00000080);
+                break;
+            case 0x15:
+                (u8IntType == 6)? (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) & ~0x00400000) : (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) & ~0x00800000);
+                break;
+            case 0x16:
+                (u8IntType == 6)? (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) & ~0x00000040) : (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) & ~0x00000080);
+                break;
+            case 0x17:
+                (u8IntType == 6)? (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) & ~0x00400000) : (*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) & ~0x00800000);
+                break;
+        }   
+    }
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        
+ 
+void DrvPWM_Open(void)
+{ 
+    *((volatile unsigned int *)(&((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->APBCLK))=(*((volatile unsigned int *)(&((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->APBCLK))) | 0x00F00000;
+    *((volatile unsigned int *)(&((GCR_T *) ((( uint32_t)0x50000000) + 0x00000))->IPRSTC2))=(*((volatile unsigned int *)(&((GCR_T *) ((( uint32_t)0x50000000) + 0x00000))->IPRSTC2))) | 0x00300000;
+    *((volatile unsigned int *)(&((GCR_T *) ((( uint32_t)0x50000000) + 0x00000))->IPRSTC2))=(*((volatile unsigned int *)(&((GCR_T *) ((( uint32_t)0x50000000) + 0x00000))->IPRSTC2))) & ~0x00300000;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        
+ 
+void DrvPWM_Close(void)
+{
+    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->POE))=0;
+    ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CAPENR = 0;
+
+    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->POE))=0;
+    ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CAPENR = 0;
+
+    NVIC_DisableIRQ(PWMA_IRQn);
+    NVIC_DisableIRQ(PWMB_IRQn);
+    
+    *((volatile unsigned int *)(&((GCR_T *) ((( uint32_t)0x50000000) + 0x00000))->IPRSTC2))=(*((volatile unsigned int *)(&((GCR_T *) ((( uint32_t)0x50000000) + 0x00000))->IPRSTC2))) | 0x00300000;
+    *((volatile unsigned int *)(&((GCR_T *) ((( uint32_t)0x50000000) + 0x00000))->IPRSTC2))=(*((volatile unsigned int *)(&((GCR_T *) ((( uint32_t)0x50000000) + 0x00000))->IPRSTC2))) & ~0x00300000;
+
+    *((volatile unsigned int *)(&((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->APBCLK))=(*((volatile unsigned int *)(&((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->APBCLK))) & ~0x00F00000;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        
+ 
+void DrvPWM_EnableDeadZone(uint8_t u8Timer, uint8_t u8Length, int32_t i32EnableDeadZone)
+{
+    switch (u8Timer & 0x07)
+    {
+        case 0x00:
+        case 0x01:
+            ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PPR.DZI01  = u8Length;
+            ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PCR.DZEN01 = i32EnableDeadZone;
+            break;
+        case 0x02:
+        case 0x03:
+            ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PPR.DZI23  = u8Length;
+            ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PCR.DZEN23 = i32EnableDeadZone;
+            break;
+        case 0x04:
+        case 0x05:
+            ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PPR.DZI01  = u8Length;
+            ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PCR.DZEN01 = i32EnableDeadZone;
+            break;
+        case 0x06:
+        case 0x07:
+            ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PPR.DZI23  = u8Length;
+            ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PCR.DZEN23 = i32EnableDeadZone;
+            break;
+    }   
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        
+ 
+void DrvPWM_Enable(uint8_t u8Timer, int32_t i32Enable)
+{
+    switch (u8Timer & 0x07)
+    {
+        case 0x00:
+        case 0x01:
+        case 0x02:
+        case 0x03:
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PCR))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PCR))) & ~(1 << ((u8Timer & 0x07) << 3) )) | (i32Enable?(1 << ((u8Timer & 0x07) << 3) ):0);
+            break;
+        case 0x04:
+        case 0x05:
+        case 0x06:
+        case 0x07:
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PCR))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PCR))) & ~(1 << (((u8Timer & 0x07)-0x04)<< 3) )) | (i32Enable?(1 << (((u8Timer & 0x07)-0x04) << 3) ):0);
+            break;
+    }   
+
+    if (u8Timer & 0x10)
+    {
+        switch (u8Timer)
+        {
+            case 0x10:
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & 0x000F000F) | 0x00000008;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) | 0x00000008; 
+                break;
+            case 0x11:
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & 0x000F000F) | 0x00080000;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) | 0x00080000;    
+                break;
+            case 0x12:
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & 0x000F000F) | 0x00000008;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) | 0x00000008;     
+                break;                                                                    
+            case 0x13:
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & 0x000F000F) | 0x00080000;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) | 0x00080000;
+                break;
+            case 0x14:
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & 0x000F000F) | 0x00000008;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) | 0x00000008; 
+                break;
+            case 0x15:
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & 0x000F000F) | 0x00080000;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) | 0x00080000;    
+                break;
+            case 0x16:
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & 0x000F000F) | 0x00000008;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) | 0x00000008;     
+                break;                                                                    
+            case 0x17:
+                if (s_i32Option)
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & 0x000F000F) | 0x00080000;
+                else
+                    *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) | 0x00080000;
+                break;  
+        }
+    }
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+  
+ 
+ 
+                              
+ 
+ 
+        
+ 
+ 
+ 
+ 
+ 
+        
+ 
+uint32_t DrvPWM_SetTimerClk(uint8_t u8Timer, S_DRVPWM_TIME_DATA_T *sPt)
+{
+    uint32_t    u32Frequency;
+    uint32_t    u32Freqout;
+    uint16_t    u16Duty, u16cnrData, u16cmrData;
+    uint8_t     u8EngineClk = 0;
+         
+    switch (u8Timer & 0x07)
+    {
+        case 0x00:
+        case 0x01:
+            u8EngineClk = ((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKSEL1.PWM01_S;              
+            break;
+        case 0x02:
+        case 0x03:
+            u8EngineClk = ((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKSEL1.PWM23_S;
+            break;      
+        case 0x04:
+        case 0x05:
+            u8EngineClk = ((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKSEL2.PWM45_S;              
+            break;
+        case 0x06:
+        case 0x07:
+            u8EngineClk = ((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKSEL2.PWM67_S;
+            break;  
+    }
+
+
+    if (u8EngineClk == 0)         
+    {
+        u32Freqout = (12000000UL);    
+    }
+    else if(u8EngineClk == 1)     
+    {
+        u32Freqout = (32768UL);
+    }
+    else if(u8EngineClk == 2)     
+    {
+        u32Freqout = SystemCoreClock;
+    }
+    else                          
+    {
+        u32Freqout = (22118400UL);  
+    }
+
+    switch (u8Timer)
+    {
+        case 0x00:
+        case 0x01:
+        case 0x02:
+        case 0x03:
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PCR))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PCR))) & ~(1 << (((u8Timer ) << 3) + 2) )) |(sPt->i32Inverter?(1 << ((u8Timer << 3) + 2)):0);
+            break;
+        case 0x04:
+        case 0x05:
+        case 0x06:
+        case 0x07:
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PCR))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PCR))) & ~(1 << (((u8Timer-0x04) << 3) + 2) )) |(sPt->i32Inverter?(1 << (((u8Timer-0x04) << 3) + 2)):0);
+            break;
+
+        case 0x10:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & 0x000F000F) | (sPt->i32Inverter? 0x00000001 : 0);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) | (sPt->i32Inverter? 0x00000001 : 0); 
+            break;
+        case 0x11:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & 0x000F000F) | (sPt->i32Inverter? 0x00010000 : 0);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) | (sPt->i32Inverter? 0x00010000 : 0);    
+            break;
+        case 0x12:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & 0x000F000F) | (sPt->i32Inverter? 0x00000001 : 0);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) | (sPt->i32Inverter? 0x00000001 : 0); 
+            break;
+        case 0x13:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & 0x000F000F) | (sPt->i32Inverter? 0x00010000 : 0);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) | (sPt->i32Inverter? 0x00010000 : 0);
+            break;
+        case 0x14:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & 0x000F000F) | (sPt->i32Inverter? 0x00000001 : 0);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) | (sPt->i32Inverter? 0x00000001 : 0); 
+            break;
+        case 0x15:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & 0x000F000F) | (sPt->i32Inverter? 0x00010000 : 0);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR0))) & ~(0x00000010 | 0x00100000)) | (sPt->i32Inverter? 0x00010000 : 0);
+            break;
+        case 0x16:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & 0x000F000F) | (sPt->i32Inverter? 0x00000001 : 0);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) | (sPt->i32Inverter? 0x00000001 : 0);
+            break;
+        case 0x17:
+            if (s_i32Option)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & 0x000F000F) | (sPt->i32Inverter? 0x00010000 : 0);
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CCR2))) & ~(0x00000010 | 0x00100000)) | (sPt->i32Inverter? 0x00010000 : 0);
+            break;
+    } 
+
+    switch (u8Timer & 0x07)
+    {
+        case 0x00:
+        case 0x01:
+        case 0x02:
+        case 0x03:
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PCR))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PCR))) & ~(1 <<(((u8Timer & 0x07) << 3) + 3))) | ( sPt->u8Mode? (1 <<(((u8Timer & 0x07) << 3) + 3)):0);
+            break;
+        case 0x04:
+        case 0x05:
+        case 0x06:
+        case 0x07:
+            *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PCR))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PCR))) & ~(1 <<((((u8Timer & 0x07)-0x04) << 3) + 3))) | ( sPt->u8Mode? (1 <<((((u8Timer & 0x07)-0x04) << 3) + 3)):0);         
+            break;
+    } 
+            
+    
+    if (sPt->u32Frequency == 0)
+    {   
+        uint8_t u8Divider = 1;
+        uint32_t u32duty;
+        
+        switch (u8Timer & 0x07)
+        {
+            case 0x00:
+            case 0x01:
+                ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PPR.CP01 = sPt->u8PreScale;
+                break;
+            case 0x02:
+            case 0x03:
+                ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PPR.CP23 = sPt->u8PreScale;
+                break;
+            case 0x04:
+            case 0x05:
+                ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PPR.CP01 = sPt->u8PreScale;
+                break;
+            case 0x06:
+            case 0x07:
+                ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PPR.CP23 = sPt->u8PreScale;
+                break;
+        } 
+        
+        u32duty = sPt->u32Duty * sPt->u8HighPulseRatio / 100 - 1;
+        
+        switch (u8Timer & 0x07)
+        {
+            case 0x00:
+            case 0x01:
+            case 0x02:
+            case 0x03:
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CSR))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CSR))) & ~(0x7 << ((u8Timer & 0x07)<<2) )) | ((sPt->u8ClockSelector & 0x7) << ((u8Timer & 0x07)<<2));   
+                *((volatile unsigned int *)(((( uint32_t)0x40000000) + 0x40000) + 0x0C + (u8Timer & 0x07) * 12))=(sPt->u32Duty - 1);
+                *((volatile unsigned int *)(((( uint32_t)0x40000000) + 0x40000) + 0x10 + (u8Timer & 0x07) * 12))=u32duty;
+                break;
+            case 0x04:
+            case 0x05:
+            case 0x06:
+            case 0x07:
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CSR))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CSR))) & ~(0x7 << (((u8Timer & 0x07)-0x04)<<2) )) | ((sPt->u8ClockSelector & 0x7) << (((u8Timer & 0x07)-0x04)<<2));   
+                *((volatile unsigned int *)(((( uint32_t)0x40100000) + 0x40000) + 0x0C + ((u8Timer & 0x07)-0x04) * 12))=(sPt->u32Duty - 1);
+                *((volatile unsigned int *)(((( uint32_t)0x40100000) + 0x40000) + 0x10 + ((u8Timer & 0x07)-0x04) * 12))=u32duty;
+                break;
+        }
+                
+        switch (sPt->u8ClockSelector)
+        {
+            case 4:
+                u8Divider = 1;
+                break;
+            case 0:
+                u8Divider = 2;          
+                break;          
+            case 1:
+                u8Divider = 4;          
+                break;          
+            case 2:
+                u8Divider = 8;          
+                break;          
+            case 3: 
+                u8Divider = 16;         
+                break;      
+        }       
+        
+        u32Frequency = u32Freqout / (sPt->u8PreScale + 1) / u8Divider / sPt->u32Duty;
+    }
+    else
+    {
+        uint8_t  u8Divider;
+        uint16_t u16PreScale;
+        
+        u32Frequency =  u32Freqout / sPt->u32Frequency;     
+        
+        if (u32Frequency > 0x10000000)
+            return 0;
+            
+        u8Divider = 1;          
+            
+        if (u32Frequency < 0x20000)
+            u16PreScale = 2;    
+        else
+        {
+            u16PreScale = u32Frequency / 65536; 
+                            
+            if (u32Frequency / u16PreScale > 65536)
+                u16PreScale++;
+            
+            if (u16PreScale > 256)
+            {
+                uint8_t u8i = 0;
+                
+                u16PreScale = 256;
+                u32Frequency = u32Frequency / u16PreScale;
+                
+                u8Divider = u32Frequency / 65536;
+                
+                if(u32Frequency / u8Divider > 65536)
+                    u8Divider++;
+                
+                while(1)    
+                {
+                    if((1 << u8i++) > u8Divider)
+                        break;
+                }
+                
+                u8Divider = 1 << (u8i - 1);
+                
+                if (u8Divider > 16)
+                    return 0;   
+                    
+                u32Frequency = u32Frequency * u16PreScale;
+            }       
+                    
+        }
+        u16Duty = (uint16_t )(u32Frequency/u16PreScale/u8Divider);
+        
+        u32Frequency = (u32Freqout / u16PreScale / u8Divider) / u16Duty;    
+                
+        switch (u8Timer & 0x07)
+        {
+            case 0x00:
+            case 0x01:
+                ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PPR.CP01 = u16PreScale - 1;
+                break;
+            case 0x02:
+            case 0x03:
+                ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PPR.CP23 = u16PreScale - 1;
+                break;
+            case 0x04:
+            case 0x05:
+                ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PPR.CP01 = u16PreScale - 1;
+                break;
+            case 0x06:
+            case 0x07:
+                ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PPR.CP23 = u16PreScale - 1;
+                break;
+        }
+        
+        switch(u8Divider)
+        {
+            case 1:
+                u8Divider = 4;
+                break;
+            case 2:
+                u8Divider = 0;  
+                break;          
+            case 4:
+                u8Divider = 1;  
+                break;          
+            case 8:
+                u8Divider = 2;  
+                break;          
+            case 16:
+                u8Divider = 3; 
+                break;      
+        }               
+                    
+        if (u8Timer & 0x10)
+        {
+            u16cnrData = sPt->u32Duty - 1; 
+            u16cmrData = sPt->u32Duty * sPt->u8HighPulseRatio / 100 - 1;        
+        }
+        else
+        {
+            u16cnrData = u16Duty - 1;
+            u16cmrData = u16Duty * sPt->u8HighPulseRatio / 100 - 1;
+        }
+        
+        switch (u8Timer & 0x07)
+        {
+            case 0x00:
+            case 0x01:
+            case 0x02:
+            case 0x03:
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CSR))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CSR))) & ~(0x7 << ((u8Timer & 0x07)<<2) )) | ((u8Divider & 0x7) << ((u8Timer & 0x07)<<2));  
+                *((volatile unsigned int *)(((( uint32_t)0x40000000) + 0x40000) + 0x0C + (u8Timer & 0x07) * 12))=u16cnrData;          
+                *((volatile unsigned int *)(((( uint32_t)0x40000000) + 0x40000) + 0x10 + (u8Timer & 0x07) * 12))=u16cmrData;    
+                break;
+            case 0x04:
+            case 0x05:
+            case 0x06:
+            case 0x07:
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CSR))=((*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CSR))) & ~(0x7 << (((u8Timer & 0x07)-0x04)<<2) )) | ((u8Divider & 0x7) << (((u8Timer & 0x07)-0x04)<<2));  
+                *((volatile unsigned int *)(((( uint32_t)0x40100000) + 0x40000) + 0x0C + ((u8Timer & 0x07)-0x04) * 12))=u16cnrData;          
+                *((volatile unsigned int *)(((( uint32_t)0x40100000) + 0x40000) + 0x10 + ((u8Timer & 0x07)-0x04) * 12))=u16cmrData;  
+                break;
+        }
+    }
+    
+    return u32Frequency;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvPWM_SetTimerIO(uint8_t u8Timer, int32_t i32Enable)
+{
+    if (i32Enable)
+    {
+        if (u8Timer & 0x10)
+        {
+            if (u8Timer & 0x04)
+                ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CAPENR = ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CAPENR | (1 << (u8Timer - 0x14));
+            else
+                ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CAPENR = ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CAPENR | (1 << (u8Timer & 0x07));          
+        }
+        else
+        {
+            if (u8Timer & 0x04)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->POE))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->POE))) | (1 << (u8Timer-0x04));
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->POE))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->POE))) | (1 << u8Timer);    
+        }
+    }
+    else
+    {
+        if (u8Timer & 0x10)         
+        {
+            if (u8Timer & 0x04)
+                ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CAPENR = ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->CAPENR & ~(1 << (u8Timer - 0x14));
+            else
+                ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CAPENR = ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CAPENR & ~(1 << (u8Timer & 0x07));         
+        }
+        else
+        {
+            if (u8Timer & 0x04)
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->POE))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->POE))) & ~(1 << (u8Timer-0x04));
+            else
+                *((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->POE))=(*((volatile unsigned int *)(&((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->POE))) & ~(1 << u8Timer);           
+        }
+    }
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvPWM_SelectClockSource(uint8_t u8Timer, uint8_t u8ClockSourceSelector)
+{
+    switch (u8Timer & 0x07)
+    {
+        case 0x00:
+        case 0x01:
+            ((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKSEL1.PWM01_S = u8ClockSourceSelector;                
+            break;
+        case 0x02:
+        case 0x03:
+            ((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKSEL1.PWM23_S = u8ClockSourceSelector;
+            break;      
+        case 0x04:
+        case 0x05:
+            ((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKSEL2.PWM45_S = u8ClockSourceSelector;
+            break;
+        case 0x06:
+        case 0x07:
+            ((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKSEL2.PWM67_S = u8ClockSourceSelector;
+            break;  
+    }
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+int32_t DrvPWM_SelectClearLatchFlagOption(int32_t i32option)
+{
+    ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PBCR.BCn = 0;
+    if (((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PBCR.BCn)
+    {
+        return (((1) ? 0xFFFF0000 : 0x00000000) | ((((MODULE_ID_DRVPWM) & 0xFF) | ((1) ? 0x100 : 0x00)) << 7) | ((2) & 0x7F));
+    }
+    else
+    {
+        ((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->PBCR.BCn = i32option;
+        ((PWM_T *) ((( uint32_t)0x40100000) + 0x40000))->PBCR.BCn = i32option;
+        s_i32Option = i32option;        
+        return 0;
+    }
+}
+

@@ -7,6 +7,8 @@
 ".\ascii_table.o"
 ".\lcd_driver.o"
 ".\scankey.o"
+".\drvpwm.o"
+".\drvadc.o"
 ".\heartbeat.o"
 ".\main.o"
 ".\user_func.o"

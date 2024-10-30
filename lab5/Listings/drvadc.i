@@ -1,917 +1,14 @@
-#line 1 "main.c"
-
-
-
-
-
-
-
-
-
-
-
- 
-
-#line 1 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
- 
- 
- 
-
-
-
-
-
- 
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
- 
-
-
-
-
-  
- 
-
-
-
-
-
-
-
-
-#line 47 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
-
-
-  
-
-
-
-    typedef unsigned int size_t;    
-
-
-
-
-
-
-
-
-
- 
- 
-
- 
-
-
-
-    typedef struct __va_list __va_list;
-
-
-
-
-
-
-   
-
-
-
-
- 
-
-
-
-
-typedef struct __fpos_t_struct {
-    unsigned __int64 __pos;
-    
-
-
-
- 
-    struct {
-        unsigned int __state1, __state2;
-    } __mbstate;
-} fpos_t;
-   
-
-
- 
-
-
-   
-
- 
-
-typedef struct __FILE FILE;
-   
-
-
-
-
-
-
- 
-
-#line 136 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
-
-
-extern FILE __stdin, __stdout, __stderr;
-extern FILE *__aeabi_stdin, *__aeabi_stdout, *__aeabi_stderr;
-
-#line 166 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
-    
-
-    
-
-    
-
-
-
-
-
-     
-
-
-
-   
-
-
- 
-
-
-   
-
-
- 
-
-   
-
-
-
- 
-
-   
-
-
- 
-
-
-
-
-   
-
-
- 
-
-
-
-
-
-    
-
-
- 
-
-
-
-
-
-
-extern __declspec(__nothrow) int remove(const char *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
- 
-extern __declspec(__nothrow) int rename(const char *  , const char *  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) FILE *tmpfile(void);
-   
-
-
-
-
- 
-extern __declspec(__nothrow) char *tmpnam(char *  );
-   
-
-
-
-
-
-
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) int fclose(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int fflush(FILE *  );
-   
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) FILE *fopen(const char * __restrict  ,
-                           const char * __restrict  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) FILE *freopen(const char * __restrict  ,
-                    const char * __restrict  ,
-                    FILE * __restrict  ) __attribute__((__nonnull__(2,3)));
-   
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) void setbuf(FILE * __restrict  ,
-                    char * __restrict  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
- 
-extern __declspec(__nothrow) int setvbuf(FILE * __restrict  ,
-                   char * __restrict  ,
-                   int  , size_t  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-#pragma __printf_args
-extern __declspec(__nothrow) int fprintf(FILE * __restrict  ,
-                    const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-#pragma __printf_args
-extern __declspec(__nothrow) int _fprintf(FILE * __restrict  ,
-                     const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
- 
-#pragma __printf_args
-extern __declspec(__nothrow) int printf(const char * __restrict  , ...) __attribute__((__nonnull__(1)));
-   
-
-
-
-
- 
-#pragma __printf_args
-extern __declspec(__nothrow) int _printf(const char * __restrict  , ...) __attribute__((__nonnull__(1)));
-   
-
-
-
- 
-#pragma __printf_args
-extern __declspec(__nothrow) int sprintf(char * __restrict  , const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
- 
-#pragma __printf_args
-extern __declspec(__nothrow) int _sprintf(char * __restrict  , const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
- 
-
-#pragma __printf_args
-extern __declspec(__nothrow) int __ARM_snprintf(char * __restrict  , size_t  ,
-                     const char * __restrict  , ...) __attribute__((__nonnull__(3)));
-
-
-#pragma __printf_args
-extern __declspec(__nothrow) int snprintf(char * __restrict  , size_t  ,
-                     const char * __restrict  , ...) __attribute__((__nonnull__(3)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-#pragma __printf_args
-extern __declspec(__nothrow) int _snprintf(char * __restrict  , size_t  ,
-                      const char * __restrict  , ...) __attribute__((__nonnull__(3)));
-   
-
-
-
- 
-#pragma __scanf_args
-extern __declspec(__nothrow) int fscanf(FILE * __restrict  ,
-                    const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-#pragma __scanf_args
-extern __declspec(__nothrow) int _fscanf(FILE * __restrict  ,
-                     const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
- 
-#pragma __scanf_args
-extern __declspec(__nothrow) int scanf(const char * __restrict  , ...) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
- 
-#pragma __scanf_args
-extern __declspec(__nothrow) int _scanf(const char * __restrict  , ...) __attribute__((__nonnull__(1)));
-   
-
-
-
- 
-#pragma __scanf_args
-extern __declspec(__nothrow) int sscanf(const char * __restrict  ,
-                    const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
- 
-#pragma __scanf_args
-extern __declspec(__nothrow) int _sscanf(const char * __restrict  ,
-                     const char * __restrict  , ...) __attribute__((__nonnull__(1,2)));
-   
-
-
-
- 
-
- 
-extern __declspec(__nothrow) int vfscanf(FILE * __restrict  , const char * __restrict  , __va_list) __attribute__((__nonnull__(1,2)));
-extern __declspec(__nothrow) int vscanf(const char * __restrict  , __va_list) __attribute__((__nonnull__(1)));
-extern __declspec(__nothrow) int vsscanf(const char * __restrict  , const char * __restrict  , __va_list) __attribute__((__nonnull__(1,2)));
-
-extern __declspec(__nothrow) int _vfscanf(FILE * __restrict  , const char * __restrict  , __va_list) __attribute__((__nonnull__(1,2)));
-extern __declspec(__nothrow) int _vscanf(const char * __restrict  , __va_list) __attribute__((__nonnull__(1)));
-extern __declspec(__nothrow) int _vsscanf(const char * __restrict  , const char * __restrict  , __va_list) __attribute__((__nonnull__(1,2)));
-extern __declspec(__nothrow) int __ARM_vsscanf(const char * __restrict  , const char * __restrict  , __va_list) __attribute__((__nonnull__(1,2)));
-
-extern __declspec(__nothrow) int vprintf(const char * __restrict  , __va_list  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
- 
-extern __declspec(__nothrow) int _vprintf(const char * __restrict  , __va_list  ) __attribute__((__nonnull__(1)));
-   
-
-
-
- 
-extern __declspec(__nothrow) int vfprintf(FILE * __restrict  ,
-                    const char * __restrict  , __va_list  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int vsprintf(char * __restrict  ,
-                     const char * __restrict  , __va_list  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int __ARM_vsnprintf(char * __restrict  , size_t  ,
-                     const char * __restrict  , __va_list  ) __attribute__((__nonnull__(3)));
-
-extern __declspec(__nothrow) int vsnprintf(char * __restrict  , size_t  ,
-                     const char * __restrict  , __va_list  ) __attribute__((__nonnull__(3)));
-   
-
-
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) int _vsprintf(char * __restrict  ,
-                      const char * __restrict  , __va_list  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
- 
-extern __declspec(__nothrow) int _vfprintf(FILE * __restrict  ,
-                     const char * __restrict  , __va_list  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
- 
-extern __declspec(__nothrow) int _vsnprintf(char * __restrict  , size_t  ,
-                      const char * __restrict  , __va_list  ) __attribute__((__nonnull__(3)));
-   
-
-
-
- 
-
-#pragma __printf_args
-extern __declspec(__nothrow) int asprintf(char **  , const char * __restrict  , ...) __attribute__((__nonnull__(2)));
-extern __declspec(__nothrow) int vasprintf(char **  , const char * __restrict  , __va_list  ) __attribute__((__nonnull__(2)));
-
-#pragma __printf_args
-extern __declspec(__nothrow) int __ARM_asprintf(char **  , const char * __restrict  , ...) __attribute__((__nonnull__(2)));
-extern __declspec(__nothrow) int __ARM_vasprintf(char **  , const char * __restrict  , __va_list  ) __attribute__((__nonnull__(2)));
-   
-
-
-
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) int fgetc(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) char *fgets(char * __restrict  , int  ,
-                    FILE * __restrict  ) __attribute__((__nonnull__(1,3)));
-   
-
-
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int fputc(int  , FILE *  ) __attribute__((__nonnull__(2)));
-   
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int fputs(const char * __restrict  , FILE * __restrict  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
- 
-extern __declspec(__nothrow) int getc(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
- 
-
-
-
-
-    extern __declspec(__nothrow) int (getchar)(void);
-
-   
-
-
-
-
-
- 
-extern __declspec(__nothrow) char *gets(char *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int putc(int  , FILE *  ) __attribute__((__nonnull__(2)));
-   
-
-
-
-
-
- 
-
-
-
-
-    extern __declspec(__nothrow) int (putchar)(int  );
-
-   
-
-
-
- 
-extern __declspec(__nothrow) int puts(const char *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
- 
-extern __declspec(__nothrow) int ungetc(int  , FILE *  ) __attribute__((__nonnull__(2)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) size_t fread(void * __restrict  ,
-                    size_t  , size_t  , FILE * __restrict  ) __attribute__((__nonnull__(1,4)));
-   
-
-
-
-
-
-
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) size_t __fread_bytes_avail(void * __restrict  ,
-                    size_t  , FILE * __restrict  ) __attribute__((__nonnull__(1,3)));
-   
-
-
-
-
-
-
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) size_t fwrite(const void * __restrict  ,
-                    size_t  , size_t  , FILE * __restrict  ) __attribute__((__nonnull__(1,4)));
-   
-
-
-
-
-
-
-
- 
-
-extern __declspec(__nothrow) int fgetpos(FILE * __restrict  , fpos_t * __restrict  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int fseek(FILE *  , long int  , int  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) int fsetpos(FILE * __restrict  , const fpos_t * __restrict  ) __attribute__((__nonnull__(1,2)));
-   
-
-
-
-
-
-
-
-
-
-
- 
-extern __declspec(__nothrow) long int ftell(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
-
-
-
-
-
-
+#line 1 "..\\..\\Src\\Driver\\DrvADC.c"
  
-extern __declspec(__nothrow) void rewind(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
-
  
-
-extern __declspec(__nothrow) void clearerr(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
-
-
  
-
-extern __declspec(__nothrow) int feof(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
  
-extern __declspec(__nothrow) int ferror(FILE *  ) __attribute__((__nonnull__(1)));
-   
-
-
  
-extern __declspec(__nothrow) void perror(const char *  );
-   
-
-
-
-
-
 
 
-
-
- 
-
-extern __declspec(__nothrow) int _fisatty(FILE *   ) __attribute__((__nonnull__(1)));
-    
  
-
-extern __declspec(__nothrow) void __use_no_semihosting_swi(void);
-extern __declspec(__nothrow) void __use_no_semihosting(void);
-    
-
-
-
-
-
  
-
-
-
-
-
-
-
-
-
-
-
-#line 1021 "C:\\Keil_v5\\ARM\\ARMCC\\Bin\\..\\include\\stdio.h"
-
-
-
  
-
-#line 15 "main.c"
 #line 1 "..\\NUC1xx\\NUC1xx.h"
  
  
@@ -8927,31 +8024,11 @@ typedef volatile unsigned short vu16;
 
 
                                                                                                  
-#line 16 "main.c"
-
-#line 1 "user_func.h"
-
-
-
-
-
-
- 
-
-#line 10 "user_func.h"
-#line 11 "user_func.h"
- 
-#line 1 "..\\Include\\Driver\\DrvGPIO.h"
+#line 12 "..\\..\\Src\\Driver\\DrvADC.c"
+#line 13 "..\\..\\Src\\Driver\\DrvADC.c"
+#line 1 "..\\Include\\Driver\\DrvADC.h"
  
  
- 
- 
- 
-
-
-
-#line 10 "..\\Include\\Driver\\DrvGPIO.h"
-
  
  
  
@@ -8962,138 +8039,77 @@ typedef volatile unsigned short vu16;
  
  
  
+#line 14 "..\\Include\\Driver\\DrvADC.h"
+#line 15 "..\\Include\\Driver\\DrvADC.h"
 
-							   
+ 
+
+
  
  
  
+ 
 
 
 
 
-typedef void (*GPIO_GPAB_CALLBACK)(uint32_t u32GPAStatus, uint32_t u32GPBStatus);
-typedef void (*GPIO_GPCDE_CALLBACK)(uint32_t u32GPCStatus, uint32_t u32GPDStatus, uint32_t u32GPEStatus);
-typedef void (*GPIO_EINT0_CALLBACK)(void);
-typedef void (*GPIO_EINT1_CALLBACK)(void);
 
  
-#line 117 "..\\Include\\Driver\\DrvGPIO.h"
 
-typedef enum 
-{
-	E_GPA = 0,
-	E_GPB = 1, 
-	E_GPC = 2, 
-	E_GPD = 3, 
-	E_GPE = 4
-} E_DRVGPIO_PORT;
 
-typedef enum 
-{
-    E_IO_INPUT = 0,
-    E_IO_OUTPUT,
-    E_IO_OPENDRAIN,
-    E_IO_QUASI
-} E_DRVGPIO_IO;
+typedef enum {ADC_SINGLE_END, ADC_DIFFERENTIAL} E_ADC_INPUT_MODE;
+typedef enum {ADC_SINGLE_OP, ADC_SINGLE_CYCLE_OP, ADC_CONTINUOUS_OP} E_ADC_OPERATION_MODE;
+typedef enum {EXTERNAL_12MHZ=0, INTERNAL_PLL=1, INTERNAL_HCLK=2, INTERNAL_RC22MHZ=3} E_ADC_CLK_SRC;
+typedef enum {LOW_LEVEL=0, HIGH_LEVEL=1, FALLING_EDGE=2, RISING_EDGE=3} E_ADC_EXT_TRI_COND;
+typedef enum {EXTERNAL_INPUT_SIGNAL, INTERNAL_BANDGAP, INTERNAL_TEMPERATURE_SENSOR} E_ADC_CH7_SRC;
+typedef enum {LESS_THAN, GREATER_OR_EQUAL} E_ADC_CMP_CONDITION;
+typedef enum {UNSIGNED_OUTPUT, TWOS_COMPLEMENT} E_ADC_DIFF_MODE_OUTPUT_FORMAT;
 
-typedef enum 
-{
-    E_IO_RISING = 0,
-    E_IO_FALLING,
-    E_IO_BOTH_EDGE
-} E_DRVGPIO_INT_TYPE;
+typedef void (DRVADC_ADC_CALLBACK)(uint32_t u32UserData);
+typedef void (DRVADC_ADCMP0_CALLBACK)(uint32_t u32UserData);
+typedef void (DRVADC_ADCMP1_CALLBACK)(uint32_t u32UserData);
 
-typedef enum
-{
-    E_MODE_EDGE = 0,
-    E_MODE_LEVEL
-} E_DRVGPIO_INT_MODE;
+#line 50 "..\\Include\\Driver\\DrvADC.h"
 
-typedef enum
-{
-    E_DBCLKSRC_HCLK = 0, 
-    E_DBCLKSRC_10K = 1
-} E_DRVGPIO_DBCLKSRC;	   
-
-typedef enum
-{
-	E_FUNC_GPIO,    E_FUNC_CLKO,    E_FUNC_I2C0,    E_FUNC_I2C1,    E_FUNC_I2S,     E_FUNC_CAN0,	
-    E_FUNC_ACMP0,   E_FUNC_ACMP1,   
-    E_FUNC_SPI0,    E_FUNC_SPI0_SS1,    E_FUNC_SPI0_2BIT_MODE,
-    E_FUNC_SPI1,    E_FUNC_SPI1_SS1,    E_FUNC_SPI1_2BIT_MODE,
-    E_FUNC_SPI2,    E_FUNC_SPI2_SS1,    E_FUNC_SPI2_2BIT_MODE,
-    E_FUNC_SPI3,    E_FUNC_SPI3_SS1,    E_FUNC_SPI3_2BIT_MODE,      
-    E_FUNC_SPI0_QFN36PIN,   E_FUNC_SPI0_SS1_QFN36PIN,   E_FUNC_SPI0_2BIT_MODE_QFN36PIN,
-    E_FUNC_ADC0,    E_FUNC_ADC1,    E_FUNC_ADC2,    E_FUNC_ADC3,    E_FUNC_ADC4,    E_FUNC_ADC5,
-    E_FUNC_ADC6,    E_FUNC_ADC7,    E_FUNC_EXTINT0, E_FUNC_EXTINT1, E_FUNC_TMR0,    E_FUNC_TMR1,      
-    E_FUNC_TMR2,    E_FUNC_TMR3,    E_FUNC_T0EX,    E_FUNC_T1EX,    E_FUNC_T2EX,    E_FUNC_T3EX,
-    E_FUNC_UART0,   E_FUNC_UART0_RX_TX, E_FUNC_UART0_RTS_CTS,
-    E_FUNC_UART1,   E_FUNC_UART1_RX_TX, E_FUNC_UART1_RTS_CTS,       E_FUNC_UART2,
-    E_FUNC_PWM01,   E_FUNC_PWM23,   E_FUNC_PWM45,   E_FUNC_PWM67,   E_FUNC_PWM0,    E_FUNC_PWM1,
-    E_FUNC_PWM2,    E_FUNC_PWM3,    E_FUNC_PWM4,    E_FUNC_PWM5,    E_FUNC_PWM6,    E_FUNC_PWM7,    
-    E_FUNC_EBI_8B,  E_FUNC_EBI_16B,          
-} E_DRVGPIO_FUNC;
-			  
  
  
  
-int32_t DrvGPIO_Open(E_DRVGPIO_PORT port, int32_t i32Bit, E_DRVGPIO_IO mode);
-int32_t DrvGPIO_Close(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_SetBit(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_GetBit(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_ClrBit(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_SetPortBits(E_DRVGPIO_PORT port, int32_t i32Data);
-int32_t DrvGPIO_GetPortBits(E_DRVGPIO_PORT port);
-int32_t DrvGPIO_GetDoutBit(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_GetPortDoutBits(E_DRVGPIO_PORT port);
-int32_t DrvGPIO_SetBitMask(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_GetBitMask(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_ClrBitMask(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_SetPortMask(E_DRVGPIO_PORT port, int32_t i32MaskData);
-int32_t DrvGPIO_GetPortMask(E_DRVGPIO_PORT port);
-int32_t DrvGPIO_ClrPortMask(E_DRVGPIO_PORT port, int32_t i32MaskData);
-int32_t DrvGPIO_EnableDigitalInputBit(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_DisableDigitalInputBit(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_EnableDebounce(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_DisableDebounce(E_DRVGPIO_PORT port, int32_t i32Bit);
-int32_t DrvGPIO_SetDebounceTime(uint32_t u32CycleSelection, E_DRVGPIO_DBCLKSRC ClockSource);
-int32_t DrvGPIO_GetDebounceSampleCycle(void);
-int32_t DrvGPIO_EnableInt(E_DRVGPIO_PORT port, int32_t i32Bit, E_DRVGPIO_INT_TYPE TriggerType, E_DRVGPIO_INT_MODE Mode);
-int32_t DrvGPIO_DisableInt(E_DRVGPIO_PORT port, int32_t i32Bit);
-void DrvGPIO_SetIntCallback(GPIO_GPAB_CALLBACK pfGPABCallback, GPIO_GPCDE_CALLBACK pfGPCDECallback);
-void DrvGPIO_EnableEINT0(E_DRVGPIO_INT_TYPE TriggerType, E_DRVGPIO_INT_MODE Mode, GPIO_EINT0_CALLBACK pfEINT0Callback);
-void DrvGPIO_DisableEINT0(void);
-void DrvGPIO_EnableEINT1(E_DRVGPIO_INT_TYPE TriggerType, E_DRVGPIO_INT_MODE Mode, GPIO_EINT1_CALLBACK pfEINT1Callback);
-void DrvGPIO_DisableEINT1(void);
-int32_t DrvGPIO_GetIntStatus(E_DRVGPIO_PORT port);
-int32_t DrvGPIO_InitFunction(E_DRVGPIO_FUNC function);
-int32_t DrvGPIO_GetVersion(void);
+void DrvADC_Open(E_ADC_INPUT_MODE InputMode, E_ADC_OPERATION_MODE OpMode, uint8_t u8ChannelSelBitwise, E_ADC_CLK_SRC ClockSrc, uint8_t u8AdcDivisor);
+void DrvADC_Close(void);
+void DrvADC_SetADCChannel(uint8_t u8ChannelSelBitwise);
+void DrvADC_ConfigADCChannel7(E_ADC_CH7_SRC Ch7Src);
+void DrvADC_SetADCInputMode(E_ADC_INPUT_MODE InputMode);
+void DrvADC_SetADCOperationMode(E_ADC_OPERATION_MODE OpMode);
+void DrvADC_SetADCClkSrc(E_ADC_CLK_SRC ClockSrc);
+void DrvADC_SetADCDivisor(uint8_t u8AdcDivisor);
+void DrvADC_EnableADCInt(DRVADC_ADC_CALLBACK callback, uint32_t u32UserData);
+void DrvADC_DisableADCInt(void);
+void DrvADC_EnableADCCmp0Int(DRVADC_ADCMP0_CALLBACK callback, uint32_t u32UserData);
+void DrvADC_DisableADCCmp0Int(void);
+void DrvADC_EnableADCCmp1Int(DRVADC_ADCMP1_CALLBACK callback, uint32_t u32UserData);
+void DrvADC_DisableADCCmp1Int(void);
+uint32_t DrvADC_GetConversionRate(void);
+void DrvADC_EnableExtTrigger(E_ADC_EXT_TRI_COND TriggerCondition);
+void DrvADC_DisableExtTrigger(void);
+void DrvADC_StartConvert(void);
+void DrvADC_StopConvert(void);
+uint32_t DrvADC_IsConversionDone(void);
+int32_t DrvADC_GetConversionData(uint8_t u8ChannelNum);
+void DrvADC_EnablePDMA(void);
+void DrvADC_DisablePDMA(void);
+uint32_t DrvADC_IsDataValid(uint8_t u8ChannelNum);
+uint32_t DrvADC_IsDataOverrun(uint8_t u8ChannelNum);
+int32_t DrvADC_EnableADCCmp0(uint8_t u8CmpChannelNum, E_ADC_CMP_CONDITION CmpCondition, uint16_t u16CmpData, uint8_t CmpMatchCount);
+int32_t DrvADC_EnableADCCmp1(uint8_t u8CmpChannelNum, E_ADC_CMP_CONDITION CmpCondition, uint16_t u16CmpData, uint8_t CmpMatchCount);
+void DrvADC_DisableADCCmp0(void);
+void DrvADC_DisableADCCmp1(void);
+void DrvADC_EnableSelfCalibration(void);
+uint32_t DrvADC_IsCalibrationDone(void);
+void DrvADC_DisableSelfCalibration(void);
+void DrvADC_DiffModeOutputFormat(E_ADC_DIFF_MODE_OUTPUT_FORMAT OutputFormat);
+uint32_t DrvADC_GetVersion (void);
 
-
-
-
-
-
-
-
-
-
-#line 13 "user_func.h"
-#line 1 "..\\Include\\NUC1xx-LB_002\\LCD_Driver.h"
-
-
-     
-extern void SysTimerDelay(uint32_t us);
-extern void Initial_panel(void);
-extern void Disable_Buzzer(void);
-
-extern void Show_Word(unsigned char x, unsigned char y,unsigned char ascii_word);
-
-extern void print_lcd(unsigned char line, char *str);
-
-
-extern void clr_all_panel(void);
-#line 14 "user_func.h"
+#line 14 "..\\..\\Src\\Driver\\DrvADC.c"
 #line 1 "..\\Include\\Driver\\DrvSYS.h"
  
  
@@ -9323,582 +8339,838 @@ int32_t  DrvSYS_UnlockProtectedReg(void);
 
 
 
-#line 15 "user_func.h"
-#line 1 "..\\Include\\NUC1xx-LB_002\\Seven_Segment.h"
-
-
-extern void OpenSevenSegment(void);
-extern void ShowSevenSegment(unsigned char no, unsigned char number);
-extern void CloseSevenSegment(void);
-
-
-#line 16 "user_func.h"
-#line 1 "..\\Include\\NUC1xx-LB_002\\ScanKey.h"
- 
- 
- 
- 
- 
-
-
-
-void OpenKeyPad(void);
-void CloseKeyPad(void);
-uint8_t Scankey(void);
-
-
-
-#line 17 "user_func.h"
-#line 1 "..\\Include\\Driver\\DrvTIMER.h"
- 
- 
- 
- 
- 
-
-
-
-#line 10 "..\\Include\\Driver\\DrvTIMER.h"
+#line 15 "..\\..\\Src\\Driver\\DrvADC.c"
 
  
  
  
+static DRVADC_ADC_CALLBACK *g_ptADCCallBack;
+static DRVADC_ADCMP0_CALLBACK *g_ptADCMP0CallBack;
+static DRVADC_ADCMP1_CALLBACK *g_ptADCMP1CallBack;
+static uint32_t g_pu32UserData[3];
 
  
  
  
-
-
-
-
-
  
  
  
-#line 32 "..\\Include\\Driver\\DrvTIMER.h"
-
- 
-                                                                             
- 
-typedef void (*TIMER_CALLBACK)(uint32_t data);	 
-typedef void (*WDT_CALLBACK)(uint32_t data);	 
-
  
  
  
-typedef struct timeEvent_t
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_Open(E_ADC_INPUT_MODE InputMode, E_ADC_OPERATION_MODE OpMode, uint8_t u8ChannelSelBitwise, E_ADC_CLK_SRC ClockSrc, uint8_t u8AdcDivisor)
 {
-    int32_t              active;
-    int32_t              initTick;
-    int32_t              curTick;
-    TIMER_CALLBACK       funPtr;
-    uint32_t             transParam;
-} TIMER_EVENT_T;
-
- 
- 
- 
-typedef enum {
-    E_TMR0      = 0,
-    E_TMR1      = 1,
-	E_TMR2      = 2,
-	E_TMR3      = 3        
-} E_TIMER_CHANNEL;
-
- 
- 
- 
-typedef enum{                   
-    E_ONESHOT_MODE 		= 0,
-    E_PERIODIC_MODE   	= 1,
-    E_TOGGLE_MODE     	= 2, 
-	E_CONTINUOUS_MODE 	= 3     
-} E_TIMER_OPMODE ;
-
- 
- 
- 
-typedef enum{                   
-    E_PHASE_FALLING     = 0,
-    E_PHASE_RISING      = 1,
-} E_TIMER_TX_PHASE ;
-
- 
- 
- 
-typedef enum{                   
-    E_EDGE_FALLING      = 0,
-    E_EDGE_RISING       = 1,
-    E_EDGE_BOTH         = 2,
-} E_TIMER_TEX_EDGE ;
-
- 
- 
- 
-typedef enum{                   
-    E_CAPTURE           = 0,
-    E_RESET             = 1,
-} E_TIMER_RSTCAP_MODE ;
-
- 
- 
- 
-typedef enum {
-    E_WDT_IOC_START_TIMER       = 0,
-    E_WDT_IOC_STOP_TIMER        = 1,
-    E_WDT_IOC_ENABLE_INT        = 2,
-    E_WDT_IOC_DISABLE_INT       = 3,
-    E_WDT_IOC_ENABLE_WAKEUP     = 4, 
-    E_WDT_IOC_DISABLE_WAKEUP    = 5, 
-    E_WDT_IOC_RESET_TIMER       = 6,
-    E_WDT_IOC_ENABLE_RESET_FUNC = 7,
-    E_WDT_IOC_DISABLE_RESET_FUNC= 8,
-	E_WDT_IOC_SET_INTERVAL      = 9
-} E_WDT_CMD; 
-
- 
- 
- 
-typedef enum{
-    E_WDT_LEVEL0      = 0,          
-    E_WDT_LEVEL1      = 1,          
-    E_WDT_LEVEL2      = 2,           
-    E_WDT_LEVEL3      = 3,          
-	E_WDT_LEVEL4      = 4,          
-	E_WDT_LEVEL5      = 5,          
-	E_WDT_LEVEL6      = 6,          
-	E_WDT_LEVEL7      = 7           
-} E_WDT_INTERVAL;
-
- 
- 
- 
-void DrvTIMER_Init(void);
-int32_t DrvTIMER_Open(E_TIMER_CHANNEL ch, uint32_t uTicksPerSecond, E_TIMER_OPMODE op_mode);
-int32_t DrvTIMER_Close(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_SetTimerEvent(E_TIMER_CHANNEL ch, uint32_t uInterruptTicks, TIMER_CALLBACK pTimerCallback, uint32_t parameter);
-void DrvTIMER_ClearTimerEvent(E_TIMER_CHANNEL ch, uint32_t uTimerEventNo);
-int32_t DrvTIMER_EnableInt(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableInt(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_GetIntFlag(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_ClearIntFlag(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_Start(E_TIMER_CHANNEL ch);
-uint32_t DrvTIMER_GetIntTicks(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_ResetIntTicks(E_TIMER_CHANNEL ch);
-void DrvTIMER_Delay(E_TIMER_CHANNEL ch, uint32_t uTicks);
-int32_t DrvTIMER_OpenCounter(E_TIMER_CHANNEL ch, uint32_t uCounterBoundary, E_TIMER_OPMODE op_mode);
-int32_t DrvTIMER_StartCounter(E_TIMER_CHANNEL ch);
-uint32_t DrvTIMER_GetCounters(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_OpenCapture(E_TIMER_CHANNEL ch, E_TIMER_RSTCAP_MODE mode);
-int32_t DrvTIMER_CloseCapture(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_SelectExternalMode(E_TIMER_CHANNEL ch, E_TIMER_RSTCAP_MODE mode);
-int32_t DrvTIMER_SelectCaptureEdge(E_TIMER_CHANNEL ch, E_TIMER_TEX_EDGE edge);
-int32_t DrvTIMER_EnableCaptureInt(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableCaptureInt(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_EnableCapture(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableCapture(E_TIMER_CHANNEL ch);
-uint32_t DrvTIMER_GetCaptureData(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_GetCaptureIntFlag(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_ClearCaptureIntFlag(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_EnableCaptureDebounce(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableCaptureDebounce(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_EnableCounterDebounce(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_DisableCounterDebounce(E_TIMER_CHANNEL ch);
-int32_t DrvTIMER_SelectCounterDetectPhase(E_TIMER_CHANNEL ch, E_TIMER_TX_PHASE phase);
-uint32_t DrvTIMER_GetVersion(void);
-
-int32_t DrvWDT_Open(E_WDT_INTERVAL WDTlevel);
-void DrvWDT_Close(void);
-void DrvWDT_InstallISR(WDT_CALLBACK pvWDTISR);
-int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
-
-
-
-
-
-#line 18 "user_func.h"
-#line 1 "..\\Include\\Driver\\DrvPWM.h"
- 
- 
- 
- 
- 
-
-
-
- 
- 
- 
-
-#line 14 "..\\Include\\Driver\\DrvPWM.h"
-
-
-
-
-
-
- 
- 
- 
-
-
-
-
- 
- 
- 
-
-                               
- 
- 
- 
-
-
-
-
-
- 
- 
- 
-#line 51 "..\\Include\\Driver\\DrvPWM.h"
-
- 
- 
- 
-#line 63 "..\\Include\\Driver\\DrvPWM.h"
-
- 
- 
- 
-
-
-
-
- 
- 
- 
-
-
-
- 
- 
- 
-
-
-
-
-
-
- 
- 
- 
-
-
-
-
-
- 
- 
- 
-
-
-
- 
- 
- 
-typedef struct
-{
-    uint8_t   u8Mode;
-    uint8_t   u8HighPulseRatio;
-    uint8_t   u8ClockSelector;
-    uint8_t   u8PreScale;
-    uint32_t  u32Frequency; 
-    uint32_t  u32Duty;
-    int32_t   i32Inverter;
-}S_DRVPWM_TIME_DATA_T;
-
- 
- 
- 
-typedef void (*PFN_DRVPWM_CALLBACK)(void);
-
- 
- 
- 
-typedef struct
-{
-    PFN_DRVPWM_CALLBACK pfnPWM0CallBack;    
-    PFN_DRVPWM_CALLBACK pfnCAP0CallBack;
-   
-    PFN_DRVPWM_CALLBACK pfnPWM1CallBack;    
-    PFN_DRVPWM_CALLBACK pfnCAP1CallBack;
+     
+    ((GCR_T *) ((( uint32_t)0x50000000) + 0x00000))->IPRSTC2.ADC_RST = 1;
+    ((GCR_T *) ((( uint32_t)0x50000000) + 0x00000))->IPRSTC2.ADC_RST = 0;
     
-    PFN_DRVPWM_CALLBACK pfnPWM2CallBack;    
-    PFN_DRVPWM_CALLBACK pfnCAP2CallBack;
+     
+    ((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKSEL1.ADC_S = ClockSrc;
     
-    PFN_DRVPWM_CALLBACK pfnPWM3CallBack;    
-    PFN_DRVPWM_CALLBACK pfnCAP3CallBack;        
-   
-}S_DRVPWM_CALLBACK_T;
-
- 
- 
- 
-void     DrvPWM_ClearCaptureIntStatus(uint8_t u8Capture, uint8_t u8IntType);
-void     DrvPWM_ClearInt(uint8_t u8Timer);
-void     DrvPWM_Close(void);
-
-void     DrvPWM_DisableInt(uint8_t u8Timer);
-
-void     DrvPWM_Enable(uint8_t u8Timer, int32_t i32Enable);
-void     DrvPWM_EnableDeadZone(uint8_t u8Timer, uint8_t u8Length, int32_t i32EnableDeadZone);
-void     DrvPWM_EnableInt(uint8_t u8Timer, uint8_t u8Int, PFN_DRVPWM_CALLBACK pfncallback);
-
-int32_t  DrvPWM_GetCaptureIntStatus(uint8_t u8Capture, uint8_t u8IntType);
-
-uint16_t DrvPWM_GetFallingCounter(uint8_t u8Capture);
-int32_t  DrvPWM_GetIntFlag(uint8_t u8Timer);
-uint16_t DrvPWM_GetRisingCounter(uint8_t u8Capture);
-uint32_t DrvPWM_GetTimerCounter(uint8_t u8Timer);
-uint32_t DrvPWM_GetVersion (void);
-
-int32_t  DrvPWM_IsTimerEnabled(uint8_t u8Timer);
-
-void     DrvPWM_Open(void);
-
-int32_t  DrvPWM_SelectClearLatchFlagOption(int32_t i32option);
-void     DrvPWM_SelectClockSource(uint8_t u8Timer, uint8_t u8ClockSourceSelector);
-uint32_t DrvPWM_SetTimerClk(uint8_t u8Timer, S_DRVPWM_TIME_DATA_T *sPt);
-void     DrvPWM_SetTimerCounter(uint8_t u8Timer, uint16_t u16Counter);
-void     DrvPWM_SetTimerIO(uint8_t u8Timer, int32_t i32Enable);
-
-
-
-
-
-
-
-
-
-#line 19 "user_func.h"
-#line 1 "..\\Include\\Driver\\DrvADC.h"
- 
- 
- 
- 
- 
-
-
-
-
- 
- 
- 
-#line 14 "..\\Include\\Driver\\DrvADC.h"
-#line 15 "..\\Include\\Driver\\DrvADC.h"
-
- 
-
+     
+    ((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKDIV.ADC_N = u8AdcDivisor;
+     
+    ((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->APBCLK.ADC_EN = 1;
+     
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.ADEN = 1;
+    
+    if( InputMode == ADC_SINGLE_END )
+        ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.DIFFEN = 0;      
+    else
+        ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.DIFFEN = 1;      
+    
+    if( OpMode == ADC_SINGLE_OP )
+        ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.ADMD = 0;      
+    else if( OpMode == ADC_SINGLE_CYCLE_OP )
+        ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.ADMD = 2;      
+    else
+        ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.ADMD = 3;      
+    
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCHER.CHEN = u8ChannelSelBitwise;
+}
 
  
  
  
  
-
-
-
-
-
- 
-
-
-typedef enum {ADC_SINGLE_END, ADC_DIFFERENTIAL} E_ADC_INPUT_MODE;
-typedef enum {ADC_SINGLE_OP, ADC_SINGLE_CYCLE_OP, ADC_CONTINUOUS_OP} E_ADC_OPERATION_MODE;
-typedef enum {EXTERNAL_12MHZ=0, INTERNAL_PLL=1, INTERNAL_HCLK=2, INTERNAL_RC22MHZ=3} E_ADC_CLK_SRC;
-typedef enum {LOW_LEVEL=0, HIGH_LEVEL=1, FALLING_EDGE=2, RISING_EDGE=3} E_ADC_EXT_TRI_COND;
-typedef enum {EXTERNAL_INPUT_SIGNAL, INTERNAL_BANDGAP, INTERNAL_TEMPERATURE_SENSOR} E_ADC_CH7_SRC;
-typedef enum {LESS_THAN, GREATER_OR_EQUAL} E_ADC_CMP_CONDITION;
-typedef enum {UNSIGNED_OUTPUT, TWOS_COMPLEMENT} E_ADC_DIFF_MODE_OUTPUT_FORMAT;
-
-typedef void (DRVADC_ADC_CALLBACK)(uint32_t u32UserData);
-typedef void (DRVADC_ADCMP0_CALLBACK)(uint32_t u32UserData);
-typedef void (DRVADC_ADCMP1_CALLBACK)(uint32_t u32UserData);
-
-#line 50 "..\\Include\\Driver\\DrvADC.h"
-
  
  
  
-void DrvADC_Open(E_ADC_INPUT_MODE InputMode, E_ADC_OPERATION_MODE OpMode, uint8_t u8ChannelSelBitwise, E_ADC_CLK_SRC ClockSrc, uint8_t u8AdcDivisor);
-void DrvADC_Close(void);
-void DrvADC_SetADCChannel(uint8_t u8ChannelSelBitwise);
-void DrvADC_ConfigADCChannel7(E_ADC_CH7_SRC Ch7Src);
-void DrvADC_SetADCInputMode(E_ADC_INPUT_MODE InputMode);
-void DrvADC_SetADCOperationMode(E_ADC_OPERATION_MODE OpMode);
-void DrvADC_SetADCClkSrc(E_ADC_CLK_SRC ClockSrc);
-void DrvADC_SetADCDivisor(uint8_t u8AdcDivisor);
-void DrvADC_EnableADCInt(DRVADC_ADC_CALLBACK callback, uint32_t u32UserData);
-void DrvADC_DisableADCInt(void);
-void DrvADC_EnableADCCmp0Int(DRVADC_ADCMP0_CALLBACK callback, uint32_t u32UserData);
-void DrvADC_DisableADCCmp0Int(void);
-void DrvADC_EnableADCCmp1Int(DRVADC_ADCMP1_CALLBACK callback, uint32_t u32UserData);
-void DrvADC_DisableADCCmp1Int(void);
-uint32_t DrvADC_GetConversionRate(void);
-void DrvADC_EnableExtTrigger(E_ADC_EXT_TRI_COND TriggerCondition);
-void DrvADC_DisableExtTrigger(void);
-void DrvADC_StartConvert(void);
-void DrvADC_StopConvert(void);
-uint32_t DrvADC_IsConversionDone(void);
-int32_t DrvADC_GetConversionData(uint8_t u8ChannelNum);
-void DrvADC_EnablePDMA(void);
-void DrvADC_DisablePDMA(void);
-uint32_t DrvADC_IsDataValid(uint8_t u8ChannelNum);
-uint32_t DrvADC_IsDataOverrun(uint8_t u8ChannelNum);
-int32_t DrvADC_EnableADCCmp0(uint8_t u8CmpChannelNum, E_ADC_CMP_CONDITION CmpCondition, uint16_t u16CmpData, uint8_t CmpMatchCount);
-int32_t DrvADC_EnableADCCmp1(uint8_t u8CmpChannelNum, E_ADC_CMP_CONDITION CmpCondition, uint16_t u16CmpData, uint8_t CmpMatchCount);
-void DrvADC_DisableADCCmp0(void);
-void DrvADC_DisableADCCmp1(void);
-void DrvADC_EnableSelfCalibration(void);
-uint32_t DrvADC_IsCalibrationDone(void);
-void DrvADC_DisableSelfCalibration(void);
-void DrvADC_DiffModeOutputFormat(E_ADC_DIFF_MODE_OUTPUT_FORMAT OutputFormat);
-uint32_t DrvADC_GetVersion (void);
+ 
+ 
+ 
+ 
+ 
+void DrvADC_Close(void)
+{     
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.ADEN = 0;                 
+    ((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->APBCLK.ADC_EN = 0;          
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.ADIE = 0;                 
+    NVIC_DisableIRQ(ADC_IRQn);
+    
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[0].CMPEN = 0;           
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[0].CMPIE = 0;           
+    
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[1].CMPEN = 0;           
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[1].CMPIE = 0;           
+}
 
-#line 20 "user_func.h"
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_SetADCChannel(uint8_t u8ChannelSelBitwise)
+{     
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCHER.CHEN = u8ChannelSelBitwise;
+}
 
-	void heartbeat(void);
-	
-	void keypad_input(int* k);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_ConfigADCChannel7(E_ADC_CH7_SRC Ch7Src)
+{
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCHER.PRESEL = Ch7Src;
+    if(Ch7Src==INTERNAL_TEMPERATURE_SENSOR)
+        ((GCR_T *) ((( uint32_t)0x50000000) + 0x00000))->TEMPCR.VTEMP_EN = 1;    
+    else
+        ((GCR_T *) ((( uint32_t)0x50000000) + 0x00000))->TEMPCR.VTEMP_EN = 0;    
+}
 
-  void displayToUser(int* target);
-	
-	void calibrateLight(double *full_LED_silly, double *no_LED_silly);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_SetADCInputMode(E_ADC_INPUT_MODE InputMode)
+{
+    if( InputMode == ADC_SINGLE_END )
+        ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.DIFFEN = 0;      
+    else
+        ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.DIFFEN = 1;      
+}
 
-#line 18 "main.c"
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_SetADCOperationMode(E_ADC_OPERATION_MODE OpMode)
+{
+    if( OpMode == ADC_SINGLE_OP )
+        ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.ADMD = 0;          
+    else if( OpMode == ADC_SINGLE_CYCLE_OP )
+        ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.ADMD = 2;          
+    else
+        ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.ADMD = 3;          
+}
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_SetADCClkSrc(E_ADC_CLK_SRC ClockSrc)
+{
+    ((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKSEL1.ADC_S = ClockSrc;  
+}
 
-int prevInputKeypad = 0;
-int update = 0;
-double no_LED = 0.0;
-double full_LED = 0.0;
-double target_reading = 0.0;
-double kp = 1.0;
-int new_duty = 0; 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_SetADCDivisor(uint8_t u8AdcDivisor)
+{
+    ((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKDIV.ADC_N = u8AdcDivisor;
+}
 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_EnableADCInt(DRVADC_ADC_CALLBACK Callback, uint32_t u32UserData)
+{
+    g_ptADCCallBack = Callback;
+    g_pu32UserData[0] = u32UserData;
+    (*((volatile unsigned int *)((((( uint32_t)0x40000000) + 0xE0000) + 0x30)))=((*((volatile unsigned int *)((((( uint32_t)0x40000000) + 0xE0000) + 0x30))))&(~0x7))|0x1);      
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.ADIE = 1;
+    NVIC_SetPriority(ADC_IRQn, (1<<2) - 2);
+    NVIC_EnableIRQ(ADC_IRQn);
+}
 
-int main (void) {
-	char output[15];
-	double iMeas = 0;
-	double voltage = 0.0;
-	double error = 0.0;
-	double temp_error = 0.0;
-	
-	 
-	S_DRVPWM_TIME_DATA_T sPt;
-		sPt.u32Frequency = 1000; 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_DisableADCInt(void)
+{
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.ADIE = 0;
+}
 
-		sPt.u8Mode = 1;
-	
-		sPt.u8HighPulseRatio = 20;   
-		sPt.i32Inverter = 0; 
-	
-		sPt.u8ClockSelector = 4; 
-		sPt.u8PreScale = 22;      
-		sPt.u32Duty = 1000;
-	
-	heartbeat();
-	
-		 
-	OpenKeyPad();
-	Initial_panel(); 
-	DrvGPIO_ClrBit(E_GPD,14); 
-	clr_all_panel(); 
-	
-	DrvADC_Open(ADC_SINGLE_END, ADC_SINGLE_OP,0x40,INTERNAL_HCLK,1); 
-	DrvADC_SetADCChannel(0x40);
-	DrvGPIO_DisableDigitalInputBit(E_GPA,6); 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_EnableADCCmp0Int(DRVADC_ADCMP0_CALLBACK Callback, uint32_t u32UserData)
+{
+    g_ptADCMP0CallBack = Callback;
+    g_pu32UserData[1] = u32UserData;
+    (*((volatile unsigned int *)((((( uint32_t)0x40000000) + 0xE0000) + 0x30)))=((*((volatile unsigned int *)((((( uint32_t)0x40000000) + 0xE0000) + 0x30))))&(~0x7))|0x2);         
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[0].CMPIE = 1;
+    NVIC_SetPriority(ADC_IRQn, (1<<2) - 2);
+    NVIC_EnableIRQ(ADC_IRQn);
+}
 
-	 
-	DrvGPIO_InitFunction(E_FUNC_PWM3);
-	DrvPWM_Open();
-	DrvPWM_SelectClockSource(0x03, 2); 
-	DrvPWM_SetTimerClk(0x03, &sPt);
-	DrvPWM_SetTimerIO(0x03,1);
-	DrvPWM_Enable(0x03, 1);
-	
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_DisableADCCmp0Int(void)
+{
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[0].CMPIE = 0;
+}
 
-	calibrateLight(&full_LED, &no_LED);
-	kp = (no_LED/full_LED); 
-	
-	prevInputKeypad = 3; 
-	
-	clr_all_panel(); 
-	
-	while(1){
-			DrvADC_StartConvert();
-			while(!DrvADC_IsConversionDone());
-			DrvSYS_Delay(1000000);
-			while(DrvADC_IsDataValid(6)) 
-			iMeas = DrvADC_GetConversionData(6); 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_EnableADCCmp1Int(DRVADC_ADCMP1_CALLBACK Callback, uint32_t u32UserData)
+{
+    g_ptADCMP1CallBack = Callback;
+    g_pu32UserData[2] = u32UserData;
+    (*((volatile unsigned int *)((((( uint32_t)0x40000000) + 0xE0000) + 0x30)))=((*((volatile unsigned int *)((((( uint32_t)0x40000000) + 0xE0000) + 0x30))))&(~0x7))|0x4);         
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[1].CMPIE = 1;
+    NVIC_SetPriority(ADC_IRQn, (1<<2) - 2);
+    NVIC_EnableIRQ(ADC_IRQn);
+}
 
-			
-			temp_error = target_reading-iMeas;
-			error = (temp_error)*kp/(full_LED-no_LED)*100;
-			
-			if (error > 5) { error = 5; }
-			else if (error < -5) { error = -5; }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_DisableADCCmp1Int(void)
+{
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[1].CMPIE = 0;
+}
 
-			new_duty = sPt.u8HighPulseRatio + error * 1.2;
-			if (new_duty > 100){ new_duty = 100;	}
-			else if (new_duty < 1) {new_duty = 1; }
-			
-			sPt.u8HighPulseRatio = new_duty; 
-			DrvPWM_SetTimerClk(0x03 , &sPt); 
-			DrvSYS_Delay(100000); 
-			
-			voltage =	(iMeas / 4096.0) * 3.3 ;
-			sprintf(output, " %.2f V %.1f", voltage, iMeas); 
-			print_lcd(0, output);
-			
-			sprintf(output, " %.2f V %5.2f ", ((target_reading / 4096.0) * 3.3), target_reading);
-			print_lcd(1, output);
-			
-			sprintf(output, "%.1f %% error", error);
-			print_lcd(2, output);
-			
-			sprintf(output, "%d duty cycle", new_duty);
-			print_lcd(3, output);
-			
-			
-		keypad_input(&prevInputKeypad);
-		switch(prevInputKeypad){
-			case 1: 
-				target_reading = full_LED;
-				displayToUser(&prevInputKeypad);
-				break;
-			case 2: 
-				target_reading = no_LED +((full_LED - no_LED)*3/4);
-				displayToUser(&prevInputKeypad);
-			break;
-			case 3: 
-				target_reading = no_LED +((full_LED - no_LED)/2);
-				displayToUser(&prevInputKeypad);
-			break;
-			case 4: 
-				target_reading = no_LED +((full_LED - no_LED)*1/4);
-				displayToUser(&prevInputKeypad);
-			break;
-			case 5: 
-				target_reading = no_LED;
-				displayToUser(&prevInputKeypad);
-			break;
-			default:
-				target_reading = no_LED;
-				displayToUser(&prevInputKeypad);
-			break;
-		}
-		
-	CloseKeyPad();
-		
-	}
-} 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void ADC_IRQHandler(void)
+{
+    if(((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADSR.ADF==1)
+    {
+        if(g_ptADCCallBack)
+            g_ptADCCallBack(g_pu32UserData[0]);
+        
+         
+         
+        *((volatile unsigned int *)((((( uint32_t)0x40000000) + 0xE0000) + 0x30)))=((*((volatile unsigned int *)((((( uint32_t)0x40000000) + 0xE0000) + 0x30))))&(~0x7))|0x1;
+    }
+    
+    if(((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADSR.CMPF0==1)
+    {
+        if(g_ptADCMP0CallBack)
+            g_ptADCMP0CallBack(g_pu32UserData[1]);
+        
+         
+         
+        *((volatile unsigned int *)((((( uint32_t)0x40000000) + 0xE0000) + 0x30)))=((*((volatile unsigned int *)((((( uint32_t)0x40000000) + 0xE0000) + 0x30))))&(~0x7))|0x2;
+    }
+    
+    if(((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADSR.CMPF1==1)
+    {
+        if(g_ptADCMP1CallBack)
+            g_ptADCMP1CallBack(g_pu32UserData[2]);
+        
+         
+         
+        *((volatile unsigned int *)((((( uint32_t)0x40000000) + 0xE0000) + 0x30)))=((*((volatile unsigned int *)((((( uint32_t)0x40000000) + 0xE0000) + 0x30))))&(~0x7))|0x4;
+    }
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+uint32_t DrvADC_GetConversionRate(void)
+{
+    if( ((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKSEL1.ADC_S == EXTERNAL_12MHZ )          
+    {
+        return ((12000000UL)/(((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKDIV.ADC_N + 1)/27);
+    }
+    else if( ((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKSEL1.ADC_S == INTERNAL_PLL )       
+    {
+        return ( DrvSYS_GetPLLClockFreq()/(((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKDIV.ADC_N + 1)/27);
+    }
+    else if( ((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKSEL1.ADC_S == INTERNAL_HCLK )      
+    {
+        return ( DrvSYS_GetHCLKFreq()/(((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKDIV.ADC_N + 1)/23);
+    }
+    else                                                   
+    {
+        return ((22118400UL)/(((SYSCLK_T *) ((( uint32_t)0x50000000) + 0x00200))->CLKDIV.ADC_N + 1)/27);
+    }
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_EnableExtTrigger(E_ADC_EXT_TRI_COND TriggerCondition)
+{
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.ADST = 0;                    
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.TRGEN = 0;                   
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.TRGS = 0;                    
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.TRGCOND = TriggerCondition;  
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.TRGEN = 1;                   
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_DisableExtTrigger(void)
+{
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.TRGEN = 0;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_StartConvert(void)
+{
+     
+     
+    *((volatile unsigned int *)((((( uint32_t)0x40000000) + 0xE0000) + 0x30)))=((*((volatile unsigned int *)((((( uint32_t)0x40000000) + 0xE0000) + 0x30))))&(~0x7))|0x1;
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.ADST = 1;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_StopConvert(void)
+{
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.ADST = 0;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+uint32_t DrvADC_IsConversionDone(void)
+{
+    if(((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADSR.ADF==0)
+        return 0;
+    else
+        return 1;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+int32_t DrvADC_GetConversionData(uint8_t u8ChannelNum)
+{
+    if(((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.DIFFEN==0)        
+    {
+        return ((int32_t)(((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADDR[u8ChannelNum].RSLT & 0xFFF));
+    }
+    else                           
+    {
+        if(((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.DMOF==0)      
+            return (((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADDR[u8ChannelNum].RSLT);
+        else                       
+        {
+            uint16_t u16AdcData = ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADDR[u8ChannelNum].RSLT;
+            if( u16AdcData&0x8000 )
+                return (0xFFFF0000|u16AdcData);
+            else
+                return (int32_t)u16AdcData;
+        }
+    }
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_EnablePDMA(void)
+{
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.ADIE = 0;
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.PTEN = 1;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_DisablePDMA(void)
+{
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.PTEN = 0;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+uint32_t DrvADC_IsDataValid(uint8_t u8ChannelNum)
+{
+    volatile uint8_t u8ChannelSelBitwise[8]={ 1, 2, 4, 8, 0x10, 0x20, 0x40, 0x80 };
+    
+    if(u8ChannelNum>7)
+        return 0;
+    if( ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADSR.VALID & u8ChannelSelBitwise[u8ChannelNum] )
+        return 1;
+    else
+        return 0;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+uint32_t DrvADC_IsDataOverrun(uint8_t u8ChannelNum)
+{
+    volatile uint8_t u8ChannelSelBitwise[8]={ 1, 2, 4, 8, 0x10, 0x20, 0x40, 0x80 };
+    
+    if(u8ChannelNum>7)
+        return 0;
+    if( ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADSR.OVERRUN & u8ChannelSelBitwise[u8ChannelNum] )
+        return 1;
+    else
+        return 0;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+int32_t DrvADC_EnableADCCmp0(uint8_t u8CmpChannelNum, E_ADC_CMP_CONDITION CmpCondition, uint16_t u16CmpData, uint8_t u8CmpMatchCount)
+{
+    if(u8CmpChannelNum>7)
+        return (((1) ? 0xFFFF0000 : 0x00000000) | ((((MODULE_ID_DRVADC) & 0xFF) | ((1) ? 0x100 : 0x00)) << 7) | ((1) & 0x7F));
+    
+    if(u16CmpData>0x0FFF)
+        return (((1) ? 0xFFFF0000 : 0x00000000) | ((((MODULE_ID_DRVADC) & 0xFF) | ((1) ? 0x100 : 0x00)) << 7) | ((1) & 0x7F));
+    
+    if(u8CmpMatchCount>0x0F)
+        return (((1) ? 0xFFFF0000 : 0x00000000) | ((((MODULE_ID_DRVADC) & 0xFF) | ((1) ? 0x100 : 0x00)) << 7) | ((1) & 0x7F));
+    
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[0].CMPCH     = u8CmpChannelNum;
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[0].CMPCOND   = CmpCondition;
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[0].CMPD      = u16CmpData;
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[0].CMPMATCNT = u8CmpMatchCount;
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[0].CMPEN     = 1;
+    
+    return 0;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_DisableADCCmp0(void)
+{
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[0].CMPEN = 0;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+int32_t DrvADC_EnableADCCmp1(uint8_t u8CmpChannelNum, E_ADC_CMP_CONDITION CmpCondition, uint16_t u16CmpData, uint8_t u8CmpMatchCount)
+{
+    if(u8CmpChannelNum>7)
+        return (((1) ? 0xFFFF0000 : 0x00000000) | ((((MODULE_ID_DRVADC) & 0xFF) | ((1) ? 0x100 : 0x00)) << 7) | ((1) & 0x7F));
+    
+    if(u16CmpData>0x0FFF)
+        return (((1) ? 0xFFFF0000 : 0x00000000) | ((((MODULE_ID_DRVADC) & 0xFF) | ((1) ? 0x100 : 0x00)) << 7) | ((1) & 0x7F));
+    
+    if(u8CmpMatchCount>0x0F)
+        return (((1) ? 0xFFFF0000 : 0x00000000) | ((((MODULE_ID_DRVADC) & 0xFF) | ((1) ? 0x100 : 0x00)) << 7) | ((1) & 0x7F));
+    
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[1].CMPCH     = u8CmpChannelNum;
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[1].CMPCOND   = CmpCondition;
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[1].CMPD      = u16CmpData;
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[1].CMPMATCNT = u8CmpMatchCount;
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[1].CMPEN     = 1;
+    
+    return 0;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_DisableADCCmp1(void)
+{
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCMPR[1].CMPEN = 0;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_EnableSelfCalibration(void)
+{
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCALR.CALEN = 1;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+uint32_t DrvADC_IsCalibrationDone(void)
+{
+    if(((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCALR.CALDONE == 1)
+        return 1;
+    else
+        return 0;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_DisableSelfCalibration(void)
+{
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCALR.CALEN = 0;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+void DrvADC_DiffModeOutputFormat (E_ADC_DIFF_MODE_OUTPUT_FORMAT OutputFormat)
+{
+    ((ADC_T *) ((( uint32_t)0x40000000) + 0xE0000))->ADCR.DMOF = OutputFormat;
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+uint32_t DrvADC_GetVersion (void)
+{
+    return (((1) << 16) | ((03) << 8) | (002));
+}
+

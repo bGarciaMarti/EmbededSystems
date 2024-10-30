@@ -10,8 +10,8 @@
       <TargetName>Blink_LED_7Seg</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pArmCC>5060750::V5.06 update 6 (build 750)::.\ARMCC</pArmCC>
-      <pCCUsed>5060750::V5.06 update 6 (build 750)::.\ARMCC</pCCUsed>
+      <pArmCC>5060960::V5.06 update 7 (build 960)::.\ARMCC</pArmCC>
+      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -467,6 +467,16 @@
               <FileName>ScanKey.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Src\NUC1xx-LB_002\ScanKey.c</FilePath>
+            </File>
+            <File>
+              <FileName>DrvPWM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Src\Driver\DrvPWM.c</FilePath>
+            </File>
+            <File>
+              <FileName>DrvADC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Src\Driver\DrvADC.c</FilePath>
             </File>
           </Files>
         </Group>

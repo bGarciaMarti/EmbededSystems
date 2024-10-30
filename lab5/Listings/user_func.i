@@ -9504,16 +9504,263 @@ int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
 
 
 #line 18 "user_func.h"
+#line 1 "..\\Include\\Driver\\DrvPWM.h"
+ 
+ 
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+
+#line 14 "..\\Include\\Driver\\DrvPWM.h"
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+
+
+ 
+ 
+ 
+
+                               
+ 
+ 
+ 
+
+
+
+
+
+ 
+ 
+ 
+#line 51 "..\\Include\\Driver\\DrvPWM.h"
+
+ 
+ 
+ 
+#line 63 "..\\Include\\Driver\\DrvPWM.h"
+
+ 
+ 
+ 
+
+
+
+
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+
+
+
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+typedef struct
+{
+    uint8_t   u8Mode;
+    uint8_t   u8HighPulseRatio;
+    uint8_t   u8ClockSelector;
+    uint8_t   u8PreScale;
+    uint32_t  u32Frequency; 
+    uint32_t  u32Duty;
+    int32_t   i32Inverter;
+}S_DRVPWM_TIME_DATA_T;
+
+ 
+ 
+ 
+typedef void (*PFN_DRVPWM_CALLBACK)(void);
+
+ 
+ 
+ 
+typedef struct
+{
+    PFN_DRVPWM_CALLBACK pfnPWM0CallBack;    
+    PFN_DRVPWM_CALLBACK pfnCAP0CallBack;
+   
+    PFN_DRVPWM_CALLBACK pfnPWM1CallBack;    
+    PFN_DRVPWM_CALLBACK pfnCAP1CallBack;
+    
+    PFN_DRVPWM_CALLBACK pfnPWM2CallBack;    
+    PFN_DRVPWM_CALLBACK pfnCAP2CallBack;
+    
+    PFN_DRVPWM_CALLBACK pfnPWM3CallBack;    
+    PFN_DRVPWM_CALLBACK pfnCAP3CallBack;        
+   
+}S_DRVPWM_CALLBACK_T;
+
+ 
+ 
+ 
+void     DrvPWM_ClearCaptureIntStatus(uint8_t u8Capture, uint8_t u8IntType);
+void     DrvPWM_ClearInt(uint8_t u8Timer);
+void     DrvPWM_Close(void);
+
+void     DrvPWM_DisableInt(uint8_t u8Timer);
+
+void     DrvPWM_Enable(uint8_t u8Timer, int32_t i32Enable);
+void     DrvPWM_EnableDeadZone(uint8_t u8Timer, uint8_t u8Length, int32_t i32EnableDeadZone);
+void     DrvPWM_EnableInt(uint8_t u8Timer, uint8_t u8Int, PFN_DRVPWM_CALLBACK pfncallback);
+
+int32_t  DrvPWM_GetCaptureIntStatus(uint8_t u8Capture, uint8_t u8IntType);
+
+uint16_t DrvPWM_GetFallingCounter(uint8_t u8Capture);
+int32_t  DrvPWM_GetIntFlag(uint8_t u8Timer);
+uint16_t DrvPWM_GetRisingCounter(uint8_t u8Capture);
+uint32_t DrvPWM_GetTimerCounter(uint8_t u8Timer);
+uint32_t DrvPWM_GetVersion (void);
+
+int32_t  DrvPWM_IsTimerEnabled(uint8_t u8Timer);
+
+void     DrvPWM_Open(void);
+
+int32_t  DrvPWM_SelectClearLatchFlagOption(int32_t i32option);
+void     DrvPWM_SelectClockSource(uint8_t u8Timer, uint8_t u8ClockSourceSelector);
+uint32_t DrvPWM_SetTimerClk(uint8_t u8Timer, S_DRVPWM_TIME_DATA_T *sPt);
+void     DrvPWM_SetTimerCounter(uint8_t u8Timer, uint16_t u16Counter);
+void     DrvPWM_SetTimerIO(uint8_t u8Timer, int32_t i32Enable);
+
+
+
+
+
+
+
+
+
+#line 19 "user_func.h"
+#line 1 "..\\Include\\Driver\\DrvADC.h"
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+ 
+ 
+ 
+#line 14 "..\\Include\\Driver\\DrvADC.h"
+#line 15 "..\\Include\\Driver\\DrvADC.h"
+
+ 
+
+
+ 
+ 
+ 
+ 
+
+
+
+
+
+ 
+
+
+typedef enum {ADC_SINGLE_END, ADC_DIFFERENTIAL} E_ADC_INPUT_MODE;
+typedef enum {ADC_SINGLE_OP, ADC_SINGLE_CYCLE_OP, ADC_CONTINUOUS_OP} E_ADC_OPERATION_MODE;
+typedef enum {EXTERNAL_12MHZ=0, INTERNAL_PLL=1, INTERNAL_HCLK=2, INTERNAL_RC22MHZ=3} E_ADC_CLK_SRC;
+typedef enum {LOW_LEVEL=0, HIGH_LEVEL=1, FALLING_EDGE=2, RISING_EDGE=3} E_ADC_EXT_TRI_COND;
+typedef enum {EXTERNAL_INPUT_SIGNAL, INTERNAL_BANDGAP, INTERNAL_TEMPERATURE_SENSOR} E_ADC_CH7_SRC;
+typedef enum {LESS_THAN, GREATER_OR_EQUAL} E_ADC_CMP_CONDITION;
+typedef enum {UNSIGNED_OUTPUT, TWOS_COMPLEMENT} E_ADC_DIFF_MODE_OUTPUT_FORMAT;
+
+typedef void (DRVADC_ADC_CALLBACK)(uint32_t u32UserData);
+typedef void (DRVADC_ADCMP0_CALLBACK)(uint32_t u32UserData);
+typedef void (DRVADC_ADCMP1_CALLBACK)(uint32_t u32UserData);
+
+#line 50 "..\\Include\\Driver\\DrvADC.h"
+
+ 
+ 
+ 
+void DrvADC_Open(E_ADC_INPUT_MODE InputMode, E_ADC_OPERATION_MODE OpMode, uint8_t u8ChannelSelBitwise, E_ADC_CLK_SRC ClockSrc, uint8_t u8AdcDivisor);
+void DrvADC_Close(void);
+void DrvADC_SetADCChannel(uint8_t u8ChannelSelBitwise);
+void DrvADC_ConfigADCChannel7(E_ADC_CH7_SRC Ch7Src);
+void DrvADC_SetADCInputMode(E_ADC_INPUT_MODE InputMode);
+void DrvADC_SetADCOperationMode(E_ADC_OPERATION_MODE OpMode);
+void DrvADC_SetADCClkSrc(E_ADC_CLK_SRC ClockSrc);
+void DrvADC_SetADCDivisor(uint8_t u8AdcDivisor);
+void DrvADC_EnableADCInt(DRVADC_ADC_CALLBACK callback, uint32_t u32UserData);
+void DrvADC_DisableADCInt(void);
+void DrvADC_EnableADCCmp0Int(DRVADC_ADCMP0_CALLBACK callback, uint32_t u32UserData);
+void DrvADC_DisableADCCmp0Int(void);
+void DrvADC_EnableADCCmp1Int(DRVADC_ADCMP1_CALLBACK callback, uint32_t u32UserData);
+void DrvADC_DisableADCCmp1Int(void);
+uint32_t DrvADC_GetConversionRate(void);
+void DrvADC_EnableExtTrigger(E_ADC_EXT_TRI_COND TriggerCondition);
+void DrvADC_DisableExtTrigger(void);
+void DrvADC_StartConvert(void);
+void DrvADC_StopConvert(void);
+uint32_t DrvADC_IsConversionDone(void);
+int32_t DrvADC_GetConversionData(uint8_t u8ChannelNum);
+void DrvADC_EnablePDMA(void);
+void DrvADC_DisablePDMA(void);
+uint32_t DrvADC_IsDataValid(uint8_t u8ChannelNum);
+uint32_t DrvADC_IsDataOverrun(uint8_t u8ChannelNum);
+int32_t DrvADC_EnableADCCmp0(uint8_t u8CmpChannelNum, E_ADC_CMP_CONDITION CmpCondition, uint16_t u16CmpData, uint8_t CmpMatchCount);
+int32_t DrvADC_EnableADCCmp1(uint8_t u8CmpChannelNum, E_ADC_CMP_CONDITION CmpCondition, uint16_t u16CmpData, uint8_t CmpMatchCount);
+void DrvADC_DisableADCCmp0(void);
+void DrvADC_DisableADCCmp1(void);
+void DrvADC_EnableSelfCalibration(void);
+uint32_t DrvADC_IsCalibrationDone(void);
+void DrvADC_DisableSelfCalibration(void);
+void DrvADC_DiffModeOutputFormat(E_ADC_DIFF_MODE_OUTPUT_FORMAT OutputFormat);
+uint32_t DrvADC_GetVersion (void);
+
+#line 20 "user_func.h"
 
 	void heartbeat(void);
 	
 	void keypad_input(int* k);
 
-	void zero_percent(void);
-	void twentyfive_percent(void);
-	void fifty_percent(void);
-	void seventyFive_percent(void);
-	void oneHund_percent(void);
+  void displayToUser(int* target);
+	
+	void calibrateLight(double *full_LED_silly, double *no_LED_silly);
+
 #line 5 "user_func.c"
 
 
@@ -9521,8 +9768,38 @@ int32_t DrvWDT_Ioctl(E_WDT_CMD uWDTCmd, uint32_t uArgument);
 
  
  
- 
 
+void calibrateLight(double *full_LED_silly, double *no_LED_silly){
+	char output[15];
+	int i = 0;
+		
+	((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CMR3=0; 
+  DrvSYS_Delay(100000000); 
+		DrvADC_StartConvert();
+		while(!DrvADC_IsConversionDone());
+		DrvSYS_Delay(1000000);
+		while(DrvADC_IsDataValid(6)) 
+		*no_LED_silly = DrvADC_GetConversionData(6); 
+
+	
+	((PWM_T *) ((( uint32_t)0x40000000) + 0x40000))->CMR3=0xFFFF;
+  DrvSYS_Delay(100000000);
+		DrvADC_StartConvert();
+		while(!DrvADC_IsConversionDone());
+		DrvSYS_Delay(1000000);
+		while(DrvADC_IsDataValid(6)) 
+		*full_LED_silly = DrvADC_GetConversionData(6); 
+	
+		sprintf(output, "full_LED %5.2f ", *full_LED_silly );
+		print_lcd(0, output);
+		
+		sprintf(output, "no_LED %5.2f ", *no_LED_silly);
+		print_lcd(3, output);
+		
+		for(i = 0; i < 15; i++){
+		DrvSYS_Delay(1000000);
+		}
+}
 
  
  
@@ -9541,40 +9818,35 @@ void keypad_input(int* k){
  
  
  
-void oneHund_percent(void){
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 0; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 0; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 0; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 0; 
-	
-	
+void displayToUser(int* target){
+	if(*target == 5){ 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 1; 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 1; 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 1; 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 1; 
+		}
+	else if (*target == 4){ 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 0; 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 1; 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 1; 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 1; 
+		}
+	else if (*target == 3){ 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 0; 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 0; 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 1; 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 1; 
+		}
+	else if (*target == 2){ 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 0; 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 0; 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 0; 
+		}
+	else if (*target == 1){ 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 0; 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 0; 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 0; 
+		(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 0; 
+		}
 }
 
-void zero_percent(void){
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 1; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 1; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 1; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 1; 
-}
-
-void twentyfive_percent(void){
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 0; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 1; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 1; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 1; 
-}
-
-
-void seventyFive_percent(void){
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 0; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 0; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 0; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 1; 
-}
-
-void fifty_percent(void){
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*12)))) = 0; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*13)))) = 0; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*14)))) = 1; 
-	(*((volatile uint32_t *) (((((( uint32_t)0x50000000) + 0x4000) + 0x200)+(0x40*2)) + (0x4*15)))) = 1; 
-}
